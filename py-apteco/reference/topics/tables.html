@@ -1,0 +1,513 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tables &mdash; py-apteco 0.8.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/theme_overrides.css?v=f0e53977" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=dbee5847"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Variables" href="variables.html" />
+    <link rel="prev" title="Session" href="session.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            py-apteco
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../reference.html">Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="session.html">Session</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Tables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#basic-use">Basic use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#table-related-tasks">Table-related tasks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#changing-the-resolve-table-of-a-selection">Changing the resolve table of a selection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#building-a-data-grid-or-cube">Building a data grid or cube</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#api-reference">API Reference</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#general-table-properties-metadata">General table properties &amp; metadata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#relationships-with-other-tables">Relationships with other tables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#table-comparison-methods">Table comparison methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#table-variables">Table variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data-grids-and-cubes">Data Grids and Cubes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html">Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selections.html">Selections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datagrid.html">Data Grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cube.html">Cube</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apteco-api.html">apteco-api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apteco_website.html">Back to apteco.com</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">py-apteco</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../reference.html">Reference</a></li>
+      <li class="breadcrumb-item active">Tables</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/reference/topics/tables.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tables">
+<span id="tables-reference"></span><h1>Tables<a class="headerlink" href="#tables" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">Table</span></code> object represents a FastStats system table.
+It holds metadata about the FastStats table,
+and provides access to all its variables.
+It can also be used to help specify what records are included
+in a selection, data grid or cube.
+Table objects for a FastStats system are automatically created
+when you initialize a <code class="xref py py-class docutils literal notranslate"><span class="pre">Session</span></code> connected to that system.</p>
+</section>
+<section id="basic-use">
+<h2>Basic use<a class="headerlink" href="#basic-use" title="Link to this heading"></a></h2>
+<p>Retrieving a table from a <code class="xref py py-class docutils literal notranslate"><span class="pre">Session</span></code> object:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bookings</span> <span class="o">=</span> <span class="n">my_session</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="s2">&quot;Bookings&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Examining table metadata:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="sa">f</span><span class="s2">&quot;There are </span><span class="si">{</span><span class="n">bookings</span><span class="o">.</span><span class="n">total_records</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">bookings</span><span class="o">.</span><span class="n">plural</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="gp">... </span>    <span class="sa">f</span><span class="s2">&quot; in this system.&quot;</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">There are 2,130,081 bookings in this system.</span>
+</pre></div>
+</div>
+<p>Accessing variables:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cost</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Cost&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">bookings</span><span class="o">.</span><span class="n">variables</span><span class="p">)</span>
+<span class="go">14</span>
+</pre></div>
+</div>
+<p>Checking table relationships:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">households</span> <span class="o">=</span> <span class="n">my_session</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="s2">&quot;Households&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">households</span><span class="o">.</span><span class="n">is_ancestor</span><span class="p">(</span><span class="n">bookings</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</section>
+<section id="table-related-tasks">
+<h2>Table-related tasks<a class="headerlink" href="#table-related-tasks" title="Link to this heading"></a></h2>
+<section id="changing-the-resolve-table-of-a-selection">
+<h3>Changing the resolve table of a selection<a class="headerlink" href="#changing-the-resolve-table-of-a-selection" title="Link to this heading"></a></h3>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">*</span></code> operator with a table object and a selection
+enables you to change the resolve table of the selection:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">people</span> <span class="o">=</span> <span class="n">my_session</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="s2">&quot;People&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">usa</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Destination&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;38&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">been_to_usa</span> <span class="o">=</span> <span class="n">people</span> <span class="o">*</span> <span class="n">usa</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">been_to_usa</span><span class="o">.</span><span class="n">table_name</span>
+<span class="go">&#39;People&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="building-a-data-grid-or-cube">
+<h3>Building a data grid or cube<a class="headerlink" href="#building-a-data-grid-or-cube" title="Link to this heading"></a></h3>
+<p>Table objects can be used as the starting point
+for creating a data grid using records from that table:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cols</span> <span class="o">=</span> <span class="p">(</span>
+<span class="go">        [people[var] for var in (&quot;peInit&quot;, &quot;peSName&quot;)]</span>
+<span class="go">        + [bookings[var] for var in (&quot;boDate&quot;, &quot;boCost&quot;, &quot;boDest&quot;)]</span>
+<span class="go">    )</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">northern</span> <span class="o">=</span> <span class="n">households</span><span class="p">[</span><span class="s2">&quot;Region&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;01&quot;</span><span class="p">,</span> <span class="s2">&quot;02&quot;</span><span class="p">,</span> <span class="s2">&quot;13&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">datagrid</span> <span class="o">=</span> <span class="n">bookings</span><span class="o">.</span><span class="n">datagrid</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">northern</span><span class="p">,</span> <span class="n">max_rows</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">datagrid</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">  Initial   Surname Booking Date     Cost    Destination</span>
+<span class="go">0       A     Allen   2020-08-11   551.81         France</span>
+<span class="go">1       W   Livesey   2021-08-02  1167.57   Sierra Leone</span>
+<span class="go">2       W   Livesey   2021-08-19   562.56  United States</span>
+<span class="go">3       W   Livesey   2021-08-08   960.55      Australia</span>
+<span class="go">4       O  Robinson   2021-08-22   455.60  United States</span>
+</pre></div>
+</div>
+<p>You can similarly create a cube:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cube</span> <span class="o">=</span> <span class="n">bookings</span><span class="o">.</span><span class="n">cube</span><span class="p">(</span>
+<span class="go">        [people[&quot;Occupation&quot;], bookings[&quot;Product&quot;]],</span>
+<span class="go">        selection=(bookings[&quot;Cost&quot;] &gt; 200),</span>
+<span class="go">    )</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">cube</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="go">                                  Bookings</span>
+<span class="go">Occupation    Product</span>
+<span class="go">Manual Worker Accommodation Only      4039</span>
+<span class="go">              Package Holiday        77547</span>
+<span class="go">              Flight Only            27104</span>
+<span class="go">Director      Accommodation Only      1714</span>
+<span class="go">              Package Holiday        24585</span>
+<span class="go">              Flight Only             8477</span>
+<span class="go">Manager       Accommodation Only      4422</span>
+<span class="go">              Package Holiday       109725</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="api-reference">
+<h2>API Reference<a class="headerlink" href="#api-reference" title="Link to this heading"></a></h2>
+<section id="general-table-properties-metadata">
+<h3>General table properties &amp; metadata<a class="headerlink" href="#general-table-properties-metadata" title="Link to this heading"></a></h3>
+<p>These attributes on the <code class="xref py py-class docutils literal notranslate"><span class="pre">Table</span></code> object</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Table.name">
+<span class="sig-prename descclassname"><span class="pre">Table.</span></span><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#Table.name" title="Link to this definition"></a></dt>
+<dd><p>table reference name</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Table.singular">
+<span class="sig-prename descclassname"><span class="pre">Table.</span></span><span class="sig-name descname"><span class="pre">singular</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#Table.singular" title="Link to this definition"></a></dt>
+<dd><p>noun for a single item from this table</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Table.plural">
+<span class="sig-prename descclassname"><span class="pre">Table.</span></span><span class="sig-name descname"><span class="pre">plural</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#Table.plural" title="Link to this definition"></a></dt>
+<dd><p>noun for multiple items from this table</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Table.is_default">
+<span class="sig-prename descclassname"><span class="pre">Table.</span></span><span class="sig-name descname"><span class="pre">is_default</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#Table.is_default" title="Link to this definition"></a></dt>
+<dd><p>whether this is the default table for this FastStats system</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Table.is_people">
+<span class="sig-prename descclassname"><span class="pre">Table.</span></span><span class="sig-name descname"><span class="pre">is_people</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#Table.is_people" title="Link to this definition"></a></dt>
+<dd><p>whether this is the table representing people in this FastStats system</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Table.total_records">
+<span class="sig-prename descclassname"><span class="pre">Table.</span></span><span class="sig-name descname"><span class="pre">total_records</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#Table.total_records" title="Link to this definition"></a></dt>
+<dd><p>total number of records on this table</p>
+</dd></dl>
+
+</section>
+<section id="relationships-with-other-tables">
+<h3>Relationships with other tables<a class="headerlink" href="#relationships-with-other-tables" title="Link to this heading"></a></h3>
+<p>These attributes on the <code class="xref py py-class docutils literal notranslate"><span class="pre">Table</span></code> object hold data
+about this table’s related tables.
+‘Related’ tables in this context covers:
+<strong>parent</strong>, <strong>children</strong>, <strong>ancestors</strong> (this includes the parent),
+<strong>descendants</strong> (this includes children).</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Table.child_relationship">
+<span class="sig-prename descclassname"><span class="pre">Table.</span></span><span class="sig-name descname"><span class="pre">child_relationship</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#Table.child_relationship" title="Link to this definition"></a></dt>
+<dd><p>phrase to relate to this table from its parent,
+e.g. ‘customer <em>&lt;purchased the&gt;</em> product’</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Table.parent_relationship">
+<span class="sig-prename descclassname"><span class="pre">Table.</span></span><span class="sig-name descname"><span class="pre">parent_relationship</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#Table.parent_relationship" title="Link to this definition"></a></dt>
+<dd><p>phrase to relate this table to its parent,
+e.g. ‘product <em>&lt;was purchased by the&gt;</em> customer’</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Table.has_children">
+<span class="sig-prename descclassname"><span class="pre">Table.</span></span><span class="sig-name descname"><span class="pre">has_children</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#Table.has_children" title="Link to this definition"></a></dt>
+<dd><p>whether this table has any child tables</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Table.parent_name">
+<span class="sig-prename descclassname"><span class="pre">Table.</span></span><span class="sig-name descname"><span class="pre">parent_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#Table.parent_name" title="Link to this definition"></a></dt>
+<dd><p>name of this table’s parent table (an empty string for the master table)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Table.parent">
+<span class="sig-prename descclassname"><span class="pre">Table.</span></span><span class="sig-name descname"><span class="pre">parent</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Table</span></em><a class="headerlink" href="#Table.parent" title="Link to this definition"></a></dt>
+<dd><p>the parent table of this table (<code class="xref py py-const docutils literal notranslate"><span class="pre">None</span></code> for the master table)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Table.children">
+<span class="sig-prename descclassname"><span class="pre">Table.</span></span><span class="sig-name descname"><span class="pre">children</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Table</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#Table.children" title="Link to this definition"></a></dt>
+<dd><p>list of child tables of this table (an empty list if table has no children)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Table.ancestors">
+<span class="sig-prename descclassname"><span class="pre">Table.</span></span><span class="sig-name descname"><span class="pre">ancestors</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Table</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#Table.ancestors" title="Link to this definition"></a></dt>
+<dd><p>list of ancestor tables of this table (an empty list for the master table)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Table.descendants">
+<span class="sig-prename descclassname"><span class="pre">Table.</span></span><span class="sig-name descname"><span class="pre">descendants</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Table</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#Table.descendants" title="Link to this definition"></a></dt>
+<dd><p>list of descendant tables of this table (an empty list if table has no children)</p>
+</dd></dl>
+
+</section>
+<section id="table-comparison-methods">
+<h3>Table comparison methods<a class="headerlink" href="#table-comparison-methods" title="Link to this heading"></a></h3>
+<p>These methods on the <code class="xref py py-class docutils literal notranslate"><span class="pre">Table</span></code> object enable you to compare it
+with another table to check how they are related, if at all.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Table.is_same">
+<span class="sig-prename descclassname"><span class="pre">Table.</span></span><span class="sig-name descname"><span class="pre">is_same</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Table.is_same" title="Link to this definition"></a></dt>
+<dd><p>Return whether this table is the same as <cite>other</cite>.</p>
+<p>This comparison can also be performed using the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Table.is_ancestor">
+<span class="sig-prename descclassname"><span class="pre">Table.</span></span><span class="sig-name descname"><span class="pre">is_ancestor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_same</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Table.is_ancestor" title="Link to this definition"></a></dt>
+<dd><p>Return whether this table is an ancestor of <cite>other</cite>
+(the direct parent table also counts as an ancestor).
+If <cite>allow_same</cite> is set to <cite>True</cite>,
+this will also return <cite>True</cite> if the tables are the same.</p>
+<p>This comparison can also be performed using the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> operator,
+or <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> for <cite>allow_same=True</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Table.is_descendant">
+<span class="sig-prename descclassname"><span class="pre">Table.</span></span><span class="sig-name descname"><span class="pre">is_descendant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_same</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Table.is_descendant" title="Link to this definition"></a></dt>
+<dd><p>Return whether this table is a descendant of <cite>other</cite>
+(direct child tables also count as descendants).
+If <cite>allow_same</cite> is set to <cite>True</cite>,
+this will also return <cite>True</cite> if the tables are the same.</p>
+<p>This comparison can also be performed using the <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> operator,
+or <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> for <cite>allow_same=True</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Table.is_related">
+<span class="sig-prename descclassname"><span class="pre">Table.</span></span><span class="sig-name descname"><span class="pre">is_related</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_same</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Table.is_related" title="Link to this definition"></a></dt>
+<dd><p>Return whether this table is either an ancestor or descendant
+of <cite>other</cite>.
+If <cite>allow_same</cite> is set to <cite>True</cite>,
+this will also return <cite>True</cite> if the tables are the same.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In one sense, all the tables in a FastStats system are related,
+since they are all descended from a single master table.
+However, ‘related’ here is referring to direct ancestor
+or direct descendant relationships,
+not including indirect ‘sibling’ or ‘cousin’ relationships.</p>
+</div>
+</dd></dl>
+
+</section>
+<section id="table-variables">
+<span id="id1"></span><h3>Table variables<a class="headerlink" href="#table-variables" title="Link to this heading"></a></h3>
+<p>The variables on the table can be accessed through the
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">variables</span></code> attribute.
+This single object provides both a list-like and dict-like
+interface for accessing variables.</p>
+<p>Variables can be retrieved by indexing into this object
+(using the <code class="docutils literal notranslate"><span class="pre">[]</span></code> operator)
+with either the variable name or description:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cost</span> <span class="o">=</span> <span class="n">bookings</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s2">&quot;Cost&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">destination</span> <span class="o">=</span> <span class="n">bookings</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s2">&quot;boDest&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>This will raise a <code class="xref py py-exc docutils literal notranslate"><span class="pre">KeyError</span></code> if the string you pass in
+doesn’t match a variable name or description.</p>
+<p>There is also a shortcut for this by using the <code class="docutils literal notranslate"><span class="pre">[]</span></code> operator
+directly on the table itself:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cost</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Cost&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">destination</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;boDest&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>You can be explicit about picking by name or description
+by using the <code class="xref py py-attr docutils literal notranslate"><span class="pre">names</span></code> or <code class="xref py py-attr docutils literal notranslate"><span class="pre">descs</span></code> attribute
+on <code class="xref py py-attr docutils literal notranslate"><span class="pre">variables</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">travel_date</span> <span class="o">=</span> <span class="n">bookings</span><span class="o">.</span><span class="n">variables</span><span class="o">.</span><span class="n">names</span><span class="p">[</span><span class="s2">&quot;boTrav&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">profit</span> <span class="o">=</span> <span class="n">bookings</span><span class="o">.</span><span class="n">variables</span><span class="o">.</span><span class="n">descs</span><span class="p">[</span><span class="s2">&quot;Profit&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>This will similarly raise a <code class="xref py py-exc docutils literal notranslate"><span class="pre">KeyError</span></code>
+if the lookup string is not recognised.
+This includes if you pass a valid variable description
+to <code class="xref py py-attr docutils literal notranslate"><span class="pre">variables.names</span></code> and vice-versa.</p>
+<p>The built-in <code class="xref py py-func docutils literal notranslate"><span class="pre">len()</span></code> function will give
+the number of variables on the table:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">bookings</span><span class="o">.</span><span class="n">variables</span><span class="p">)</span>
+<span class="go">14</span>
+</pre></div>
+</div>
+<p>You can iterate over the variables:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">bookings</span><span class="o">.</span><span class="n">variables</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">if</span> <span class="n">var</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="nb">print</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">Cost</span>
+<span class="go">Profit</span>
+</pre></div>
+</div>
+<p>You can also iterate over the variable names or descriptions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">bookings</span><span class="o">.</span><span class="n">variables</span><span class="o">.</span><span class="n">names</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">n</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;bo&quot;</span><span class="p">)]</span>
+<span class="go">[&#39;deType&#39;, &#39;deGrade&#39;, &#39;deMgr&#39;, &#39;deFacil&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">bookings</span><span class="o">.</span><span class="n">variables</span><span class="o">.</span><span class="n">descs</span> <span class="k">if</span> <span class="s2">&quot;date&quot;</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
+<span class="go">[&#39;Booking Date&#39;, &#39;Travel Date&#39;, &#39;Busy dates&#39;]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Iterating over <code class="xref py py-attr docutils literal notranslate"><span class="pre">variables</span></code> returns the <a class="reference internal" href="variables.html#Variable" title="Variable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Variable</span></code></a>
+objects, whereas iterating over <code class="xref py py-attr docutils literal notranslate"><span class="pre">names</span></code> or <code class="xref py py-attr docutils literal notranslate"><span class="pre">descs</span></code>
+returns the names or descriptions as strings.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Refer to the <a class="reference internal" href="variables.html#variables-reference"><span class="std std-ref">Variables</span></a> documentation for more details
+on using variable objects.</p>
+</div>
+</section>
+<section id="data-grids-and-cubes">
+<h3>Data Grids and Cubes<a class="headerlink" href="#data-grids-and-cubes" title="Link to this heading"></a></h3>
+<dl class="py method">
+<dt class="sig sig-object py" id="datagrid">
+<span class="sig-name descname"><span class="pre">datagrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datagrid" title="Link to this definition"></a></dt>
+<dd><p>Build a data grid with this table as the resolve table.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cols</span> <span class="o">=</span> <span class="p">(</span>
+<span class="go">        [people[var] for var in (&quot;Initial&quot;, &quot;Surname&quot;)]</span>
+<span class="go">        + [bookings[var] for var in (&quot;boDate&quot;, &quot;boCost&quot;, &quot;boDest&quot;)]</span>
+<span class="go">    )</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">northern</span> <span class="o">=</span> <span class="n">households</span><span class="p">[</span><span class="s2">&quot;Region&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;01&quot;</span><span class="p">,</span> <span class="s2">&quot;02&quot;</span><span class="p">,</span> <span class="s2">&quot;13&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">datagrid</span> <span class="o">=</span> <span class="n">bookings</span><span class="o">.</span><span class="n">datagrid</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">northern</span><span class="p">,</span> <span class="n">max_rows</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">datagrid</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">  Initial   Surname Booking Date     Cost    Destination</span>
+<span class="go">0       A     Allen   2020-08-11   551.81         France</span>
+<span class="go">1       W   Livesey   2021-08-02  1167.57   Sierra Leone</span>
+<span class="go">2       W   Livesey   2021-08-19   562.56  United States</span>
+<span class="go">3       W   Livesey   2021-08-08   960.55      Australia</span>
+<span class="go">4       O  Robinson   2021-08-22   455.60  United States</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>This method is a wrapper around the <code class="xref py py-class docutils literal notranslate"><span class="pre">DataGrid</span></code> class.
+Refer to the <a class="reference internal" href="datagrid.html#datagrid-reference"><span class="std std-ref">Data Grid</span></a> documentation for more details.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cube">
+<span class="sig-name descname"><span class="pre">cube</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dimensions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">measures</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cube" title="Link to this definition"></a></dt>
+<dd><p>Build a cube with this table as the resolve table.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cube</span> <span class="o">=</span> <span class="n">bookings</span><span class="o">.</span><span class="n">cube</span><span class="p">(</span>
+<span class="go">        [people[&quot;Occupation&quot;], bookings[&quot;Product&quot;]],</span>
+<span class="go">        selection=(bookings[&quot;Cost&quot;] &gt; 200),</span>
+<span class="go">    )</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">cube</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+<span class="go">                     Bookings</span>
+<span class="go">Product         Accommodation  Flight Package</span>
+<span class="go">Occupation</span>
+<span class="go">Director                 1714    8477   24585</span>
+<span class="go">Manager                  4422   28566  109725</span>
+<span class="go">Manual Worker            4039   27104   77547</span>
+<span class="go">Professional             1806    9728   40072</span>
+<span class="go">Public Sector           18308   82437  249637</span>
+<span class="go">Retail Worker            9864   30853  126350</span>
+<span class="go">Retired                 12750   47333   86594</span>
+<span class="go">Sales Executive         35214  152911  407288</span>
+<span class="go">Student                  6553   27665  145156</span>
+<span class="go">Unemployed               8999   30648   57211</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>This method is a wrapper around the <code class="xref py py-class docutils literal notranslate"><span class="pre">Cube</span></code> class.
+Refer to the <a class="reference internal" href="cube.html#cube-reference"><span class="std std-ref">Cube</span></a> documentation for more details.</p>
+</div>
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="session.html" class="btn btn-neutral float-left" title="Session" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="variables.html" class="btn btn-neutral float-right" title="Variables" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Apteco Ltd.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

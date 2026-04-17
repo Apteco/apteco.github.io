@@ -1,0 +1,939 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Variables &mdash; py-apteco 0.8.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/theme_overrides.css?v=f0e53977" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=dbee5847"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Selections" href="selections.html" />
+    <link rel="prev" title="Tables" href="tables.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            py-apteco
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../reference.html">Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="session.html">Session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tables.html">Tables</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#basic-use">Basic use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#variable-related-tasks">Variable-related tasks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#retrieving-a-variable">Retrieving a variable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#building-a-selection">Building a selection</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#api-reference">API reference</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#general-variable-properties">General variable properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#selector-type-variables">Selector-type variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#selector-variable">Selector variable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#numeric-variable">Numeric variable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#text-variable">Text variable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#array-variable">Array variable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#flag-array-variable">Flag array variable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#date-type-variables">Date-type variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#date-variable">Date variable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#date-time-variable">Date-time variable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reference-variable">Reference variable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#operator-chaining">Operator chaining</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#variables-missing-from-session-object">Variables missing from Session object</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="selections.html">Selections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datagrid.html">Data Grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cube.html">Cube</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apteco-api.html">apteco-api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apteco_website.html">Back to apteco.com</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">py-apteco</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../reference.html">Reference</a></li>
+      <li class="breadcrumb-item active">Variables</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/reference/topics/variables.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="variables">
+<span id="variables-reference"></span><h1>Variables<a class="headerlink" href="#variables" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>The <a class="reference internal" href="#Variable" title="Variable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Variable</span></code></a> object represents a FastStats system variable.
+It holds metadata about the FastStats variable,
+and has a reference to the <code class="xref py py-class docutils literal notranslate"><span class="pre">Table</span></code> object
+corresponding to the FastStats table the variable belongs to.
+But its main use is in enabling you to build selections
+in a quick and intuitive way.
+<a class="reference internal" href="#Variable" title="Variable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Variable</span></code></a> objects for a FastStats system are automatically created
+when you initialize a <code class="xref py py-class docutils literal notranslate"><span class="pre">Session</span></code> connected to that system.</p>
+</section>
+<section id="basic-use">
+<h2>Basic use<a class="headerlink" href="#basic-use" title="Link to this heading"></a></h2>
+<p>Retrieving a variable from a <code class="xref py py-class docutils literal notranslate"><span class="pre">Session</span></code> object:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cost</span> <span class="o">=</span> <span class="n">my_session</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s2">&quot;Cost&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Retrieving a variable from its <code class="xref py py-class docutils literal notranslate"><span class="pre">Table</span></code> object:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gender</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;Gender&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Examining variable metadata:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">cost</span><span class="o">.</span><span class="n">description</span><span class="si">}</span><span class="s2">&#39; is a&quot;</span>
+<span class="gp">... </span>    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39; virtual&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">cost</span><span class="o">.</span><span class="n">is_virtual</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="gp">... </span>    <span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">cost</span><span class="o">.</span><span class="n">type</span><span class="si">}</span><span class="s2"> variable on the &#39;</span><span class="si">{</span><span class="n">cost</span><span class="o">.</span><span class="n">table_name</span><span class="si">}</span><span class="s2">&#39; table.&quot;</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">&#39;Cost&#39; is a Numeric variable on the &#39;Bookings&#39; table.</span>
+</pre></div>
+</div>
+<p>Building a selection:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">expensive_bookings</span> <span class="o">=</span> <span class="n">cost</span> <span class="o">&gt;</span> <span class="mi">2000</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expensive_bookings</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">53266</span>
+</pre></div>
+</div>
+</section>
+<section id="variable-related-tasks">
+<h2>Variable-related tasks<a class="headerlink" href="#variable-related-tasks" title="Link to this heading"></a></h2>
+<section id="retrieving-a-variable">
+<h3>Retrieving a variable<a class="headerlink" href="#retrieving-a-variable" title="Link to this heading"></a></h3>
+<p>Variables can be accessed through the <code class="xref py py-attr docutils literal notranslate"><span class="pre">variables</span></code> attribute
+on a <code class="xref py py-class docutils literal notranslate"><span class="pre">Session</span></code> object.
+You can look up variables by their name or description:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">surname</span> <span class="o">=</span> <span class="n">my_session</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s2">&quot;peSName&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cost</span> <span class="o">=</span> <span class="n">my_session</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s2">&quot;Cost&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Similarly, there is a <code class="xref py py-attr docutils literal notranslate"><span class="pre">variables</span></code> attribute on each <code class="xref py py-class docutils literal notranslate"><span class="pre">Table</span></code> object
+for accessing the variables from that table:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">surname</span> <span class="o">=</span> <span class="n">people</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s2">&quot;peSName&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cost</span> <span class="o">=</span> <span class="n">bookings</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s2">&quot;Cost&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>However, for convenience it’s possible to just index directly into
+the <code class="xref py py-class docutils literal notranslate"><span class="pre">Table</span></code> itself:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">surname</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;peSName&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cost</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Cost&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="building-a-selection">
+<h3>Building a selection<a class="headerlink" href="#building-a-selection" title="Link to this heading"></a></h3>
+<p>Variable objects can be used as the starting point for creating selections.
+Selections can be built up by specifying accepted values for a given variable
+using the Python comparison operators:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">destination</span> <span class="o">=</span> <span class="n">my_session</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s2">&quot;Destination&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bookings_to_sweden</span> <span class="o">=</span> <span class="n">destination</span> <span class="o">==</span> <span class="s2">&quot;29&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bookings_to_sweden</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">25207</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">profit</span> <span class="o">=</span> <span class="n">my_session</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s2">&quot;Profit&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">high_value_bookings</span> <span class="o">=</span> <span class="n">profit</span> <span class="o">&gt;</span> <span class="mi">500</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">high_value_bookings</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">14428</span>
+</pre></div>
+</div>
+<p>For details on variable types, their supported operators and accepted values,
+see the variables <a class="reference internal" href="#variable-api-reference"><span class="std std-ref">API reference</span></a> section below.</p>
+</section>
+</section>
+<section id="api-reference">
+<span id="variable-api-reference"></span><h2>API reference<a class="headerlink" href="#api-reference" title="Link to this heading"></a></h2>
+<section id="general-variable-properties">
+<h3>General variable properties<a class="headerlink" href="#general-variable-properties" title="Link to this heading"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="Variable">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Variable</span></span><a class="headerlink" href="#Variable" title="Link to this definition"></a></dt>
+<dd><p>The base class for all variables.
+It has various attributes for variable metadata common to all variable types.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Variable.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#Variable.name" title="Link to this definition"></a></dt>
+<dd><p>The variable’s short reference name (e.g. <cite>boDest</cite>).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Variable.description">
+<span class="sig-name descname"><span class="pre">description</span></span><a class="headerlink" href="#Variable.description" title="Link to this definition"></a></dt>
+<dd><p>The variable’s descriptive name (e.g. <cite>Destination</cite>).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Variable.type">
+<span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#Variable.type" title="Link to this definition"></a></dt>
+<dd><p>A string of the variable’s type.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Variable.folder_name">
+<span class="sig-name descname"><span class="pre">folder_name</span></span><a class="headerlink" href="#Variable.folder_name" title="Link to this definition"></a></dt>
+<dd><p>The FastStats system folder this variable belongs to.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Variable.table">
+<span class="sig-name descname"><span class="pre">table</span></span><a class="headerlink" href="#Variable.table" title="Link to this definition"></a></dt>
+<dd><p>The table this variable is from (a <code class="xref py py-class docutils literal notranslate"><span class="pre">Table</span></code> object).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Variable.table_name">
+<span class="sig-name descname"><span class="pre">table_name</span></span><a class="headerlink" href="#Variable.table_name" title="Link to this definition"></a></dt>
+<dd><p>The name of the table this variable is from
+(alias of <code class="xref py py-attr docutils literal notranslate"><span class="pre">table.name</span></code>).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Variable.is_selectable">
+<span class="sig-name descname"><span class="pre">is_selectable</span></span><a class="headerlink" href="#Variable.is_selectable" title="Link to this definition"></a></dt>
+<dd><p>Whether the variable is allowed to be used in selections.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Variable.is_browsable">
+<span class="sig-name descname"><span class="pre">is_browsable</span></span><a class="headerlink" href="#Variable.is_browsable" title="Link to this definition"></a></dt>
+<dd><p>Whether the variable is allowed
+to be viewed with a client application (but not exported).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Variable.is_exportable">
+<span class="sig-name descname"><span class="pre">is_exportable</span></span><a class="headerlink" href="#Variable.is_exportable" title="Link to this definition"></a></dt>
+<dd><p>Whether the variable is allowed
+to be exported by a client application.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Variable.is_virtual">
+<span class="sig-name descname"><span class="pre">is_virtual</span></span><a class="headerlink" href="#Variable.is_virtual" title="Link to this definition"></a></dt>
+<dd><p>Whether the variable is a virtual variable.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="selector-type-variables">
+<h3>Selector-type variables<a class="headerlink" href="#selector-type-variables" title="Link to this heading"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="BaseSelectorVariable">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BaseSelectorVariable</span></span><a class="headerlink" href="#BaseSelectorVariable" title="Link to this definition"></a></dt>
+<dd><p>The base class for selector-type variables
+with attributes common to all of them.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BaseSelectorVariable.code_length">
+<span class="sig-name descname"><span class="pre">code_length</span></span><a class="headerlink" href="#BaseSelectorVariable.code_length" title="Link to this definition"></a></dt>
+<dd><p>The length (in bytes) of the var codes for this variable.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BaseSelectorVariable.num_codes">
+<span class="sig-name descname"><span class="pre">num_codes</span></span><a class="headerlink" href="#BaseSelectorVariable.num_codes" title="Link to this definition"></a></dt>
+<dd><p>The number of different var codes this variable has.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BaseSelectorVariable.var_code_min_count">
+<span class="sig-name descname"><span class="pre">var_code_min_count</span></span><a class="headerlink" href="#BaseSelectorVariable.var_code_min_count" title="Link to this definition"></a></dt>
+<dd><p>The number of records that have the var code with the smallest count.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BaseSelectorVariable.var_code_max_count">
+<span class="sig-name descname"><span class="pre">var_code_max_count</span></span><a class="headerlink" href="#BaseSelectorVariable.var_code_max_count" title="Link to this definition"></a></dt>
+<dd><p>The number of records that have the var code with the largest count.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BaseSelectorVariable.var_code_order">
+<span class="sig-name descname"><span class="pre">var_code_order</span></span><a class="headerlink" href="#BaseSelectorVariable.var_code_order" title="Link to this definition"></a></dt>
+<dd><p>How the var codes are ordered for this variable, out of:
+<strong>Nominal</strong>, <strong>Ascending</strong>, <strong>Descending</strong>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="selector-variable">
+<h3>Selector variable<a class="headerlink" href="#selector-variable" title="Link to this heading"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="SelectorVariable">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SelectorVariable</span></span><a class="headerlink" href="#SelectorVariable" title="Link to this definition"></a></dt>
+<dd><p>Subclass of <a class="reference internal" href="#BaseSelectorVariable" title="BaseSelectorVariable"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSelectorVariable</span></code></a> which represents
+a standard FastStats <strong>Selector</strong> variable.</p>
+</dd></dl>
+
+<section id="operators">
+<h4>Operators<a class="headerlink" href="#operators" title="Link to this heading"></a></h4>
+<p>Use the equals operator <code class="docutils literal notranslate"><span class="pre">==</span></code> to select records
+where this selector variable equals the given value.
+If multiple values are given, it must be equal to one of them.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sweden</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Destination&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;29&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">high_earners</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;Income&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;07&quot;</span><span class="p">,</span> <span class="s2">&quot;08&quot;</span><span class="p">,</span> <span class="s2">&quot;09&quot;</span><span class="p">,</span> <span class="s2">&quot;10&quot;</span><span class="p">,</span> <span class="s2">&quot;11&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Use the ‘not equals’ operator <code class="docutils literal notranslate"><span class="pre">!=</span></code> to select records
+where this selector variable does not equal the given value.
+If multiple values are given, it must not be equal to any of them.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">not_unclassified</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;Occupation&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;!&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">england</span> <span class="o">=</span> <span class="n">households</span><span class="p">[</span><span class="s2">&quot;Region&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="p">[</span><span class="s2">&quot;10&quot;</span><span class="p">,</span> <span class="s2">&quot;11&quot;</span><span class="p">,</span> <span class="s2">&quot;12&quot;</span><span class="p">,</span> <span class="s2">&quot;14&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="numeric-variable">
+<h3>Numeric variable<a class="headerlink" href="#numeric-variable" title="Link to this heading"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="NumericVariable">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NumericVariable</span></span><a class="headerlink" href="#NumericVariable" title="Link to this definition"></a></dt>
+<dd><p>Class which represents a FastStats <strong>Numeric</strong> variable.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="NumericVariable.min_value">
+<span class="sig-name descname"><span class="pre">min_value</span></span><a class="headerlink" href="#NumericVariable.min_value" title="Link to this definition"></a></dt>
+<dd><p>The smallest value of this variable over all records.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="NumericVariable.max_value">
+<span class="sig-name descname"><span class="pre">max_value</span></span><a class="headerlink" href="#NumericVariable.max_value" title="Link to this definition"></a></dt>
+<dd><p>The largest value of this variable over all records.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="NumericVariable.is_currency">
+<span class="sig-name descname"><span class="pre">is_currency</span></span><a class="headerlink" href="#NumericVariable.is_currency" title="Link to this definition"></a></dt>
+<dd><p>Whether this variable represents a currency value.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="NumericVariable.currency_locale">
+<span class="sig-name descname"><span class="pre">currency_locale</span></span><a class="headerlink" href="#NumericVariable.currency_locale" title="Link to this definition"></a></dt>
+<dd><p>Locale name for the currency (if this is a currency variable).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="NumericVariable.currency_symbol">
+<span class="sig-name descname"><span class="pre">currency_symbol</span></span><a class="headerlink" href="#NumericVariable.currency_symbol" title="Link to this definition"></a></dt>
+<dd><p>Currency symbol for the currency (if this is a currency variable).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="NumericVariable.missing">
+<span class="sig-prename descclassname"><span class="pre">NumericVariable.</span></span><span class="sig-name descname"><span class="pre">missing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#NumericVariable.missing" title="Link to this definition"></a></dt>
+<dd><p>Select records where this numeric variable’s value is missing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>include</strong> (<em>bool</em>) – set to <cite>False</cite> to <em>exclude</em> missing values
+from the selection (default is <cite>True</cite>)</p></li>
+<li><p><strong>label</strong> (<em>str</em><em> or </em><em>None</em>) – textual label for this selection clause</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<section id="id1">
+<h4>Operators<a class="headerlink" href="#id1" title="Link to this heading"></a></h4>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator to select records
+where this numeric variable equals the given value.
+If multiple values are given, it must be equal to one of them.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">booked_3_days_ago</span> <span class="o">=</span> <span class="n">policies</span><span class="p">[</span><span class="s2">&quot;Days Since Booking&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cost_multiple_of_100</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Cost&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">100</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">284</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">!=</span></code> operator to select records
+where this numeric variable does not equal the given value.
+If multiple values are given, it must not be equal to any of them.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">some_profit</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Profit&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">waiting_more_than_week</span> <span class="o">=</span> <span class="n">journeys</span><span class="p">[</span><span class="s2">&quot;Days Waiting&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> operator to select records
+where this numeric variable is less than or equal to the given value.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">premium_up_to_25</span> <span class="o">=</span> <span class="n">policies</span><span class="p">[</span><span class="s2">&quot;Premium&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">25</span>
+</pre></div>
+</div>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> operator to select records
+where this numeric variable is greater than or equal to the given value.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">high_profit</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Profit&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">1000</span>
+</pre></div>
+</div>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> operator to select records
+where this numeric variable is strictly less than the given value.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">visit_shorter_than_minute</span> <span class="o">=</span> <span class="n">web_visits</span><span class="p">[</span><span class="s2">&quot;Duration&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">60</span>
+</pre></div>
+</div>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> operator to select records
+where this numeric variable is strictly greater than the given value.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">more_than_4_weeks_to_travel</span> <span class="o">=</span> <span class="n">policies</span><span class="p">[</span><span class="s2">&quot;Days Until Travel&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">28</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You <strong>cannot</strong> use two comparison operators at once,
+for example, to try to pick values bounded within a range on either side.
+So the following code <strong>will not</strong> have the desired effect:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cost_between_50_100</span> <span class="o">=</span> <span class="mi">50</span> <span class="o">&lt;=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Cost&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">100</span>
+</pre></div>
+</div>
+<p>See the <a class="reference internal" href="#operator-chaining"><span class="std std-ref">Operator chaining</span></a> section below for more details.</p>
+</div>
+</section>
+</section>
+<section id="text-variable">
+<h3>Text variable<a class="headerlink" href="#text-variable" title="Link to this heading"></a></h3>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="TextVariable.max_length">
+<span class="sig-prename descclassname"><span class="pre">TextVariable.</span></span><span class="sig-name descname"><span class="pre">max_length</span></span><a class="headerlink" href="#TextVariable.max_length" title="Link to this definition"></a></dt>
+<dd><p>An integer giving the maximum length (in bytes) of text data per record
+for this variable.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="TextVariable.equals">
+<span class="sig-prename descclassname"><span class="pre">TextVariable.</span></span><span class="sig-name descname"><span class="pre">equals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">match_case</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TextVariable.equals" title="Link to this definition"></a></dt>
+<dd><p>Select records where this text variable equals the given value.
+If multiple values are given, it must be equal to one of them.</p>
+<p>Can also use the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator, or <code class="docutils literal notranslate"><span class="pre">!=</span></code> for <cite>include=False</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>str</em><em> or </em><em>Iterable</em><em>[</em><em>str</em><em>]</em>) – value(s) to use in the selection</p></li>
+<li><p><strong>match_case</strong> (<em>bool</em>) – set to <cite>False</cite> to perform case-insensitive
+matching on the given values (default is <cite>True</cite>)</p></li>
+<li><p><strong>include</strong> (<em>bool</em>) – set to <cite>False</cite> to specify these as values
+to <em>exclude</em> from the selection (default is <cite>True</cite>)</p></li>
+<li><p><strong>label</strong> (<em>str</em><em> or </em><em>None</em>) – textual label for this selection clause</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="TextVariable.contains">
+<span class="sig-prename descclassname"><span class="pre">TextVariable.</span></span><span class="sig-name descname"><span class="pre">contains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">match_case</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TextVariable.contains" title="Link to this definition"></a></dt>
+<dd><p>Select records where this text variable contains the given value.
+If multiple values are given, it must contain at least one of them.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>str</em><em> or </em><em>Iterable</em><em>[</em><em>str</em><em>]</em>) – value(s) to use in the selection</p></li>
+<li><p><strong>match_case</strong> (<em>bool</em>) – set to <cite>False</cite> to perform case-insensitive
+matching on the given values (default is <cite>True</cite>)</p></li>
+<li><p><strong>include</strong> (<em>bool</em>) – set to <cite>False</cite> to specify these as values
+to <em>exclude</em> from the selection (default is <cite>True</cite>)</p></li>
+<li><p><strong>label</strong> (<em>str</em><em> or </em><em>None</em>) – textual label for this selection clause</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="TextVariable.startswith">
+<span class="sig-prename descclassname"><span class="pre">TextVariable.</span></span><span class="sig-name descname"><span class="pre">startswith</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">match_case</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TextVariable.startswith" title="Link to this definition"></a></dt>
+<dd><p>Select records where this text variable begins with the given value.
+If multiple values are given, it must begin with one of them.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>str</em><em> or </em><em>Iterable</em><em>[</em><em>str</em><em>]</em>) – value(s) to use in the selection</p></li>
+<li><p><strong>match_case</strong> (<em>bool</em>) – set to <cite>False</cite> to perform case-insensitive
+matching on the given values (default is <cite>True</cite>)</p></li>
+<li><p><strong>include</strong> (<em>bool</em>) – set to <cite>False</cite> to specify these as values
+to <em>exclude</em> from the selection (default is <cite>True</cite>)</p></li>
+<li><p><strong>label</strong> (<em>str</em><em> or </em><em>None</em>) – textual label for this selection clause</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="TextVariable.endswith">
+<span class="sig-prename descclassname"><span class="pre">TextVariable.</span></span><span class="sig-name descname"><span class="pre">endswith</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">match_case</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TextVariable.endswith" title="Link to this definition"></a></dt>
+<dd><p>Select records where this text variable ends with the given value.
+If multiple values are given, it must end with one of them.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>str</em><em> or </em><em>Iterable</em><em>[</em><em>str</em><em>]</em>) – value(s) to use in the selection</p></li>
+<li><p><strong>match_case</strong> (<em>bool</em>) – set to <cite>False</cite> to perform case-insensitive
+matching on the given values (default is <cite>True</cite>)</p></li>
+<li><p><strong>include</strong> (<em>bool</em>) – set to <cite>False</cite> to specify these as values
+to <em>exclude</em> from the selection (default is <cite>True</cite>)</p></li>
+<li><p><strong>label</strong> (<em>str</em><em> or </em><em>None</em>) – textual label for this selection clause</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="TextVariable.before">
+<span class="sig-prename descclassname"><span class="pre">TextVariable.</span></span><span class="sig-name descname"><span class="pre">before</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_equal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TextVariable.before" title="Link to this definition"></a></dt>
+<dd><p>Select records where this text variable is alphabetically before
+the given value. Set <cite>allow_equal=True</cite> to also select the value itself.
+This method is <em>not</em> case-sensitive.</p>
+<p>Can also use the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> operator, or <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> for <cite>allow_equal=True</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>str</em>) – value to use in the selection</p></li>
+<li><p><strong>allow_equal</strong> (<em>bool</em>) – set to <cite>True</cite> to also include the value itself
+(default is <cite>False</cite>)</p></li>
+<li><p><strong>include</strong> (<em>bool</em>) – set to <cite>False</cite> to specify these as values
+to <em>exclude</em> from the selection (default is <cite>True</cite>)</p></li>
+<li><p><strong>label</strong> (<em>str</em><em> or </em><em>None</em>) – textual label for this selection clause</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="TextVariable.after">
+<span class="sig-prename descclassname"><span class="pre">TextVariable.</span></span><span class="sig-name descname"><span class="pre">after</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_equal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TextVariable.after" title="Link to this definition"></a></dt>
+<dd><p>Select records where this text variable is alphabetically after
+the given value. Set <cite>allow_equal=True</cite> to also select the value itself.
+This method is <em>not</em> case-sensitive.</p>
+<p>Can also use the <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> operator, or <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> for <cite>allow_equal=True</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>str</em>) – value to use in the selection</p></li>
+<li><p><strong>allow_equal</strong> (<em>bool</em>) – set to <cite>True</cite> to include the value itself
+(default is <cite>False</cite>)</p></li>
+<li><p><strong>include</strong> (<em>bool</em>) – set to <cite>False</cite> to specify these as values
+to <em>exclude</em> from the selection (default is <cite>True</cite>)</p></li>
+<li><p><strong>label</strong> (<em>str</em><em> or </em><em>None</em>) – textual label for this selection clause</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="TextVariable.between">
+<span class="sig-prename descclassname"><span class="pre">TextVariable.</span></span><span class="sig-name descname"><span class="pre">between</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TextVariable.between" title="Link to this definition"></a></dt>
+<dd><p>Select records where this text variable is alphabetically
+between <cite>start</cite> and <cite>end</cite> (inclusive).
+This method is <em>not</em> case-sensitive.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<em>str</em>) – start of permitted range</p></li>
+<li><p><strong>end</strong> (<em>str</em>) – end of permitted range</p></li>
+<li><p><strong>include</strong> (<em>bool</em>) – set to <cite>False</cite> to specify these as values
+to <em>exclude</em> from the selection (default is <cite>True</cite>)</p></li>
+<li><p><strong>label</strong> (<em>str</em><em> or </em><em>None</em>) – textual label for this selection clause</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="TextVariable.matches">
+<span class="sig-prename descclassname"><span class="pre">TextVariable.</span></span><span class="sig-name descname"><span class="pre">matches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">match_case</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TextVariable.matches" title="Link to this definition"></a></dt>
+<dd><p>Select records where this text variable matches the given value,
+based on wildcard matching rules.
+If multiple values are given, it must match at least one of them.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>str</em><em> or </em><em>Iterable</em><em>[</em><em>str</em><em>]</em>) – value(s) to use in the selection
+(see below for details of wildcards)</p></li>
+<li><p><strong>match_case</strong> (<em>bool</em>) – set to <cite>False</cite> to perform case-insensitive
+matching on the given values (default is <cite>True</cite>)</p></li>
+<li><p><strong>include</strong> (<em>bool</em>) – set to <cite>False</cite> to specify these as values
+to <em>exclude</em> from the selection (default is <cite>True</cite>)</p></li>
+<li><p><strong>label</strong> (<em>str</em><em> or </em><em>None</em>) – textual label for this selection clause</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Wildcards</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Wildcard</p></th>
+<th class="head"><p>Explanation</p></th>
+<th class="head"><p>Examples</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">?</span></code></p></td>
+<td><p>matches any single character</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Sm?th</span></code> matches <code class="docutils literal notranslate"><span class="pre">Smith</span></code>, <code class="docutils literal notranslate"><span class="pre">Smyth</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
+<td><p>matches any number of characters, or none</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Smith*</span></code> matches <code class="docutils literal notranslate"><span class="pre">Smith</span></code>, <code class="docutils literal notranslate"><span class="pre">Smithers</span></code>, <code class="docutils literal notranslate"><span class="pre">Smith-Wood</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">?</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
+<td><p>(the two wildcards can be used in conjunction)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Sm?th*</span></code> matches all of the above, as well as <code class="docutils literal notranslate"><span class="pre">Smethurst</span></code>, <code class="docutils literal notranslate"><span class="pre">Smythe</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<section id="id2">
+<h4>Operators<a class="headerlink" href="#id2" title="Link to this heading"></a></h4>
+<p>Use the equals operator <code class="docutils literal notranslate"><span class="pre">==</span></code> to select records
+where this text variable equals the given value.
+If multiple values are given, it must be equal to one of them.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">smiths</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;Surname&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Smith&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">royal</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;Surname&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;King&quot;</span><span class="p">,</span> <span class="s2">&quot;Queen&quot;</span><span class="p">,</span> <span class="s2">&quot;Prince&quot;</span><span class="p">,</span> <span class="s2">&quot;Princess&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Use the ‘not equals’ operator <code class="docutils literal notranslate"><span class="pre">!=</span></code> to select records
+where this text variable does not equal the given value.
+If multiple values are given, it must not be equal to any of them.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">not_s</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;Initial&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;S&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">consonant</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;Initial&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="nb">list</span><span class="p">(</span><span class="s2">&quot;AEIOU&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> operator to select records
+where this text variable is alphabetically before the given value.
+This operation is case-insensitive.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">first_half_of_alphabet</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;Initial&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="s2">&quot;N&quot;</span>
+</pre></div>
+</div>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> operator to select records
+where this text variable is alphabetically before the given value,
+or equal to the value itself.
+This operation is case-insensitive.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">up_to_jones</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;Surname&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="s2">&quot;Jones&quot;</span>
+</pre></div>
+</div>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> operator to select records
+where this text variable is alphabetically after the given value.
+This operation is case-insensitive.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">after_t</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;Initial&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="s2">&quot;T&quot;</span>
+</pre></div>
+</div>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> operator to select records
+where this text variable is alphabetically after the given value,
+or equal to the value itself.
+This operation is case-insensitive.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">smith_onwards</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;Surname&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="s2">&quot;Smith&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="array-variable">
+<h3>Array variable<a class="headerlink" href="#array-variable" title="Link to this heading"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="ArrayVariable">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ArrayVariable</span></span><a class="headerlink" href="#ArrayVariable" title="Link to this definition"></a></dt>
+<dd><p>Subclass of <a class="reference internal" href="#BaseSelectorVariable" title="BaseSelectorVariable"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSelectorVariable</span></code></a> which represents
+a FastStats <strong>Array</strong> variable.</p>
+</dd></dl>
+
+<section id="id3">
+<h4>Operators<a class="headerlink" href="#id3" title="Link to this heading"></a></h4>
+<p>Use the equals operator <code class="docutils literal notranslate"><span class="pre">==</span></code> to select records
+where this array variable has the given value.
+If multiple values are given, it must have one of them.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">james_bond</span> <span class="o">=</span> <span class="n">households</span><span class="p">[</span><span class="s2">&quot;Car Make Code&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;ASM&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">french_car</span> <span class="o">=</span> <span class="n">households</span><span class="p">[</span><span class="s2">&quot;Car Make Code&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;CIT&quot;</span><span class="p">,</span> <span class="s2">&quot;PEU&quot;</span><span class="p">,</span> <span class="s2">&quot;REN&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Use the ‘not equals’ operator <code class="docutils literal notranslate"><span class="pre">!=</span></code> to select records
+where this array variable does not have the given value.
+If multiple values are given, it must not have any of them.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">not_unclassified_car</span> <span class="o">=</span> <span class="n">households</span><span class="p">[</span><span class="s2">&quot;Car Make Code&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;  !&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">not_f_car</span> <span class="o">=</span> <span class="n">households</span><span class="p">[</span><span class="s2">&quot;Car Make Code&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="p">[</span><span class="s2">&quot;FER&quot;</span><span class="p">,</span> <span class="s2">&quot;FIA&quot;</span><span class="p">,</span> <span class="s2">&quot;FOR&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="flag-array-variable">
+<h3>Flag array variable<a class="headerlink" href="#flag-array-variable" title="Link to this heading"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="FlagArrayVariable">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FlagArrayVariable</span></span><a class="headerlink" href="#FlagArrayVariable" title="Link to this definition"></a></dt>
+<dd><p>Subclass of <a class="reference internal" href="#BaseSelectorVariable" title="BaseSelectorVariable"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSelectorVariable</span></code></a> which represents
+a FastStats <strong>FlagArray</strong> variable.</p>
+</dd></dl>
+
+<section id="id4">
+<h4>Operators<a class="headerlink" href="#id4" title="Link to this heading"></a></h4>
+<p>Use the equals operator <code class="docutils literal notranslate"><span class="pre">==</span></code> to select records
+where this flag array variable has the given value.
+If multiple values are given, it must have one of them.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">financial_times_reader</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;Newspapers&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Financial Times&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tabloid_reader</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;Newspapers&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="s2">&quot;Daily Express&quot;</span><span class="p">,</span> <span class="s2">&quot;The Sun&quot;</span><span class="p">,</span> <span class="s2">&quot;Daily Mirror&quot;</span><span class="p">,</span> <span class="s2">&quot;Daily Mail&quot;</span><span class="p">,</span> <span class="s2">&quot;Record&quot;</span>
+<span class="gp">... </span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Use the ‘not equals’ operator <code class="docutils literal notranslate"><span class="pre">!=</span></code> to select records
+where this flag array variable does not have the given value.
+If multiple values are given, it must not have any of them.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">self_catering</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Facilities&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;Food&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cannot_contact</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;Contact Permission&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="p">[</span><span class="s2">&quot;EPS&quot;</span><span class="p">,</span> <span class="s2">&quot;MPS&quot;</span><span class="p">,</span> <span class="s2">&quot;TPS&quot;</span><span class="p">,</span> <span class="s2">&quot;FPS&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="date-type-variables">
+<h3>Date-type variables<a class="headerlink" href="#date-type-variables" title="Link to this heading"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="BaseDateVariable">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BaseDateVariable</span></span><a class="headerlink" href="#BaseDateVariable" title="Link to this definition"></a></dt>
+<dd><p>A subclass of <a class="reference internal" href="#BaseSelectorVariable" title="BaseSelectorVariable"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSelectorVariable</span></code></a>
+which is the base class for date-type variables,
+with attributes common to all of them.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BaseDateVariable.min_date">
+<span class="sig-name descname"><span class="pre">min_date</span></span><a class="headerlink" href="#BaseDateVariable.min_date" title="Link to this definition"></a></dt>
+<dd><p>The earliest date value of this variable over all records.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="BaseDateVariable.max_date">
+<span class="sig-name descname"><span class="pre">max_date</span></span><a class="headerlink" href="#BaseDateVariable.max_date" title="Link to this definition"></a></dt>
+<dd><p>The latest date value of this variable over all records.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="date-variable">
+<h3>Date variable<a class="headerlink" href="#date-variable" title="Link to this heading"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="DateVariable">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DateVariable</span></span><a class="headerlink" href="#DateVariable" title="Link to this definition"></a></dt>
+<dd><p>Subclass of <a class="reference internal" href="#BaseDateVariable" title="BaseDateVariable"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseDateVariable</span></code></a> which represents
+a FastStats <strong>Date</strong> variable.</p>
+</dd></dl>
+
+<section id="id5">
+<h4>Operators<a class="headerlink" href="#id5" title="Link to this heading"></a></h4>
+<p>Use the equals operator <code class="docutils literal notranslate"><span class="pre">==</span></code> to select records
+where this date variable is the given date.
+If multiple dates are given, it must be one of them.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">date</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">christmas_day_2018</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Booking Date&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">date</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valentines_day</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Travel Date&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="n">date</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">2023</span><span class="p">)</span>
+<span class="gp">... </span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Use the equals operator <code class="docutils literal notranslate"><span class="pre">!=</span></code> to select records
+where this date variable is not the given date.
+If multiple dates are given, it must not be any of them.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">not_new_years_day_2020</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Travel Date&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">not_easter</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Travel Date&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">27</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">date</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">date</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">date</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">date</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">date</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">date</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">17</span><span class="p">)</span>
+<span class="gp">... </span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> operator to select records
+where this date variable is before the given date (or is the date itself).</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bookings_before_2019</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Booking Date&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> operator to select records
+where this date variable is after the given date (or is the date itself).</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">dateutil.relativedelta</span><span class="w"> </span><span class="kn">import</span> <span class="n">relativedelta</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">under_30</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;DOB&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span> <span class="o">-</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">years</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You <strong>cannot</strong> use two comparison operators at once,
+for example, to try to pick values bounded within a range on either side.
+So the following code <strong>will not</strong> have the desired effect:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">summer_holiday_2019</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Travel Date&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>See the <a class="reference internal" href="#operator-chaining"><span class="std std-ref">Operator chaining</span></a> section below for more details.</p>
+</div>
+</section>
+</section>
+<section id="date-time-variable">
+<h3>Date-time variable<a class="headerlink" href="#date-time-variable" title="Link to this heading"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="DateTimeVariable">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DateTimeVariable</span></span><a class="headerlink" href="#DateTimeVariable" title="Link to this definition"></a></dt>
+<dd><p>Subclass of <a class="reference internal" href="#BaseDateVariable" title="BaseDateVariable"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseDateVariable</span></code></a> which represents
+a FastStats <strong>DateTime</strong> variable.</p>
+</dd></dl>
+
+<section id="id6">
+<h4>Operators<a class="headerlink" href="#id6" title="Link to this heading"></a></h4>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> operator to select records
+where this datetime variable is before the given datetime
+(or is the datetime itself).</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">before_4pm_halloween_2019</span> <span class="o">=</span> <span class="n">web_visits</span><span class="p">[</span><span class="s2">&quot;wvTime&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">datetime</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="mi">2019</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">59</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> operator to select records
+where this datetime variable is after the given datetime
+(or is the datetime itself).</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">after_july_2016</span> <span class="o">=</span> <span class="n">communications</span><span class="p">[</span><span class="s2">&quot;cmCommDt&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You <strong>cannot</strong> use two comparison operators at once,
+for example, to try to pick values bounded within a range on either side.
+So the following code <strong>will not</strong> have the desired effect:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">during_webinar</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">web_visits</span><span class="p">[</span><span class="s2">&quot;wvTime&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>See the <a class="reference internal" href="#operator-chaining"><span class="std std-ref">Operator chaining</span></a> section below for more details.</p>
+</div>
+</section>
+</section>
+<section id="reference-variable">
+<h3>Reference variable<a class="headerlink" href="#reference-variable" title="Link to this heading"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="ReferenceVariable">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ReferenceVariable</span></span><a class="headerlink" href="#ReferenceVariable" title="Link to this definition"></a></dt>
+<dd><p>Class which represents a FastStats <strong>Reference</strong> variable.</p>
+</dd></dl>
+
+<p><em>(no operators are currently supported for</em> <a class="reference internal" href="#ReferenceVariable" title="ReferenceVariable"><code class="xref py py-class docutils literal notranslate"><span class="pre">ReferenceVariable</span></code></a> <em>objects)</em></p>
+</section>
+<section id="operator-chaining">
+<span id="id7"></span><h3>Operator chaining<a class="headerlink" href="#operator-chaining" title="Link to this heading"></a></h3>
+<p>The following is true for all variable types,
+as it also applies to the [not] equals operators <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code>,
+but is particularly relevant for those types that support the operators
+<code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>:
+<strong>Numeric</strong>, <strong>Date</strong>, <strong>DateTime</strong></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You <strong>cannot</strong> use two comparison operators at once,
+for example, to try to pick values bounded within a range on either side.
+So the following code <strong>will not</strong> have the desired effect:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">born_in_1990</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">1990</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;DOB&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">date</span><span class="p">(</span><span class="mi">1990</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Python <em>does</em> normally support this ‘operator chaining’ syntax
+when <a class="reference external" href="https://realpython.com/python-operators-expressions/#compound-logical-expressions-and-short-circuit-evaluation">using the operators for standard comparison</a>,
+but it doesn’t work in our situation where the operators have been overloaded
+for creating selections.</p>
+<p>In this example, because of the way <a class="reference external" href="https://realpython.com/python-operators-expressions/#chained-comparisons">operator chaining</a>
+and short-circuit evaluation work,
+this ends up being equivalent to just the right-hand part of the expression:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">born_in_1990</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;DOB&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">date</span><span class="p">(</span><span class="mi">1990</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="variables-missing-from-session-object">
+<h3>Variables missing from Session object<a class="headerlink" href="#variables-missing-from-session-object" title="Link to this heading"></a></h3>
+<p>If the session initialization process encounters an unfamiliar variable type
+not supported by the package, it will log a warning using the
+<a class="reference external" href="https://docs.python.org/3/library/logging.html">Python built-in logging module</a>.
+If a variable from your FastStats system seems to be missing from the <cite>Session</cite> object,
+this may be the cause.</p>
+<p>To investigate, you will need to run the session initialization process with a
+log handler configured to direct the log output to your chosen destination
+to inspect the log.
+The log message for this warning will begin <code class="docutils literal notranslate"><span class="pre">Failed</span> <span class="pre">to</span> <span class="pre">initialize</span> <span class="pre">variable</span></code>.</p>
+<p>You can report unsupported variable types by contacting Apteco support:
+<a class="reference external" href="mailto:support&#37;&#52;&#48;apteco&#46;com">support<span>&#64;</span>apteco<span>&#46;</span>com</a>
+or <a class="reference external" href="https://github.com/Apteco/py-apteco/issues">creating a GitHub issue</a>
+— this will help us prioritise developments.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tables.html" class="btn btn-neutral float-left" title="Tables" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="selections.html" class="btn btn-neutral float-right" title="Selections" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Apteco Ltd.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

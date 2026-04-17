@@ -1,0 +1,342 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Grid &mdash; py-apteco 0.8.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/theme_overrides.css?v=f0e53977" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=dbee5847"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Cube" href="cube.html" />
+    <link rel="prev" title="Selections" href="selections.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            py-apteco
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../reference.html">Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="session.html">Session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tables.html">Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html">Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selections.html">Selections</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Data Grid</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#basic-use">Basic use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#api-reference">API reference</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#apteco.datagrid.DataGrid"><code class="docutils literal notranslate"><span class="pre">DataGrid</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cube.html">Cube</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apteco-api.html">apteco-api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apteco_website.html">Back to apteco.com</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">py-apteco</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../reference.html">Reference</a></li>
+      <li class="breadcrumb-item active">Data Grid</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/reference/topics/datagrid.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="data-grid">
+<span id="datagrid-reference"></span><h1>Data Grid<a class="headerlink" href="#data-grid" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>The <a class="reference internal" href="#apteco.datagrid.DataGrid" title="apteco.datagrid.DataGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataGrid</span></code></a> object corresponds to a FastStats Data Grid
+and is an exported set of data from the FastStats system.</p>
+<p>The data to export is specified by:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>a resolve <strong>table</strong> – each row in the data grid corresponds to
+a single record in this table</p></li>
+<li><p>a set of <strong>columns</strong> – these are the fields of data returned for each record</p></li>
+<li><p>a base <strong>selection</strong> <em>(optional)</em> – this filters records in the table
+to only return ones that match the given criteria</p></li>
+</ul>
+</div></blockquote>
+<p>There are also other parameters that determine things such as
+how many rows of data to return.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The data grid functionality is still under active development,
+and so is currently subject to a couple of limitations:</p>
+<ul class="simple">
+<li><p>The data grid columns must be FastStats variables
+(expressions and other more complex column types are not currently supported)</p></li>
+<li><p><strong>Array</strong> and <strong>FlagArray</strong> variables are not currently supported as columns</p></li>
+</ul>
+</div>
+</section>
+<section id="basic-use">
+<h2>Basic use<a class="headerlink" href="#basic-use" title="Link to this heading"></a></h2>
+<p>Setting up variables:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bookings</span> <span class="o">=</span> <span class="n">my_session</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="s2">&quot;Bookings&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">urn</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Booking URN&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dest</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Destination&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">trav</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Travel Date&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cost</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Cost&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Creating a data grid:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">datagrid</span> <span class="o">=</span> <span class="n">bookings</span><span class="o">.</span><span class="n">datagrid</span><span class="p">([</span><span class="n">urn</span><span class="p">,</span> <span class="n">dest</span><span class="p">,</span> <span class="n">trav</span><span class="p">,</span> <span class="n">cost</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Converting to a Pandas <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">datagrid</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">  Booking URN   Destination Travel Date     Cost</span>
+<span class="go">0    10001265        France  2019-05-15  1392.35</span>
+<span class="go">1    10001266        France  2019-06-05   780.34</span>
+<span class="go">2    10011532       Germany  2021-08-29   181.68</span>
+<span class="go">3    10011533       Germany  2021-08-21   300.67</span>
+<span class="go">4    10015830  Unclassified  2016-05-02   228.70</span>
+</pre></div>
+</div>
+<p>Specifying the number of rows to return:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">datagrid</span> <span class="o">=</span> <span class="n">bookings</span><span class="o">.</span><span class="n">datagrid</span><span class="p">([</span><span class="n">urn</span><span class="p">,</span> <span class="n">dest</span><span class="p">,</span> <span class="n">trav</span><span class="p">,</span> <span class="n">cost</span><span class="p">],</span> <span class="n">max_rows</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">datagrid</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="go">100</span>
+</pre></div>
+</div>
+<p>Using a base selection to filter the records:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sweden</span> <span class="o">=</span> <span class="n">dest</span> <span class="o">==</span> <span class="s2">&quot;29&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sweden_datagrid</span> <span class="o">=</span> <span class="n">sweden</span><span class="o">.</span><span class="n">datagrid</span><span class="p">([</span><span class="n">urn</span><span class="p">,</span> <span class="n">dest</span><span class="p">,</span> <span class="n">trav</span><span class="p">,</span> <span class="n">cost</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sweden_df</span> <span class="o">=</span> <span class="n">sweden_datagrid</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sweden_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">  Booking URN Destination Travel Date     Cost</span>
+<span class="go">0    10172319      Sweden  2020-05-15  1201.81</span>
+<span class="go">1    10384970      Sweden  2018-04-05   344.30</span>
+<span class="go">2    10421011      Sweden  2019-07-11   322.89</span>
+<span class="go">3    10425298      Sweden  2020-10-10   880.02</span>
+<span class="go">4    10479109      Sweden  2020-09-21   172.91</span>
+</pre></div>
+</div>
+<p>Using a base selection from a different table:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">households</span> <span class="o">=</span> <span class="n">my_session</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="s2">&quot;Households&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">town</span> <span class="o">=</span> <span class="n">households</span><span class="p">[</span><span class="s2">&quot;Town&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">postcode</span> <span class="o">=</span> <span class="n">households</span><span class="p">[</span><span class="s2">&quot;Postcode&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">manchester</span> <span class="o">=</span> <span class="n">households</span><span class="p">[</span><span class="s2">&quot;Region&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;13&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">manc_datagrid</span> <span class="o">=</span> <span class="n">manchester</span><span class="o">.</span><span class="n">datagrid</span><span class="p">([</span><span class="n">urn</span><span class="p">,</span> <span class="n">dest</span><span class="p">,</span> <span class="n">trav</span><span class="p">,</span> <span class="n">cost</span><span class="p">,</span> <span class="n">town</span><span class="p">,</span> <span class="n">postcode</span><span class="p">],</span> <span class="n">table</span><span class="o">=</span><span class="n">bookings</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">manc_df</span> <span class="o">=</span> <span class="n">manc_datagrid</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">manc_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">  Booking URN    Destination Travel Date     Cost    Town Postcode</span>
+<span class="go">0    10172319         Sweden  2020-05-15  1201.81  Bolton  BL1 5XB</span>
+<span class="go">1    10172320  United States  2020-04-14  1616.80  Bolton  BL1 5XB</span>
+<span class="go">2    10173729         France  2020-08-19   581.71  Bolton  BL1 8JJ</span>
+<span class="go">3    10173730         France  2020-08-09  2224.70  Bolton  BL1 8JJ</span>
+<span class="go">4    10177047         France  2021-05-07   686.53  Bolton  BL3 5LX</span>
+</pre></div>
+</div>
+</section>
+<section id="api-reference">
+<h2>API reference<a class="headerlink" href="#api-reference" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="apteco.datagrid.DataGrid">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apteco.datagrid.</span></span><span class="sig-name descname"><span class="pre">DataGrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apteco.datagrid.DataGrid" title="Link to this definition"></a></dt>
+<dd><p>Create a data grid.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The <a class="reference internal" href="tables.html#datagrid" title="datagrid"><code class="xref py py-meth docutils literal notranslate"><span class="pre">datagrid()</span></code></a> methods on tables and selections are wrappers
+around this class.
+It is recommended to prefer those over instantiating this class directly,
+as they generally provide a simpler interface.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>columns</strong> (<em>list</em><em>[</em><a class="reference internal" href="variables.html#Variable" title="Variable"><em>Variable</em></a><em>]</em>) – variables to use as columns in the data grid.
+These must be from <cite>table</cite> or from one of its ancestor tables.</p></li>
+<li><p><strong>selection</strong> (<em>Clause</em>) – base selection to apply to the data grid.
+The table of this selection must be <cite>table</cite> or a ‘related’ table
+– either an ancestor or descendant.</p></li>
+<li><p><strong>table</strong> (<em>Table</em>) – resolve table of the data grid.
+Each row of the data grid will correspond to a record
+from this table.</p></li>
+<li><p><strong>max_rows</strong> (<em>int</em>) – maximum number of records to return <em>(default is 1000)</em>.</p></li>
+<li><p><strong>session</strong> (<em>Session</em>) – current Apteco API session.</p></li>
+</ul>
+</dd>
+</dl>
+<p>At least one of <cite>selection</cite> or <cite>table</cite> must be given:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>If only <cite>selection</cite> is given,
+then <cite>table</cite> will be set to the resolve table of the selection.</p></li>
+<li><p>If both are given and the resolve table of <cite>selection</cite>
+isn’t <cite>table</cite>,
+then the records returned in the data grid
+are determined by mapping the selection to the required table by applying
+<strong>ANY</strong>/<strong>THE</strong> logic as necessary.
+This matches the behaviour when applying an underlying selection
+to a data grid in the FastStats application.
+The mapping described here happens in the FastStats data engine
+and does not change the <cite>selection</cite> on the <a class="reference internal" href="#apteco.datagrid.DataGrid" title="apteco.datagrid.DataGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataGrid</span></code></a>.</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The following two data grids are equivalent:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">datagrid1</span> <span class="o">=</span> <span class="n">DataGrid</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">columns</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">selection</span><span class="o">=</span><span class="n">manchester</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">table</span><span class="o">=</span><span class="n">bookings</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">session</span><span class="o">=</span><span class="n">my_session</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">datagrid2</span> <span class="o">=</span> <span class="n">DataGrid</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">columns</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">selection</span><span class="o">=</span><span class="p">(</span><span class="n">bookings</span> <span class="o">*</span> <span class="n">manchester</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">session</span><span class="o">=</span><span class="n">my_session</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<p>They both return a data grid of <em>bookings</em> made by people
+from households in the Greater Manchester region.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The raw data is fetched from the Apteco API
+when the <a class="reference internal" href="#apteco.datagrid.DataGrid" title="apteco.datagrid.DataGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataGrid</span></code></a> object is initialised.
+It is held on the object in the <code class="xref py py-attr docutils literal notranslate"><span class="pre">_data</span></code> attribute as a list of tuples
+but this is not considered public, and so to work with the data
+you should convert it to your desired output format.
+The only format currently supported is a Pandas <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="apteco.datagrid.DataGrid.to_df">
+<span class="sig-name descname"><span class="pre">to_df</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#apteco.datagrid.DataGrid.to_df" title="Link to this definition"></a></dt>
+<dd><p>Return the data as a Pandas <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
+<p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code> is configured such that:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>the <em>index</em> is a <code class="xref py py-class docutils literal notranslate"><span class="pre">RangeIndex</span></code></p></li>
+<li><p>the <em>columns</em> (headings) are the variable descriptions</p></li>
+<li><p>data is returned as its corresponding Pandas column type
+or native Python type</p></li>
+<li><p>Selector variable columns contain strings of the category descriptions</p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pol_num</span> <span class="o">=</span> <span class="n">policies</span><span class="p">[</span><span class="s2">&quot;Policy Number&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">premium</span> <span class="o">=</span> <span class="n">policies</span><span class="p">[</span><span class="s2">&quot;Premium&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cover</span> <span class="o">=</span> <span class="n">policies</span><span class="p">[</span><span class="s2">&quot;Cover&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dob</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;DOB&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">postcode</span> <span class="o">=</span> <span class="n">households</span><span class="p">[</span><span class="s2">&quot;Postcode&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">policies_datagrid</span> <span class="o">=</span> <span class="n">policies</span><span class="o">.</span><span class="n">datagrid</span><span class="p">([</span><span class="n">pol_num</span><span class="p">,</span> <span class="n">premium</span><span class="p">,</span> <span class="n">cover</span><span class="p">,</span> <span class="n">dob</span><span class="p">,</span> <span class="n">postcode</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">policies_datagrid</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span>
+<span class="go">    Policy Number  Premium        Cover         DOB  Postcode</span>
+<span class="go">0        10001265    87.02   Individual  1975-02-09  AB10 1XL</span>
+<span class="go">1        10036397   123.30   Individual  1972-11-25    B6 4TN</span>
+<span class="go">2        10078565   143.20   Multi Trip  1971-10-05   B74 2QX</span>
+<span class="go">3        10078566    29.23       Family  1971-10-05   B74 2QX</span>
+<span class="go">4        10078567    14.65  Single Trip  1999-11-14   B74 2QX</span>
+<span class="go">..            ...      ...          ...         ...       ...</span>
+<span class="go">995      11192414    17.83  Single Trip         NaT  ME15 0QB</span>
+<span class="go">996      11205561    10.43   Individual  1976-01-30  MK18 7ZT</span>
+<span class="go">997      11242733    33.56   Individual  1977-01-22   N16 7NJ</span>
+<span class="go">998      11252163    13.57   Individual  1997-09-12   NE2 2DJ</span>
+<span class="go">999      11262841    11.19   Individual  1978-08-03  NE20 9QJ</span>
+
+<span class="go">[1000 rows x 5 columns]</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more details on working with a Pandas DataFrame
+see the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/index.html">official Pandas documentation</a>.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="selections.html" class="btn btn-neutral float-left" title="Selections" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cube.html" class="btn btn-neutral float-right" title="Cube" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Apteco Ltd.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

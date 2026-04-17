@@ -1,0 +1,258 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5. Specifying selection values &mdash; py-apteco 0.8.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/theme_overrides.css?v=f0e53977" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=dbee5847"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6. Combining selections using logic" href="tutorial_06.html" />
+    <link rel="prev" title="4. Selecting with different variable types" href="tutorial_04.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            py-apteco
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorial.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="tutorial_01.html">1. Connecting to your FastStats system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_02.html">2. Accessing tables and variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_03.html">3. Creating simple selections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_04.html">4. Selecting with different variable types</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5. Specifying selection values</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#excluding-values-from-selections">Excluding values from selections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#specifying-ranges-of-values">Specifying ranges of values</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#numeric-ranges">Numeric ranges</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#date-datetime-ranges">Date &amp; DateTime ranges</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#text-ranges">Text Ranges</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#restrictions-on-using-comparison-operators">Restrictions on using comparison operators</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_06.html">6. Combining selections using logic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_07.html">7. Controlling selection structure and tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_08.html">8. Creating Data Grids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_09.html">9. Creating Cubes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apteco-api.html">apteco-api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apteco_website.html">Back to apteco.com</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">py-apteco</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../tutorial.html">Tutorial</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">5. </span>Specifying selection values</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tutorials/tutorial_05.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="specifying-selection-values">
+<h1><span class="section-number">5. </span>Specifying selection values<a class="headerlink" href="#specifying-selection-values" title="Link to this heading"></a></h1>
+<p>In this part of the tutorial we’ll learn
+other ways of specifying the values within selections.</p>
+<section id="excluding-values-from-selections">
+<h2>Excluding values from selections<a class="headerlink" href="#excluding-values-from-selections" title="Link to this heading"></a></h2>
+<p>So far we’ve always specified the values we want to <em>include</em> in our selections.
+But just as in the FastStats application,
+we can also choose what values we want to <em>exclude</em> instead.
+We do this using the Python ‘not equal’ operator <code class="docutils literal notranslate"><span class="pre">!=</span></code> :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">uk_only</span> <span class="o">=</span> <span class="n">households</span><span class="p">[</span><span class="s2">&quot;Region&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;14&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">uk_only</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">741572</span>
+</pre></div>
+</div>
+<p>(<code class="docutils literal notranslate"><span class="pre">14</span></code> is the selector code for the Channel Islands region,
+so this a selection of all households in the UK ‘proper’)</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Just as with the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator seen in previous examples,
+instead of performing a comparison,
+the <code class="docutils literal notranslate"><span class="pre">!=</span></code> operator has been ‘overloaded’ to create a selection
+but with the <code class="xref py py-attr docutils literal notranslate"><span class="pre">include</span></code> flag set to <code class="xref py py-const docutils literal notranslate"><span class="pre">False</span></code>
+— to <em>exclude</em> the given value.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">uk_only</span><span class="p">)</span>
+<span class="go">&lt;class &#39;apteco.query.SelectorClause&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">uk_only</span><span class="o">.</span><span class="n">values</span>
+<span class="go">[&#39;14&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">uk_only</span><span class="o">.</span><span class="n">include</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</div>
+<p>We can also specify multiple values to exclude:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">england</span> <span class="o">=</span> <span class="n">households</span><span class="p">[</span><span class="s2">&quot;Region&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="p">[</span><span class="s2">&quot;10&quot;</span><span class="p">,</span> <span class="s2">&quot;11&quot;</span><span class="p">,</span> <span class="s2">&quot;12&quot;</span><span class="p">,</span> <span class="s2">&quot;14&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">england</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">627550</span>
+</pre></div>
+</div>
+<p>(<code class="docutils literal notranslate"><span class="pre">10</span></code>, <code class="docutils literal notranslate"><span class="pre">11</span></code>, <code class="docutils literal notranslate"><span class="pre">12</span></code>, <code class="docutils literal notranslate"><span class="pre">14</span></code> are the selector codes for
+Scotland, Wales, Northern Ireland &amp; Channel Islands)</p>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">!=</span></code> operator everywhere that you can use <code class="docutils literal notranslate"><span class="pre">==</span></code> .</p>
+</section>
+<section id="specifying-ranges-of-values">
+<h2>Specifying ranges of values<a class="headerlink" href="#specifying-ranges-of-values" title="Link to this heading"></a></h2>
+<p>As well as choosing one or more specific values,
+some variables also allow you to choose a whole range of values
+using the Python operators <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> :</p>
+<section id="numeric-ranges">
+<h3>Numeric ranges<a class="headerlink" href="#numeric-ranges" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">at_least_2k</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Cost&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">2000</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">at_least_2k</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">53267</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">low_profit</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Profit&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">25</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">low_profit</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">211328</span>
+</pre></div>
+</div>
+<p><strong>Numeric</strong> variables also support the operators
+<code class="docutils literal notranslate"><span class="pre">&lt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> for selecting a range of values,
+but <em>not</em> include the boundary value itself.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Unlike the <code class="docutils literal notranslate"><span class="pre">==</span></code> and <code class="docutils literal notranslate"><span class="pre">!=</span></code> operators,
+the other comparison operators only accept a single value.</p>
+</div>
+</section>
+<section id="date-datetime-ranges">
+<h3>Date &amp; DateTime ranges<a class="headerlink" href="#date-datetime-ranges" title="Link to this heading"></a></h3>
+<p>We can use comparison operators to create a selection with a range of dates or times:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">date</span><span class="p">,</span> <span class="n">datetime</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bookings_before_2019</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Booking Date&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bookings_before_2019</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">972439</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">web_visits</span> <span class="o">=</span> <span class="n">my_session</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="s2">&quot;WebVisits&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">website_launch</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">36</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">visits_to_new_site</span> <span class="o">=</span> <span class="n">web_visits</span><span class="p">[</span><span class="s2">&quot;Web Visit Time&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">website_launch</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">visits_to_new_site</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">133564</span>
+</pre></div>
+</div>
+<p>Because <strong>Date</strong> and <strong>DateTime</strong> variables use
+<code class="xref py py-class docutils literal notranslate"><span class="pre">datetime.date</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime.datetime</span></code> objects,
+we can take advantage of functionality available for working with these.
+For example, using the popular <code class="xref py py-mod docutils literal notranslate"><span class="pre">dateutil</span></code> package:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">dateutil.relativedelta</span><span class="w"> </span><span class="kn">import</span> <span class="n">relativedelta</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">under_30</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;DOB&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span> <span class="o">-</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">years</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">under_30</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">207737</span>
+</pre></div>
+</div>
+</section>
+<section id="text-ranges">
+<h3>Text Ranges<a class="headerlink" href="#text-ranges" title="Link to this heading"></a></h3>
+<p>Using the comparison operators with a <strong>Text</strong> variable
+allows you to select values that are alphabetically earlier or later than a given value.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">second_half_of_alphabet</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;Surname&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="s2">&quot;N&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">second_half_of_alphabet</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">410954</span>
+</pre></div>
+</div>
+</section>
+<section id="restrictions-on-using-comparison-operators">
+<h3>Restrictions on using comparison operators<a class="headerlink" href="#restrictions-on-using-comparison-operators" title="Link to this heading"></a></h3>
+<p>All of the examples above specify an <em>unbounded</em> range of values
+— it is only limited by one value,
+and allows all values above or below this (depending on the operator used).</p>
+<div class="admonition warning" id="tutorial-operator-chaining-warning">
+<p class="admonition-title">Warning</p>
+<p>You <strong>cannot</strong> use two comparison operators at once,
+for example, to try to pick values bounded within a range on either side.
+So the following code <strong>will not</strong> have the desired effect:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">born_in_1990</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">1990</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;DOB&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">date</span><span class="p">(</span><span class="mi">1990</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>See the warning about <a class="reference internal" href="../reference/topics/variables.html#operator-chaining"><span class="std std-ref">Operator chaining</span></a>
+in the variables reference guide for more information about this.</p>
+</div>
+<p>We will learn in the next part how to achieve the desired result
+by joining more than one selection together instead.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tutorial_04.html" class="btn btn-neutral float-left" title="4. Selecting with different variable types" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorial_06.html" class="btn btn-neutral float-right" title="6. Combining selections using logic" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Apteco Ltd.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

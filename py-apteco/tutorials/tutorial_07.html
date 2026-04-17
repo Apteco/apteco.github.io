@@ -1,0 +1,274 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>7. Controlling selection structure and tables &mdash; py-apteco 0.8.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/theme_overrides.css?v=f0e53977" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=dbee5847"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="8. Creating Data Grids" href="tutorial_08.html" />
+    <link rel="prev" title="6. Combining selections using logic" href="tutorial_06.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            py-apteco
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorial.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="tutorial_01.html">1. Connecting to your FastStats system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_02.html">2. Accessing tables and variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_03.html">3. Creating simple selections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_04.html">4. Selecting with different variable types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_05.html">5. Specifying selection values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_06.html">6. Combining selections using logic</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7. Controlling selection structure and tables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#joining-more-than-two-selections-together">Joining more than two selections together</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#determining-the-resolve-table">Determining the resolve table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#changing-the-resolve-table">Changing the resolve table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a-worked-example">A worked example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_08.html">8. Creating Data Grids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_09.html">9. Creating Cubes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apteco-api.html">apteco-api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apteco_website.html">Back to apteco.com</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">py-apteco</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../tutorial.html">Tutorial</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">7. </span>Controlling selection structure and tables</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tutorials/tutorial_07.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="controlling-selection-structure-and-tables">
+<h1><span class="section-number">7. </span>Controlling selection structure and tables<a class="headerlink" href="#controlling-selection-structure-and-tables" title="Link to this heading"></a></h1>
+<p>In this part of the tutorial we’ll learn
+how to control the way a selection is structured and joined together
+and how to change which table the selection counts.</p>
+<section id="joining-more-than-two-selections-together">
+<h2>Joining more than two selections together<a class="headerlink" href="#joining-more-than-two-selections-together" title="Link to this heading"></a></h2>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> <code class="docutils literal notranslate"><span class="pre">|</span></code> <code class="docutils literal notranslate"><span class="pre">~</span></code> operators we saw in the previous part
+to build more complex selections made of multiple parts:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">low_price_deals_audience</span> <span class="o">=</span> <span class="n">eligible_for_discount</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">high_earners</span>
+</pre></div>
+</div>
+<p>We could have even written the <code class="docutils literal notranslate"><span class="pre">eligible_for_discount</span></code> variable directly
+using its constituent parts:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">low_price_deals_audience</span> <span class="o">=</span> <span class="p">(</span><span class="n">student</span> <span class="o">|</span> <span class="n">under_21</span><span class="p">)</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">high_earners</span>
+</pre></div>
+</div>
+<p>Here we’ve had to use parentheses
+so that the <code class="docutils literal notranslate"><span class="pre">student</span> <span class="pre">|</span> <span class="pre">under_21</span></code> gets combined first,
+before the selection resulting from that is combined with <code class="docutils literal notranslate"><span class="pre">~high_earners</span></code> .
+Without parentheses, Python’s <a class="reference external" href="https://docs.python.org/3/reference/expressions.html#operator-precedence">operator precedence rules</a>
+mean this would be calculated as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">not_what_we_meant</span> <span class="o">=</span> <span class="n">student</span> <span class="o">|</span> <span class="p">(</span><span class="n">under_21</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">high_earners</span><span class="p">)</span>  <span class="c1"># since &amp; takes precedence over |</span>
+</pre></div>
+</div>
+<p>Even if operator precedence means that your selection would resolve as intended
+without parentheses,
+it’s probably sensible to include them to be explicit and improve readability:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">either_of_two_pairs</span> <span class="o">=</span> <span class="p">(</span><span class="n">student</span> <span class="o">&amp;</span> <span class="n">smiths</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">high_earner</span> <span class="o">&amp;</span> <span class="n">under_21</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> operator ‘binds’ more tightly than the <code class="docutils literal notranslate"><span class="pre">|</span></code> operator,
+so this selection would resolve in the same way even if the parentheses were omitted.
+But including them makes the logic easier to read
+and enables you to communicate your intent to anyone else reading your code.</p>
+</section>
+<section id="determining-the-resolve-table">
+<h2>Determining the resolve table<a class="headerlink" href="#determining-the-resolve-table" title="Link to this heading"></a></h2>
+<p>The <em>resolve table</em> simply refers to the FastStats system table
+that the selection is set to count records from.
+As mentioned in the previous part, this is determined automatically
+according to the following rules:</p>
+<ul class="simple">
+<li><p>for a selection consisting of a single ‘clause’,
+it is the table that the variable in this clause belongs to</p></li>
+<li><p>for a selection made from a combination of several ‘clauses’,
+it is the table of the first (i.e. left-most) clause</p></li>
+<li><p>normal Python operator precendence applies,
+including expressions in parentheses being evaluated first</p></li>
+</ul>
+<p>The following code demonstrates this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">student</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;Occupation&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;4&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">usa</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Destination&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;38&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">student</span><span class="o">.</span><span class="n">table_name</span>
+<span class="go">&#39;People&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">usa</span><span class="o">.</span><span class="n">table_name</span>
+<span class="go">&#39;Bookings&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">student</span> <span class="o">&amp;</span> <span class="n">usa</span><span class="p">)</span><span class="o">.</span><span class="n">table_name</span>
+<span class="go">&#39;People&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">usa</span> <span class="o">&amp;</span> <span class="n">student</span><span class="p">)</span><span class="o">.</span><span class="n">table_name</span>
+<span class="go">&#39;Bookings&#39;</span>
+</pre></div>
+</div>
+<p>So if your selection uses elements from different tables,
+make sure you begin it with an element from the table
+you want to use for the overall count.</p>
+</section>
+<section id="changing-the-resolve-table">
+<h2>Changing the resolve table<a class="headerlink" href="#changing-the-resolve-table" title="Link to this heading"></a></h2>
+<p>We can also manually change the resolve table of a selection
+using the multiplication operator <code class="docutils literal notranslate"><span class="pre">*</span></code> with the table:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">been_to_usa</span> <span class="o">=</span> <span class="n">people</span> <span class="o">*</span> <span class="n">usa</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">been_to_usa</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">273879</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">been_to_usa</span><span class="o">.</span><span class="n">table_name</span>
+<span class="go">&#39;People&#39;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The table that we ‘multiply by’ needs to be a <code class="xref py py-class docutils literal notranslate"><span class="pre">Table</span></code> object.
+Using the string of the table name will <strong>not</strong> work.</p>
+</div>
+<p>Again, we can use parentheses to group different parts of the selection
+to control how it is structured:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">audience_1</span> <span class="o">=</span> <span class="n">people</span> <span class="o">*</span> <span class="p">(</span><span class="n">usa</span> <span class="o">&amp;</span> <span class="n">at_least_2k</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">audience_1</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">12746</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">audience_2</span> <span class="o">=</span> <span class="p">(</span><span class="n">people</span> <span class="o">*</span> <span class="n">usa</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">at_least_2k</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">audience_2</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">20098</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">audience_1</span></code> selects people who have any Booking to the USA costing at least £2000
+— the <code class="docutils literal notranslate"><span class="pre">usa</span></code> and <code class="docutils literal notranslate"><span class="pre">at_least_2k</span></code> clauses are grouped together with parentheses,
+so a person must have a <em>single</em> Booking matching <em>both</em> criteria to be selected.</p>
+<p>It is equivalent to this selection in FastStats:</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/audience_1.png"><img alt="../_images/audience_1.png" src="../_images/audience_1.png" style="width: 578.0px; height: 349.0px;" />
+</a>
+</figure>
+<p><code class="docutils literal notranslate"><span class="pre">audience_2</span></code> selects people who have any Booking to the USA,
+and have any Booking costing at least £2000.
+The difference is that the conditions don’t have to apply to the same booking
+— the person’s Booking to the USA could cost less than £2000,
+as long as they have another Booking that <em>does</em> cost at least that much.</p>
+<p>Here’s the equivalent selection in FastStats:</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/audience_2.png"><img alt="../_images/audience_2.png" src="../_images/audience_2.png" style="width: 613.0px; height: 357.0px;" />
+</a>
+</figure>
+</section>
+<section id="a-worked-example">
+<h2>A worked example<a class="headerlink" href="#a-worked-example" title="Link to this heading"></a></h2>
+<p>Let’s just remind ourselves what <code class="docutils literal notranslate"><span class="pre">audience_2</span></code> looked like
+and work through step-by-step how it’s evaluated, according to the rules above.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">audience_2</span> <span class="o">=</span> <span class="p">(</span><span class="n">people</span> <span class="o">*</span> <span class="n">usa</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">at_least_2k</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">(people</span> <span class="pre">*</span> <span class="pre">usa)</span></code> is evaluated first because it’s in parentheses.
+<code class="docutils literal notranslate"><span class="pre">usa</span></code> is a condition on the Bookings table,
+but using the <code class="docutils literal notranslate"><span class="pre">*</span></code> operator on it with the People table manually changes it
+to resolve to the People table.</p>
+<p>We could re-write this part as a new variable:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">audience_2</span> <span class="o">=</span> <span class="n">people_to_usa</span> <span class="o">&amp;</span> <span class="n">at_least_2k</span>
+</pre></div>
+</div>
+<p>Working left-to-right, <code class="docutils literal notranslate"><span class="pre">people_to_usa</span></code> is clearly a selection on the People table
+so <code class="docutils literal notranslate"><span class="pre">at_least_2k</span></code> is automatically adjusted to resolve to the People table to match.
+We could re-write this behaviour explicitly as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">audience_2</span> <span class="o">=</span> <span class="n">people_to_usa</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">people</span> <span class="o">*</span> <span class="n">at_least_2k</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If we ‘unzip’ <code class="docutils literal notranslate"><span class="pre">people_to_usa</span></code> to its original form, we get:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">audience_2</span> <span class="o">=</span> <span class="p">(</span><span class="n">people</span> <span class="o">*</span> <span class="n">usa</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">people</span> <span class="o">*</span> <span class="n">at_least_2k</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>which mirrors the structure of the equivalent selection in FastStats shown above.</p>
+<p>So far we’ve only interacted with our data by counting selections,
+but in the next part we’ll learn how we can use data grids
+to create an export of our data, which we can analyse further.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tutorial_06.html" class="btn btn-neutral float-left" title="6. Combining selections using logic" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorial_08.html" class="btn btn-neutral float-right" title="8. Creating Data Grids" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Apteco Ltd.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

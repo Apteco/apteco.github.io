@@ -1,0 +1,236 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>6. Combining selections using logic &mdash; py-apteco 0.8.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/theme_overrides.css?v=f0e53977" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=dbee5847"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="7. Controlling selection structure and tables" href="tutorial_07.html" />
+    <link rel="prev" title="5. Specifying selection values" href="tutorial_05.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            py-apteco
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorial.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="tutorial_01.html">1. Connecting to your FastStats system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_02.html">2. Accessing tables and variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_03.html">3. Creating simple selections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_04.html">4. Selecting with different variable types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_05.html">5. Specifying selection values</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6. Combining selections using logic</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#joining-two-selections-together">Joining two selections together</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#negating-a-clause">Negating a clause</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#joining-across-different-tables">Joining across different tables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_07.html">7. Controlling selection structure and tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_08.html">8. Creating Data Grids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_09.html">9. Creating Cubes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apteco-api.html">apteco-api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apteco_website.html">Back to apteco.com</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">py-apteco</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../tutorial.html">Tutorial</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">6. </span>Combining selections using logic</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tutorials/tutorial_06.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="combining-selections-using-logic">
+<h1><span class="section-number">6. </span>Combining selections using logic<a class="headerlink" href="#combining-selections-using-logic" title="Link to this heading"></a></h1>
+<p>In this part of the tutorial we’ll learn
+how to build more complex selections by joining separate parts together,
+and how to use various types of logic in the process.</p>
+<section id="joining-two-selections-together">
+<h2>Joining two selections together<a class="headerlink" href="#joining-two-selections-together" title="Link to this heading"></a></h2>
+<p>So far we’ve only looked at selections with one condition based on a single variable,
+but we can combine these to create selections with multiple conditions.</p>
+<p>We simply use the Python <cite>bitwise and</cite> operator <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>
+to combine two parts into one selection:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sweden</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Destination&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;29&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">at_least_2k</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Cost&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">2000</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expensive_sweden</span> <span class="o">=</span> <span class="n">sweden</span> <span class="o">&amp;</span> <span class="n">at_least_2k</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expensive_sweden</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">632</span>
+</pre></div>
+</div>
+<p>This works just like the <strong>AND</strong> logic in a selection tree
+in the FastStats application:
+a record (in this case, a booking) must match both conditions to be selected.</p>
+<p>In a similar way, you can use the <cite>bitwise or</cite> operator <code class="docutils literal notranslate"><span class="pre">|</span></code>
+to combine selections using <strong>OR</strong> logic:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">student</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;Occupation&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;4&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">under_21</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;DOB&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span> <span class="o">-</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">years</span><span class="o">=</span><span class="mi">21</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eligible_for_discount</span> <span class="o">=</span> <span class="n">student</span> <span class="o">|</span> <span class="n">under_21</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eligible_for_discount</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">188364</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Be sure to use the <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> and <code class="docutils literal notranslate"><span class="pre">|</span></code> operators,
+i.e. the <em>ampersand</em> and <em>vertical bar</em> symbols.
+Using the <code class="docutils literal notranslate"><span class="pre">and</span></code> or <code class="docutils literal notranslate"><span class="pre">or</span></code> keywords will <strong>not</strong> work.</p>
+</div>
+<p>Returning to the
+<a class="reference internal" href="tutorial_05.html#tutorial-operator-chaining-warning"><span class="std std-ref">example from the previous part</span></a>,
+here’s how we can create a selection with values in a range bounded on both sides:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">born_in_1990</span> <span class="o">=</span> <span class="p">(</span>
+<span class="gp">... </span>    <span class="p">(</span><span class="n">people</span><span class="p">[</span><span class="s2">&quot;DOB&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">date</span><span class="p">(</span><span class="mi">1990</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="gp">... </span>    <span class="o">&amp;</span> <span class="p">(</span><span class="n">people</span><span class="p">[</span><span class="s2">&quot;DOB&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">date</span><span class="p">(</span><span class="mi">1990</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">))</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="negating-a-clause">
+<h2>Negating a clause<a class="headerlink" href="#negating-a-clause" title="Link to this heading"></a></h2>
+<p>To exclude a selection from the final count,
+you can use the <cite>bitwise not</cite> operator <code class="docutils literal notranslate"><span class="pre">~</span></code> to apply <strong>NOT</strong> logic to it:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">high_earners</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;Income&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s2">02</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">low_mid_earners</span> <span class="o">=</span> <span class="o">~</span><span class="n">high_earners</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">low_mid_earners</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">1149439</span>
+</pre></div>
+</div>
+<p>Of course, we could have made the same selection
+by just selecting the low-mid income codes directly
+or by swapping the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator for <code class="docutils literal notranslate"><span class="pre">!=</span></code>.
+But the <code class="docutils literal notranslate"><span class="pre">~</span></code> is particularly useful to apply to a selection made of more than one part,
+rather than trying to reverse the overall logic by changing the individual parts:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">eligible_for_discount</span> <span class="o">=</span> <span class="n">student</span> <span class="o">|</span> <span class="n">under_21</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pay_full_price</span> <span class="o">=</span> <span class="o">~</span><span class="n">eligible_for_discount</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pay_full_price</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">968189</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Be sure to use <code class="docutils literal notranslate"><span class="pre">~</span></code> operator,
+i.e. the <em>tilde</em> symbol.
+Using the <code class="docutils literal notranslate"><span class="pre">not</span></code> keyword will <strong>not</strong> work.</p>
+</div>
+</section>
+<section id="joining-across-different-tables">
+<h2>Joining across different tables<a class="headerlink" href="#joining-across-different-tables" title="Link to this heading"></a></h2>
+<p>The previous examples joined a pair of clauses from the <em>same</em> table,
+but you can also combine clauses from <em>different</em> tables:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">high_earners</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;Income&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s2">02</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>  <span class="c1"># people selection</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">at_least_2k</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Cost&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">2000</span>  <span class="c1"># bookings selection</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">high_affordability</span> <span class="o">=</span> <span class="n">high_earners</span> <span class="o">|</span> <span class="n">at_least_2k</span>  <span class="c1"># will resolve to people</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">high_affordability</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">56096</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">high_affordability</span><span class="o">.</span><span class="n">table_name</span>
+<span class="go">&#39;People&#39;</span>
+</pre></div>
+</div>
+<p>When combining clauses from different tables
+the resolve table of the resulting selection is determined by the <strong>left-most</strong> part.
+In this example, that’s the <code class="docutils literal notranslate"><span class="pre">high_earners</span></code> selection,
+which is on the <strong>People</strong> table.</p>
+<p><strong>py-apteco</strong> automatically adapts other parts of the selection to match this,
+by inserting the required table changes
+using the <strong>ANY</strong> or <strong>THE</strong> operations familiar from FastStats selection trees.
+So the selection in this example comprises 56,096 <em>people</em> who:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>either have income of £60k+</p></li>
+<li><p>or have made ANY <em>booking</em> costing at least £2k</p></li>
+</ul>
+</div></blockquote>
+<p>Although the automatic table changes are often what we want,
+we are also able to manually change the resolve table of a selection,
+which we’ll learn about in the next part.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tutorial_05.html" class="btn btn-neutral float-left" title="5. Specifying selection values" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorial_07.html" class="btn btn-neutral float-right" title="7. Controlling selection structure and tables" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Apteco Ltd.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

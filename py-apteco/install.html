@@ -1,0 +1,250 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installation Guide &mdash; py-apteco 0.8.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css?v=f0e53977" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=dbee5847"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tutorial" href="tutorial.html" />
+    <link rel="prev" title="Quickstart" href="getting_started.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            py-apteco
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Quickstart</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#apteco-api">Apteco API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python">Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#is-python-already-installed">Is Python already installed?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#which-version-do-i-need">Which version do I need?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#downloading-from-python-org">Downloading from python.org</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installing-from-the-microsoft-store">Installing from the Microsoft Store</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#py-apteco">py-apteco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#checking-your-installation">Checking your installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apteco-api.html">apteco-api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apteco_website.html">Back to apteco.com</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">py-apteco</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Installation Guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/install.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="installation-guide">
+<h1>Installation Guide<a class="headerlink" href="#installation-guide" title="Link to this heading"></a></h1>
+<p>This will take you through everything you need to install and set up
+to be able to start using the py-apteco package.
+There are three things you need in total:</p>
+<ol class="arabic simple">
+<li><p>Access to the Apteco API (Orbit API)</p></li>
+<li><p>A suitable version of Python (3.6+)</p></li>
+<li><p>The py-apteco package</p></li>
+</ol>
+<p>You may skip any steps where you already meet the requirements.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This guide was written with Windows users in mind,
+but the content should apply similarly to other operating systems.</p>
+</div>
+<section id="apteco-api">
+<h2>Apteco API<a class="headerlink" href="#apteco-api" title="Link to this heading"></a></h2>
+<p>py-apteco uses the Apteco API to connect to your FastStats system.
+This is also called the Orbit API and is part of the Apteco Orbit™ installation.
+So if you have access to Orbit, you have access to the Apteco API.</p>
+<p>If Orbit isn’t set up for your FastStats system
+or you aren’t sure whether you have access to it,
+speak to whoever administers your FastStats system
+or contact Apteco support (<a class="reference external" href="mailto:support&#37;&#52;&#48;apteco&#46;com">support<span>&#64;</span>apteco<span>&#46;</span>com</a>) who will be happy to help you.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Orbit doesn’t need to be installed or running <em>directly</em> on your computer,
+you just need to have access to it.
+If you can log into it in the browser on your computer that’s fine.</p>
+</div>
+</section>
+<section id="python">
+<h2>Python<a class="headerlink" href="#python" title="Link to this heading"></a></h2>
+<p>py-apteco is a Python package,
+so you use it with the Python programming language.</p>
+<section id="is-python-already-installed">
+<h3>Is Python already installed?<a class="headerlink" href="#is-python-already-installed" title="Link to this heading"></a></h3>
+<p>You can check if Python is already installed on your computer
+by opening the command line, typing ‘python’ and pressing return.
+If it can find Python installed it will start an interactive Python session,
+and you’ll also be able to see which version of Python it’s running
+(indicated here in red):</p>
+<img alt="_images/python_command_line_version_highlighted.png" src="_images/python_command_line_version_highlighted.png" />
+<p>If Python isn’t installed, you may see a message like this:</p>
+<img alt="_images/python_command_line_not_installed.png" src="_images/python_command_line_not_installed.png" />
+<p>or it may open the the download page for the Python app in the Microsoft Store
+(see <a class="reference internal" href="#microsoft-store-install">below</a>
+for more information about installing from there).</p>
+</section>
+<section id="which-version-do-i-need">
+<h3>Which version do I need?<a class="headerlink" href="#which-version-do-i-need" title="Link to this heading"></a></h3>
+<p>py-apteco supports Python versions 3.6+
+so if Python is already installed but the version you have is earlier than this
+you’ll need a later version as well.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can have multiple different versions of Python installed
+on one computer at the same time,
+you just need to make sure you’re using the right one
+for the task at hand.</p>
+</div>
+</section>
+<section id="downloading-from-python-org">
+<h3>Downloading from python.org<a class="headerlink" href="#downloading-from-python-org" title="Link to this heading"></a></h3>
+<p>If you don’t have a suitable version of Python installed,
+you can download it from the official Python website:
+<a class="reference external" href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></p>
+<p>If in doubt, choose the newest release of the latest version
+(at the time of writing, this is Python 3.9.1),
+though be aware that this won’t necessarily be at the top of the download list.
+Once you’re on the page for that release,
+scroll to the bottom and choose the appropriate download under <strong>Files</strong>.
+If you’re a Windows user and aren’t sure which download option to take,
+the <strong>Windows installer</strong> is probably best, highlighted here:</p>
+<img alt="_images/python_download_files.png" src="_images/python_download_files.png" />
+<p>If you don’t know whether you need the <strong>32-bit</strong> or <strong>64-bit</strong> version,
+go to <strong>Settings</strong> → <strong>System</strong> → <strong>About</strong> on your computer
+and check <strong>System type</strong> under <strong>Device specifications</strong>:</p>
+<img alt="_images/check_system_type.png" src="_images/check_system_type.png" />
+</section>
+<section id="installing-from-the-microsoft-store">
+<span id="microsoft-store-install"></span><h3>Installing from the Microsoft Store<a class="headerlink" href="#installing-from-the-microsoft-store" title="Link to this heading"></a></h3>
+<p>Python versions 3.7+ are available as apps in the Microsoft Store.
+Installing Python from here will install it just for your user
+and doesn’t require administrator privileges,
+so this a good option if you don’t normally have the necessary permissions
+to install programmes.</p>
+</section>
+</section>
+<section id="py-apteco">
+<h2>py-apteco<a class="headerlink" href="#py-apteco" title="Link to this heading"></a></h2>
+<p>Once you have Python installed, you can install py-apteco itself.
+The easiest way to do this is using <code class="docutils literal notranslate"><span class="pre">pip</span></code>,
+the standard tool for installing Python packages.
+From the command line, type:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python -m pip install apteco</span>
+</pre></div>
+</div>
+<p>This will fetch the package and install it into your Python environment.
+It will also fetch and install its dependencies
+(other Python packages which py-apteco itself uses).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Be careful with names:
+<strong>py-apteco</strong> is the name given to this tool as a whole,
+but the name you use to install and use the actual package is just <code class="docutils literal notranslate"><span class="pre">apteco</span></code>.</p>
+</div>
+</section>
+<section id="checking-your-installation">
+<h2>Checking your installation<a class="headerlink" href="#checking-your-installation" title="Link to this heading"></a></h2>
+<p>To make sure everything is installed correctly,
+first start a Python interactive session
+by opening the command line, typing ‘python’ and pressing return.
+Then type the following commands
+(double underscores either side of ‘version’):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">apteco</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">apteco</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+<span class="go">0.8.2</span>
+</pre></div>
+</div>
+<p>If everything is working as expected,
+this should print the version of py-apteco you have installed.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="getting_started.html" class="btn btn-neutral float-left" title="Quickstart" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorial.html" class="btn btn-neutral float-right" title="Tutorial" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Apteco Ltd.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

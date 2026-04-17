@@ -1,0 +1,694 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cube &mdash; py-apteco 0.8.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/theme_overrides.css?v=f0e53977" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=dbee5847"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Change Log" href="../../changelog.html" />
+    <link rel="prev" title="Data Grid" href="datagrid.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            py-apteco
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../reference.html">Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="session.html">Session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tables.html">Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html">Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selections.html">Selections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datagrid.html">Data Grid</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Cube</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#basic-use">Basic use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#api-reference">API reference</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cube-creation-and-conversion">Cube creation and conversion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dimensions">Dimensions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#statistics">Statistics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apteco-api.html">apteco-api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apteco_website.html">Back to apteco.com</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">py-apteco</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../reference.html">Reference</a></li>
+      <li class="breadcrumb-item active">Cube</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/reference/topics/cube.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cube">
+<span id="cube-reference"></span><h1>Cube<a class="headerlink" href="#cube" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>The <a class="reference internal" href="#apteco.cube.Cube" title="apteco.cube.Cube"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cube</span></code></a> object corresponds to a FastStats Cube
+and is a multi-dimensional numeric analysis of FastStats data.</p>
+<p>The cube is specified by:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>a resolve <strong>table</strong> – statistics on the cube are measures of
+records in this table</p></li>
+<li><p>a set of <strong>dimensions</strong> – these are the fields over which the data
+is being analysed</p></li>
+<li><p>a set of <strong>measures</strong> – these define the statistics displayed on the cube
+to analyse the data</p></li>
+<li><p>a base <strong>selection</strong> <em>(optional)</em> – this filters records in the table
+to only include in the analysis ones that match the given criteria</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently, the cube dimensions must be <strong>Selector</strong> variables
+or <strong>banded Date</strong> variables.
+Other variable types and more complex types like expressions or selections
+are not yet supported.</p>
+</div>
+</section>
+<section id="basic-use">
+<h2>Basic use<a class="headerlink" href="#basic-use" title="Link to this heading"></a></h2>
+<p>Setting up variables:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">people</span> <span class="o">=</span> <span class="n">my_session</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="s2">&quot;People&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">occupation</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;Occupation&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">income</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;Income&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gender</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;Gender&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Creating a cube:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cube</span> <span class="o">=</span> <span class="n">people</span><span class="o">.</span><span class="n">cube</span><span class="p">([</span><span class="n">occupation</span><span class="p">,</span> <span class="n">income</span><span class="p">,</span> <span class="n">gender</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Converting to a Pandas <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">cube</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="go">                               People</span>
+<span class="go">Occupation    Income  Gender</span>
+<span class="go">Manual Worker &lt;£10k   Female    15624</span>
+<span class="go">                      Male       5321</span>
+<span class="go">                      Unknown       5</span>
+<span class="go">              £10-20k Female    43051</span>
+<span class="go">                      Male       5992</span>
+<span class="go">                      Unknown      25</span>
+<span class="go">              £20-30k Female     1498</span>
+<span class="go">                      Male        649</span>
+<span class="go">                      Unknown      14</span>
+<span class="go">              £30-40k Female      675</span>
+</pre></div>
+</div>
+<p>Pivoting the <code class="docutils literal notranslate"><span class="pre">Occupation</span></code> dimension to make it easier to read:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">                   People          ...</span>
+<span class="go">Occupation       Director Manager  ... Student Unemployed</span>
+<span class="go">Income   Gender                    ...</span>
+<span class="go">&lt;£10k    Female      1279    4649  ...   28002      21385</span>
+<span class="go">         Male         832    2926  ...   14296       8386</span>
+<span class="go">         Unknown        4      16  ...      10        155</span>
+<span class="go">£10-20k  Female      4116   16665  ...   39462      17230</span>
+<span class="go">         Male        2139    9123  ...   17917       4532</span>
+<span class="go">         Unknown        9      47  ...      25        368</span>
+<span class="go">£100k+   Female         2       1  ...       2          0</span>
+<span class="go">         Male           1       0  ...       3          0</span>
+<span class="go">         Unknown        1       0  ...       1          0</span>
+<span class="go">£20-30k  Female      1267    6238  ...    6669       5747</span>
+<span class="go">         Male        1050    5315  ...    5274       1345</span>
+<span class="go">         Unknown        5      45  ...      22        236</span>
+<span class="go">£30-40k  Female      1591    6621  ...    5690       3117</span>
+<span class="go">         Male        1940    9713  ...    6345       1049</span>
+<span class="go">         Unknown       46     140  ...      63        519</span>
+<span class="go">£40-50k  Female       265     965  ...     587        262</span>
+<span class="go">         Male         518    1800  ...     943        115</span>
+<span class="go">         Unknown       22      58  ...      29        110</span>
+<span class="go">£50-60k  Female       336     806  ...     425        277</span>
+<span class="go">         Male         607    1677  ...     692         69</span>
+<span class="go">         Unknown       47      88  ...      64         89</span>
+<span class="go">£60-70k  Female        40     112  ...      54         58</span>
+<span class="go">         Male          96     220  ...      95          8</span>
+<span class="go">         Unknown       11      16  ...      17         17</span>
+<span class="go">£70-80k  Female        44      96  ...      42         27</span>
+<span class="go">         Male         102     179  ...      63          5</span>
+<span class="go">         Unknown       12      22  ...      15          5</span>
+<span class="go">£80-90k  Female        11      11  ...       3          0</span>
+<span class="go">         Male          14      13  ...      16          0</span>
+<span class="go">         Unknown        4       3  ...       5          0</span>
+<span class="go">£90-100k Female         1       0  ...       1          1</span>
+<span class="go">         Male          11       7  ...       4          0</span>
+<span class="go">         Unknown        3       6  ...       9          0</span>
+
+<span class="go">[33 rows x 10 columns]</span>
+</pre></div>
+</div>
+<p>Using banded Date variables as dimensions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bookings</span> <span class="o">=</span> <span class="n">my_session</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="s2">&quot;Bookings&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">booking_date</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Booking Date&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">travel_date</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Travel Date&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">booking_travel_cube</span> <span class="o">=</span> <span class="n">bookings</span><span class="o">.</span><span class="n">cube</span><span class="p">([</span><span class="n">booking_date</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">travel_date</span><span class="o">.</span><span class="n">year</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">booking_travel_df</span> <span class="o">=</span> <span class="n">booking_travel_cube</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">booking_travel_df</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">                     Bookings</span>
+<span class="go">Travel Date (Year)       2016 2017 2018 2019 2020   2021   2022</span>
+<span class="go">Booking Date (Month)</span>
+<span class="go">2016-01                  2668    0    0    0    0      0      0</span>
+<span class="go">2016-02                 24482    0    0    0    0      0      0</span>
+<span class="go">2016-03                 28435    0    0    0    0      0      0</span>
+<span class="go">2016-04                 24360    0    0    0    0      0      0</span>
+<span class="go">2016-05                 22757    0    0    0    0      0      0</span>
+<span class="go">                       ...  ...  ...  ...  ...    ...    ...</span>
+<span class="go">2021-08                     0    0    0    0    0  39880      0</span>
+<span class="go">2021-09                     0    0    0    0    0  34380    407</span>
+<span class="go">2021-10                     0    0    0    0    0  21537   6824</span>
+<span class="go">2021-11                     0    0    0    0    0  12078  14308</span>
+<span class="go">2021-12                     0    0    0    0    0   2938  16737</span>
+
+<span class="go">[72 rows x 7 columns]</span>
+</pre></div>
+</div>
+<p>Using a base selection to filter the records:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">student</span> <span class="o">=</span> <span class="n">occupation</span> <span class="o">==</span> <span class="s2">&quot;4&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">student_cube</span> <span class="o">=</span> <span class="n">student</span><span class="o">.</span><span class="n">cube</span><span class="p">([</span><span class="n">occupation</span><span class="p">,</span> <span class="n">income</span><span class="p">,</span> <span class="n">gender</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">student_df</span> <span class="o">=</span> <span class="n">student_cube</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">student_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">                               People</span>
+<span class="go">Occupation    Income  Gender</span>
+<span class="go">Manual Worker &lt;£10k   Female        0</span>
+<span class="go">                      Male          0</span>
+<span class="go">                      Unknown       0</span>
+<span class="go">              £10-20k Female        0</span>
+<span class="go">                      Male          0</span>
+</pre></div>
+</div>
+<p>Selecting only cells where <code class="docutils literal notranslate"><span class="pre">Occupation</span></code> is <em>Student</em>,
+and pivoting <code class="docutils literal notranslate"><span class="pre">Gender</span></code> dimension:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">student_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;Student&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">         People</span>
+<span class="go">Gender   Female   Male Unknown</span>
+<span class="go">Income</span>
+<span class="go">&lt;£10k     28002  14296      10</span>
+<span class="go">£10-20k   39462  17917      25</span>
+<span class="go">£100k+        2      3       1</span>
+<span class="go">£20-30k    6669   5274      22</span>
+<span class="go">£30-40k    5690   6345      63</span>
+<span class="go">£40-50k     587    943      29</span>
+<span class="go">£50-60k     425    692      64</span>
+<span class="go">£60-70k      54     95      17</span>
+<span class="go">£70-80k      42     63      15</span>
+<span class="go">£80-90k       3     16       5</span>
+<span class="go">£90-100k      1      4       9</span>
+</pre></div>
+</div>
+<p>Using a base selection from a different table:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">households</span> <span class="o">=</span> <span class="n">my_session</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="s2">&quot;Households&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">region</span> <span class="o">=</span> <span class="n">households</span><span class="p">[</span><span class="s2">&quot;hoRegion&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">manchester</span> <span class="o">=</span> <span class="n">region</span> <span class="o">==</span> <span class="s2">&quot;13&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">manc_cube</span> <span class="o">=</span> <span class="n">manchester</span><span class="o">.</span><span class="n">cube</span><span class="p">([</span><span class="n">occupation</span><span class="p">,</span> <span class="n">region</span><span class="p">,</span> <span class="n">gender</span><span class="p">],</span> <span class="n">table</span><span class="o">=</span><span class="n">people</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">manc_df</span> <span class="o">=</span> <span class="n">manc_cube</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">manc_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;Manager&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">                                      People</span>
+<span class="go">Gender                                Female  Male Unknown</span>
+<span class="go">Region</span>
+<span class="go">Channel Islands                            0     0       0</span>
+<span class="go">East Anglia                                0     0       0</span>
+<span class="go">East Midlands                              0     0       0</span>
+<span class="go">Greater Manchester                      1554  1539      26</span>
+<span class="go">North                                      0     0       0</span>
+<span class="go">North West (Excluding Gtr Manchester)      0     0       0</span>
+<span class="go">Northern Ireland                           0     0       0</span>
+<span class="go">Scotland                                   0     0       0</span>
+<span class="go">South East (Inside M25 )                   0     0       0</span>
+<span class="go">South East (Outside M25 )                  0     0       0</span>
+<span class="go">South West                                 0     0       0</span>
+<span class="go">Wales                                      0     0       0</span>
+<span class="go">West Midlands                              0     0       0</span>
+<span class="go">Yorkshire and Humber                       0     0       0</span>
+</pre></div>
+</div>
+<p>Adding different measures:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">apteco.statistics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Sum</span><span class="p">,</span> <span class="n">Mean</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cost</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Cost&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">profit</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Profit&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">finance_cube</span> <span class="o">=</span> <span class="n">bookings</span><span class="o">.</span><span class="n">cube</span><span class="p">([</span><span class="n">dest</span><span class="p">,</span> <span class="n">gender</span><span class="p">],</span> <span class="n">measures</span><span class="o">=</span><span class="p">[</span><span class="n">Mean</span><span class="p">(</span><span class="n">cost</span><span class="p">),</span> <span class="n">Sum</span><span class="p">(</span><span class="n">profit</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">finance_df</span> <span class="o">=</span> <span class="n">finance_cube</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">finance_df</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">              Mean(Cost)                  Sum(Profit)</span>
+<span class="go">Gender            Female    Male Unknown       Female         Male     Unknown</span>
+<span class="go">Destination</span>
+<span class="go">Australia         641.33  642.80  641.63   4969609.27   9289372.33   338911.11</span>
+<span class="go">Denmark           636.56  552.11  673.20     77696.43      7172.64    11138.75</span>
+<span class="go">France            644.34  645.12     NaN  28028207.53  12743135.05        0.00</span>
+<span class="go">Germany           643.13  688.66  739.48  41693688.99     49751.52     2396.78</span>
+<span class="go">Greece            644.01  643.99  652.30   3969380.08   7381942.89   259677.61</span>
+<span class="go">Italy             638.27  634.36  658.72   3362435.25    502193.53   402007.87</span>
+<span class="go">Jamaica           597.36  468.56  807.87      1770.04       290.77       15.51</span>
+<span class="go">Kuwait            650.15  645.65  659.84    298712.85    554525.03    67014.61</span>
+<span class="go">Latvia            693.92  618.84  712.12     11177.66     19882.72     2592.66</span>
+<span class="go">Mali              596.55  661.02  771.80     18392.77     40416.47     4736.45</span>
+<span class="go">Mongolia          579.34  636.74  677.02      4193.65      7141.89     2213.89</span>
+<span class="go">Namibia           704.16  638.48  542.54     31981.71     57459.89     3439.89</span>
+<span class="go">New Zealand       633.99  641.36  625.06     17982.15     33741.93     4577.55</span>
+<span class="go">Portugal          636.00  650.95  647.02    890531.92    554791.39   229951.78</span>
+<span class="go">Senegal           656.55  658.48  518.11     60939.12     28611.82      946.95</span>
+<span class="go">Sierra Leone      614.09  652.47  597.09    165479.74    353473.04    33155.92</span>
+<span class="go">South Africa      682.05  694.72  748.89     41997.60     84264.98     6911.85</span>
+<span class="go">Sweden            641.35  644.49  652.47   1232007.22   2296749.68    57618.93</span>
+<span class="go">United States     638.56  640.62  632.76  25279636.01  46492373.17  7632493.15</span>
+</pre></div>
+</div>
+</section>
+<section id="api-reference">
+<h2>API reference<a class="headerlink" href="#api-reference" title="Link to this heading"></a></h2>
+<section id="cube-creation-and-conversion">
+<h3>Cube creation and conversion<a class="headerlink" href="#cube-creation-and-conversion" title="Link to this heading"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="apteco.cube.Cube">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apteco.cube.</span></span><span class="sig-name descname"><span class="pre">Cube</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dimensions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">measures</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apteco.cube.Cube" title="Link to this definition"></a></dt>
+<dd><p>Create a cube.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The <a class="reference internal" href="tables.html#cube" title="cube"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cube()</span></code></a> methods on tables and selections are wrappers
+around this class.
+It is recommended to prefer those over instantiating this class directly,
+as they generally provide a simpler interface.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dimensions</strong> (<em>list</em><em>[</em><a class="reference internal" href="variables.html#Variable" title="Variable"><em>Variable</em></a><em>]</em>) – Variables to use as dimensions in the cube.
+These must be from <cite>table</cite> or from a ‘related’ table
+– either an ancestor or descendant.</p></li>
+<li><p><strong>measures</strong> (<em>list</em>) – Statistics to display in the cube.
+These must be from <cite>table</cite> or from a ‘related’ table
+– either an ancestor or descendant.
+If <cite>measures</cite> is None, the count measure of the cube’s resolve table
+will be used by default.</p></li>
+<li><p><strong>selection</strong> (<em>Clause</em>) – Optional base selection to apply to the cube.
+The table of this selection must be <cite>table</cite> or a ‘related’ table
+– either an ancestor or descendant.</p></li>
+<li><p><strong>table</strong> (<em>Table</em>) – Resolve table of the cube.
+This table’s records are used in the analysis for the cube,
+e.g. the default count measure is a count of records from this table.</p></li>
+<li><p><strong>session</strong> (<em>Session</em>) – Current Apteco API session.</p></li>
+</ul>
+</dd>
+</dl>
+<p>As well as being related to <cite>table</cite>,
+the following restrictions apply to dimensions and measures:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>All dimensions must be from tables related to each other,
+except in the case of a ‘cross cube’
+when dimensions may be from unrelated tables,
+as long as these are all descendants of <cite>table</cite>.</p></li>
+<li><p>Each measure’s table must be related to each dimension’s table.
+In the case of a ‘cross cube’, all measures must be from <cite>table</cite>
+or one of its ancestors.</p></li>
+</ul>
+</div></blockquote>
+<p>At least one of <cite>selection</cite> or <cite>table</cite> must be given:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>If only <cite>selection</cite> is given,
+then <cite>table</cite> will be set to the resolve table of the selection.</p></li>
+<li><p>If both are given and the resolve table of <cite>selection</cite>
+isn’t <cite>table</cite>,
+then the records used in the cube
+are determined by mapping the selection to the required table by applying
+<strong>ANY</strong>/<strong>THE</strong> logic as necessary.
+This matches the behaviour when applying an underlying selection
+to a cube in the FastStats application.
+The mapping described here happens in the FastStats data engine
+and does not change the <cite>selection</cite> on the <a class="reference internal" href="#apteco.cube.Cube" title="apteco.cube.Cube"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cube</span></code></a>.</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The following two cubes are equivalent:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cube1</span> <span class="o">=</span> <span class="n">Cube</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">dimensions</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">selection</span><span class="o">=</span><span class="n">manchester</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">table</span><span class="o">=</span><span class="n">people</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">session</span><span class="o">=</span><span class="n">my_session</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cube2</span> <span class="o">=</span> <span class="n">Cube</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">dimensions</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">selection</span><span class="o">=</span><span class="p">(</span><span class="n">people</span> <span class="o">*</span> <span class="n">manchester</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">session</span><span class="o">=</span><span class="n">my_session</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<p>They both return a cube counting <em>people</em>
+from households in the Greater Manchester region.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The raw cube data is fetched from the Apteco API
+when the <a class="reference internal" href="#apteco.cube.Cube" title="apteco.cube.Cube"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cube</span></code></a> object is initialised.
+It is held on the object in the <code class="xref py py-attr docutils literal notranslate"><span class="pre">_data</span></code> attribute as a Numpy <code class="xref py py-class docutils literal notranslate"><span class="pre">array</span></code>
+but this is not considered public, and so to work with the data
+you should convert it to your desired output format.
+The format currently supported is a Pandas <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code>,
+via the <a class="reference internal" href="#apteco.cube.Cube.to_df" title="apteco.cube.Cube.to_df"><code class="xref py py-meth docutils literal notranslate"><span class="pre">to_df()</span></code></a> method.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="apteco.cube.Cube.to_df">
+<span class="sig-name descname"><span class="pre">to_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unclassified</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">totals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_trans</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convert_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apteco.cube.Cube.to_df" title="Link to this definition"></a></dt>
+<dd><p>Return the cube as a Pandas <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code>.
+This is configured such that:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>the dimensions form the <strong>index</strong>.
+If multiple dimensions are given, this is a <code class="xref py py-class docutils literal notranslate"><span class="pre">MultiIndex</span></code>
+with each level corresponding to a dimension.</p></li>
+<li><p>there is one <strong>column</strong> for each measure.</p></li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unclassified</strong> (<em>bool</em>) – Whether to include unclassified rows in the DataFrame.
+Default is <cite>False</cite>.</p></li>
+<li><p><strong>totals</strong> (<em>bool</em>) – Whether to include totals rows in the DataFrame.
+Default is <cite>False</cite>.</p></li>
+<li><p><strong>no_trans</strong> (<em>bool</em>) – Whether to include rows counting records
+with no transactions;
+applicable when at least one dimension belongs to a child table.
+<em>Included for forwards-compatibility, but not currently implemented.</em>
+<em>Must be left as False.</em></p></li>
+<li><p><strong>convert_index</strong> (<em>bool</em>) – Whether to convert the index to the corresponding
+‘natural’ Pandas index type,
+or leave as a plain <code class="xref py py-class docutils literal notranslate"><span class="pre">Index</span></code> with strings as labels.
+Conversion isn’t possible if <cite>unclassified</cite> or <cite>totals</cite> is <cite>True</cite>.
+Default behaviour is to convert if possible.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The structure of the DataFrame returned by the <a class="reference internal" href="#apteco.cube.Cube.to_df" title="apteco.cube.Cube.to_df"><code class="xref py py-meth docutils literal notranslate"><span class="pre">to_df()</span></code></a> method
+is very similar to a <em>Tree</em> in the FastStats application.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more details on working with a Pandas DataFrame
+with a MultiIndex,
+see the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html">user guide</a>
+in the official Pandas documentation.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="dimensions">
+<h3>Dimensions<a class="headerlink" href="#dimensions" title="Link to this heading"></a></h3>
+<p>This section lists the various objects that can be applied as dimensions on a cube.
+It also details their behaviour when the cube is transformed into a pandas DataFrame
+under the <code class="xref py py-meth docutils literal notranslate"><span class="pre">to_df()</span></code> method.</p>
+<section id="selector-variables">
+<h4>Selector variables<a class="headerlink" href="#selector-variables" title="Link to this heading"></a></h4>
+<p>Selector variables can be used directly as cube dimensions,
+though this doesn’t include any selector sub-types,
+such as Array or Flag Array variables.
+(The exception to this is Date and DateTime variables,
+which can be used as dimensions when a banding is applied – see the section below.)</p>
+<p>Conversion to a pandas DataFrame:</p>
+<ul class="simple">
+<li><p>The index is left as a standard pandas <code class="xref py py-class docutils literal notranslate"><span class="pre">Index</span></code>.</p></li>
+<li><p>The index labels are the dimension category descriptions.</p></li>
+<li><p>The index name is the variable description.</p></li>
+</ul>
+</section>
+<section id="banded-date-variables">
+<h4>Banded Date variables<a class="headerlink" href="#banded-date-variables" title="Link to this heading"></a></h4>
+<p>Date and DateTime variables can be used as cube dimensions
+when banded up to a particular time period.
+These bandings are accessed via attributes on the <a class="reference internal" href="variables.html#DateVariable" title="DateVariable"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateVariable</span></code></a>
+or <a class="reference internal" href="variables.html#DateTimeVariable" title="DateTimeVariable"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeVariable</span></code></a> object.</p>
+<p>The following bandings are currently supported:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DateVariable.day</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DateVariable.month</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DateVariable.quarter</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DateVariable.year</span></code></p></li>
+</ul>
+<p>Conversion to a pandas DataFrame:</p>
+<ul class="simple">
+<li><p>The default index conversion is to a pandas <code class="xref py py-class docutils literal notranslate"><span class="pre">PeriodIndex</span></code>
+with the corresponding frequency (see table below).</p></li>
+<li><p>If not converted, the index labels are datetime strings (see table table below).</p></li>
+<li><p>The index name is of the form <cite>‘&lt;Variable description&gt; (&lt;banding&gt;)’</cite>.</p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Banding</p></th>
+<th class="head"><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#dateoffset-objects">Date Offset</a></p></th>
+<th class="head"><p>Frequency string</p></th>
+<th class="head"><p>Examples (unconverted string labels)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">day</span></code></p></td>
+<td><p>Day</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'D'</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'2019-01-01'</span></code> <code class="docutils literal notranslate"><span class="pre">'2019-01-02'</span></code> <code class="docutils literal notranslate"><span class="pre">'2019-01-03'</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">month</span></code></p></td>
+<td><p>Month</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'M'</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'2019-01'</span></code> <code class="docutils literal notranslate"><span class="pre">'2019-02'</span></code> <code class="docutils literal notranslate"><span class="pre">'2019-03'</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">quarter</span></code></p></td>
+<td><p>Quarter</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'Q'</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'2019Q1'</span></code> <code class="docutils literal notranslate"><span class="pre">'2019Q2'</span></code> <code class="docutils literal notranslate"><span class="pre">'2019Q3'</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">year</span></code></p></td>
+<td><p>Year</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'A'</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'2019'</span></code> <code class="docutils literal notranslate"><span class="pre">'2020'</span></code> <code class="docutils literal notranslate"><span class="pre">'2021'</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="statistics">
+<h3>Statistics<a class="headerlink" href="#statistics" title="Link to this heading"></a></h3>
+<p>Two types of statistics are currently supported as cube measures:
+table counts and variable statistics.</p>
+<section id="table-counts">
+<h4>Table counts<a class="headerlink" href="#table-counts" title="Link to this heading"></a></h4>
+<p>These can be specified by passing a Table object in the <cite>measures</cite> list,
+and will return a count of the records from that Table.
+If <cite>measures</cite> is None, the count of records from the resolve table
+will be used by default.</p>
+</section>
+<section id="variable-statistics">
+<h4>Variable statistics<a class="headerlink" href="#variable-statistics" title="Link to this heading"></a></h4>
+<p>These are summary statistics over a given variable and can be specified
+using the classes available in the <code class="xref py py-mod docutils literal notranslate"><span class="pre">apteco.statistics</span></code> module.</p>
+<p>The statistics all have the same signature:</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="apteco.statistics.Statistic">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apteco.statistics.</span></span><span class="sig-name descname"><span class="pre">Statistic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operand</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apteco.statistics.Statistic" title="Link to this definition"></a></dt>
+<dd><p>Create a variable statistic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>operand</strong> (<a class="reference internal" href="variables.html#Variable" title="Variable"><em>Variable</em></a>) – Variable over which to apply the statistic.
+Most statistics can only be calculated over numeric variables,
+but some also accept selector variables.
+See details below for specific restrictions.</p></li>
+<li><p><strong>label</strong> (<em>str</em><em>, </em><em>optional</em>) – Descriptive name for this statistic.
+Used as the column label for this statistic
+on the DataFrame returned by <code class="xref py py-meth docutils literal notranslate"><span class="pre">to_df()</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<section id="selector-or-numeric-variable">
+<h5>Selector or Numeric variable<a class="headerlink" href="#selector-or-numeric-variable" title="Link to this heading"></a></h5>
+<p>These statistics accept either a <strong>selector</strong> or <strong>numeric</strong> variable as the operand:</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="apteco.statistics.CountMode">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apteco.statistics.</span></span><span class="sig-name descname"><span class="pre">CountMode</span></span><a class="headerlink" href="#apteco.statistics.CountMode" title="Link to this definition"></a></dt>
+<dd><p>The number of records which take the modal value of the variable.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="apteco.statistics.CountDistinct">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apteco.statistics.</span></span><span class="sig-name descname"><span class="pre">CountDistinct</span></span><a class="headerlink" href="#apteco.statistics.CountDistinct" title="Link to this definition"></a></dt>
+<dd><p>The number of distinct values of the variable.</p>
+</dd></dl>
+
+</section>
+<section id="numeric-variable">
+<h5>Numeric variable<a class="headerlink" href="#numeric-variable" title="Link to this heading"></a></h5>
+<p>These statistics accept a <strong>numeric</strong> variable as the operand:</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="apteco.statistics.Sum">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apteco.statistics.</span></span><span class="sig-name descname"><span class="pre">Sum</span></span><a class="headerlink" href="#apteco.statistics.Sum" title="Link to this definition"></a></dt>
+<dd><p>The sum of values of the variable.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="apteco.statistics.Min">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apteco.statistics.</span></span><span class="sig-name descname"><span class="pre">Min</span></span><a class="headerlink" href="#apteco.statistics.Min" title="Link to this definition"></a></dt>
+<dd><p>The minimum value of the variable.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="apteco.statistics.Max">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apteco.statistics.</span></span><span class="sig-name descname"><span class="pre">Max</span></span><a class="headerlink" href="#apteco.statistics.Max" title="Link to this definition"></a></dt>
+<dd><p>The maximum value of the variable.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="apteco.statistics.Populated">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apteco.statistics.</span></span><span class="sig-name descname"><span class="pre">Populated</span></span><a class="headerlink" href="#apteco.statistics.Populated" title="Link to this definition"></a></dt>
+<dd><p>The number of records for which the variable has a (non-missing) value.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="apteco.statistics.Mode">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apteco.statistics.</span></span><span class="sig-name descname"><span class="pre">Mode</span></span><a class="headerlink" href="#apteco.statistics.Mode" title="Link to this definition"></a></dt>
+<dd><p>The mode (most common) value of the variable.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="apteco.statistics.Mean">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apteco.statistics.</span></span><span class="sig-name descname"><span class="pre">Mean</span></span><a class="headerlink" href="#apteco.statistics.Mean" title="Link to this definition"></a></dt>
+<dd><p>The mean value of the variable.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="apteco.statistics.StdDev">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apteco.statistics.</span></span><span class="sig-name descname"><span class="pre">StdDev</span></span><a class="headerlink" href="#apteco.statistics.StdDev" title="Link to this definition"></a></dt>
+<dd><p>The standard deviation of the variable.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="apteco.statistics.Variance">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apteco.statistics.</span></span><span class="sig-name descname"><span class="pre">Variance</span></span><a class="headerlink" href="#apteco.statistics.Variance" title="Link to this definition"></a></dt>
+<dd><p>The variance of the variable.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="apteco.statistics.Median">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apteco.statistics.</span></span><span class="sig-name descname"><span class="pre">Median</span></span><a class="headerlink" href="#apteco.statistics.Median" title="Link to this definition"></a></dt>
+<dd><p>The median value of the variable.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="apteco.statistics.LowerQuartile">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apteco.statistics.</span></span><span class="sig-name descname"><span class="pre">LowerQuartile</span></span><a class="headerlink" href="#apteco.statistics.LowerQuartile" title="Link to this definition"></a></dt>
+<dd><p>The lower quartile of the variable.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="apteco.statistics.UpperQuartile">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apteco.statistics.</span></span><span class="sig-name descname"><span class="pre">UpperQuartile</span></span><a class="headerlink" href="#apteco.statistics.UpperQuartile" title="Link to this definition"></a></dt>
+<dd><p>The upper quartile of the variable.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="apteco.statistics.InterQuartileRange">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apteco.statistics.</span></span><span class="sig-name descname"><span class="pre">InterQuartileRange</span></span><a class="headerlink" href="#apteco.statistics.InterQuartileRange" title="Link to this definition"></a></dt>
+<dd><p>The inter-quartile range of the variable.</p>
+</dd></dl>
+
+</section>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="datagrid.html" class="btn btn-neutral float-left" title="Data Grid" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../changelog.html" class="btn btn-neutral float-right" title="Change Log" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Apteco Ltd.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,629 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Change Log &mdash; py-apteco 0.8.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css?v=f0e53977" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=dbee5847"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="apteco-api" href="apteco-api.html" />
+    <link rel="prev" title="Cube" href="reference/topics/cube.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            py-apteco
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Change Log</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#version-0-8-2">Version 0.8.2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fixed">Fixed</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#version-0-8-1">Version 0.8.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Fixed</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#version-0-8-0">Version 0.8.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#changed-backwards-incompatible">Changed (backwards-incompatible)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#changed">Changed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#added">Added</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Fixed</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#version-0-7-1">Version 0.7.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Fixed</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#version-0-7-0">Version 0.7.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Added</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Changed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deprecated">Deprecated</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Fixed</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#version-0-6-0">Version 0.6.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Added</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Changed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#removed">Removed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Fixed</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#version-0-5-0">Version 0.5.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id10">Added</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">Changed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">Removed</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#version-0-4-0">Version 0.4.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id13">Added</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">Changed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">Removed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">Fixed</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#version-0-3-2">Version 0.3.2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id17">Fixed</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#version-0-3-1">Version 0.3.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id18">Fixed</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#version-0-3-0">Version 0.3.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id19">Added</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id20">Changed</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#version-0-2-0">Version 0.2.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id21">Added</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#version-0-1-2">Version 0.1.2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id22">Fixed</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#version-0-1-1">Version 0.1.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id23">Fixed</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#version-0-1-0">Version 0.1.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id24">Added</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apteco-api.html">apteco-api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apteco_website.html">Back to apteco.com</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">py-apteco</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Change Log</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/changelog.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="change-log">
+<h1>Change Log<a class="headerlink" href="#change-log" title="Link to this heading"></a></h1>
+<section id="version-0-8-2">
+<h2>Version 0.8.2<a class="headerlink" href="#version-0-8-2" title="Link to this heading"></a></h2>
+<p><em>2025-09-18</em></p>
+<section id="fixed">
+<h3>Fixed<a class="headerlink" href="#fixed" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Removed pySimpleGui dependency, which was only used in a deprecated
+code path for getting passwords from the user.</p></li>
+<li><p>Updated various other dependencies.</p></li>
+<li><p>Updated python required version to be <code class="docutils literal notranslate"><span class="pre">&gt;=3.10,&lt;3.13</span></code></p></li>
+</ul>
+</section>
+</section>
+<section id="version-0-8-1">
+<h2>Version 0.8.1<a class="headerlink" href="#version-0-8-1" title="Link to this heading"></a></h2>
+<p><em>2023-07-18</em></p>
+<section id="id1">
+<h3>Fixed<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">limit()</span></code> method on <code class="docutils literal notranslate"><span class="pre">Selection</span></code> now accepts a range of integers
+or percentages.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">sample</span></code> and <code class="docutils literal notranslate"><span class="pre">limit()</span></code> methods on <code class="docutils literal notranslate"><span class="pre">Selection</span></code> now correctly validate
+their inputs.</p></li>
+</ul>
+</section>
+</section>
+<section id="version-0-8-0">
+<h2>Version 0.8.0<a class="headerlink" href="#version-0-8-0" title="Link to this heading"></a></h2>
+<p><em>2021-05-26</em></p>
+<section id="changed-backwards-incompatible">
+<h3>Changed (backwards-incompatible)<a class="headerlink" href="#changed-backwards-incompatible" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">to_df()</span></code> method on <code class="docutils literal notranslate"><span class="pre">Cube</span></code> no longer returns <em>Unclassified</em> and <em>Totals</em> rows
+by default (can be included by using new <code class="docutils literal notranslate"><span class="pre">unclassified</span></code> and <code class="docutils literal notranslate"><span class="pre">totals</span></code> parameters).</p></li>
+</ul>
+</section>
+<section id="changed">
+<h3>Changed<a class="headerlink" href="#changed" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">type</span></code> attribute on <code class="docutils literal notranslate"><span class="pre">Variable</span></code> objects is now a Python <code class="docutils literal notranslate"><span class="pre">Enum</span></code>,
+though this is implemented in a way that is backwards-compatible with strings.</p></li>
+</ul>
+</section>
+<section id="added">
+<h3>Added<a class="headerlink" href="#added" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">day</span></code>, <code class="docutils literal notranslate"><span class="pre">month</span></code>, <code class="docutils literal notranslate"><span class="pre">quarter</span></code> and <code class="docutils literal notranslate"><span class="pre">year</span></code> attributes
+to <code class="docutils literal notranslate"><span class="pre">DateVariable</span></code> and <code class="docutils literal notranslate"><span class="pre">DateTimeVariable</span></code> objects,
+which bands them to the corresponding time period for use as cube dimensions.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">unclassified</span></code>, <code class="docutils literal notranslate"><span class="pre">totals</span></code> and <code class="docutils literal notranslate"><span class="pre">no_trans</span></code> parameters
+to the <code class="docutils literal notranslate"><span class="pre">to_df()</span></code> method on <code class="docutils literal notranslate"><span class="pre">Cube</span></code> to control whether these rows are returned.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">convert_index</span></code> parameter to the <code class="docutils literal notranslate"><span class="pre">to_df()</span></code> method on <code class="docutils literal notranslate"><span class="pre">Cube</span></code>
+to control whether to automatically convert dimensions to their ‘natural’ index type.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">before()</span></code> and <code class="docutils literal notranslate"><span class="pre">after()</span></code> methods to <code class="docutils literal notranslate"><span class="pre">TextVariable</span></code> for querying it
+according to whether it occurs alphabetically before or after a given value.
+They have parameter <code class="docutils literal notranslate"><span class="pre">allow_equal</span></code> (default False) to also include records equal
+to the given value.</p></li>
+<li><p>Added support for using <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> operators with <code class="docutils literal notranslate"><span class="pre">TextVariable</span></code>s,
+corresponding to the <code class="docutils literal notranslate"><span class="pre">before()</span></code> and <code class="docutils literal notranslate"><span class="pre">after()</span></code> methods.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>Fixed<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">TextVariable.between()</span></code> method now ignores case,
+and checks that <code class="docutils literal notranslate"><span class="pre">start</span></code> comes before <code class="docutils literal notranslate"><span class="pre">end</span></code>.</p></li>
+</ul>
+</section>
+</section>
+<section id="version-0-7-1">
+<h2>Version 0.7.1<a class="headerlink" href="#version-0-7-1" title="Link to this heading"></a></h2>
+<p><em>2021-01-27</em></p>
+<section id="id3">
+<h3>Fixed<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Creating a session with a new system no longer produces an error on the first attempt.
+Fixed by requiring <code class="docutils literal notranslate"><span class="pre">apteco-api</span></code> v0.2.1, in which the <cite>last_login</cite> parameter on
+<cite>SessionDetails</cite> object is now optional.</p></li>
+</ul>
+</section>
+</section>
+<section id="version-0-7-0">
+<h2>Version 0.7.0<a class="headerlink" href="#version-0-7-0" title="Link to this heading"></a></h2>
+<p><em>2021-01-26</em></p>
+<section id="id4">
+<h3>Added<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">LimitClause</span></code>, <code class="docutils literal notranslate"><span class="pre">TopNClause</span></code>, <code class="docutils literal notranslate"><span class="pre">NPerVariableClause</span></code>, <code class="docutils literal notranslate"><span class="pre">NPerTableClause</span></code>
+classes for creating selections with limits.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">sample()</span></code> and <code class="docutils literal notranslate"><span class="pre">limit()</span></code> methods to selections for applying limits to them.</p></li>
+<li><p>Added cube variable statistics in new <code class="docutils literal notranslate"><span class="pre">apteco.statistics</span></code> module:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Sum</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Mean</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Populated</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Min</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Max</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Median</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Mode</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Variance</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">StdDev</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LowerQuartile</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UpperQuartile</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">InterQuartileRange</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CountDistinct</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CountMode</span></code></p></li>
+</ul>
+</li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">missing()</span></code> method to <code class="docutils literal notranslate"><span class="pre">NumericVariable</span></code> for selecting records
+with missing values.</p></li>
+</ul>
+</section>
+<section id="id5">
+<h3>Changed<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Cubes can now have multiple measures rather than just the single default count.</p></li>
+<li><p>For cubes with just a single dimension, <code class="docutils literal notranslate"><span class="pre">Cube.to_df()</span></code> now returns a DataFrame
+with a normal <code class="docutils literal notranslate"><span class="pre">Index</span></code> (rather than a <code class="docutils literal notranslate"><span class="pre">MultiIndex</span></code>).</p></li>
+</ul>
+</section>
+<section id="deprecated">
+<h3>Deprecated<a class="headerlink" href="#deprecated" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">NumericVariable.max</span></code> → use <code class="docutils literal notranslate"><span class="pre">NumericVariable.max_value</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NumericVariable.min</span></code> → use <code class="docutils literal notranslate"><span class="pre">NumericVariable.min_value</span></code></p></li>
+</ul>
+</section>
+<section id="id6">
+<h3>Fixed<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Process that validates cube dimensions and measures has been improved
+to catch some invalid combinations that were previously allowed,
+and allow some valid combinations that were previously prevented.</p></li>
+</ul>
+</section>
+</section>
+<section id="version-0-6-0">
+<h2>Version 0.6.0<a class="headerlink" href="#version-0-6-0" title="Link to this heading"></a></h2>
+<p><em>2020-10-22</em></p>
+<section id="id7">
+<h3>Added<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Added ability to pick variables by description.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">table_name</span></code> property to <code class="docutils literal notranslate"><span class="pre">Variable</span></code> classes (alias of <code class="docutils literal notranslate"><span class="pre">table.name</span></code>).</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">is_related()</span></code> method to <code class="docutils literal notranslate"><span class="pre">Table</span></code>.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">allow_same</span></code> keyword to <code class="docutils literal notranslate"><span class="pre">is_ancestor()</span></code>, <code class="docutils literal notranslate"><span class="pre">is_descendant()</span></code>
+&amp; <code class="docutils literal notranslate"><span class="pre">is_related()</span></code> methods on <code class="docutils literal notranslate"><span class="pre">Table</span></code>.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> operators to <code class="docutils literal notranslate"><span class="pre">Table</span></code>
+corresponding to these <code class="docutils literal notranslate"><span class="pre">is_ancestor(allow_same=True)</span></code>
+and <code class="docutils literal notranslate"><span class="pre">is_descendant(allow_same=True)</span></code>.</p></li>
+<li><p>Added methods to <code class="docutils literal notranslate"><span class="pre">TextVariable</span></code>
+to enable querying text variables with different text match types:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">equals()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">contains()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">startswith()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">endswith()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">between()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">matches()</span></code></p></li>
+</ul>
+</li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">datagrid()</span></code> and <code class="docutils literal notranslate"><span class="pre">cube()</span></code> methods to tables and selections
+to enable building Data Grids and Cubes directly from these.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">AptecoDeprecationWarning</span></code> for warning about deprecated features.</p></li>
+</ul>
+</section>
+<section id="id8">
+<h3>Changed<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Simplified some <code class="docutils literal notranslate"><span class="pre">Table</span></code> attribute names
+(the old names still work but issue an <code class="docutils literal notranslate"><span class="pre">AptecoDeprecationWarning</span></code>):</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">singular_display_name</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">singular</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plural_display_name</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">plural</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_default_table</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">is_default</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_people_table</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">is_people</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">child_relationship_name</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">child_relationship</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">parent_relationship_name</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">parent_relationship</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">has_child_tables</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">has_children</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Session.tables</span></code> is now a <code class="docutils literal notranslate"><span class="pre">TablesAccessor</span></code> object instead of <code class="docutils literal notranslate"><span class="pre">dict</span></code>:</p>
+<ul>
+<li><p>can pick tables by name using <code class="docutils literal notranslate"><span class="pre">[]</span></code> (as before)</p></li>
+<li><p>can use <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">...</span> <span class="pre">in</span></code> to loop over tables</p></li>
+<li><p>can use <code class="docutils literal notranslate"><span class="pre">len()</span></code> to get the number of tables</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Session.variables</span></code> and <code class="docutils literal notranslate"><span class="pre">Table.variables</span></code>
+is now a <code class="docutils literal notranslate"><span class="pre">VariablesAccessor</span></code> object instead of <code class="docutils literal notranslate"><span class="pre">dict</span></code>:</p>
+<ul>
+<li><p>can pick variables by name or description using <code class="docutils literal notranslate"><span class="pre">[]</span></code>
+(as before for names; support for descriptions is new)</p></li>
+<li><p>can use <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">...</span> <span class="pre">in</span></code> to loop over variables</p></li>
+<li><p>can use <code class="docutils literal notranslate"><span class="pre">len()</span></code> to get the number of variables (in the system or on the table)</p></li>
+<li><p>has <code class="docutils literal notranslate"><span class="pre">names</span></code> attribute for picking by name-only (using <code class="docutils literal notranslate"><span class="pre">[]</span></code>)
+and looping over variable names (using <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">...</span> <span class="pre">in</span></code>)</p></li>
+<li><p>has <code class="docutils literal notranslate"><span class="pre">descs</span></code> attribute for picking by description-only (using <code class="docutils literal notranslate"><span class="pre">[]</span></code>)
+and looping over variable descriptions (using <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">...</span> <span class="pre">in</span></code>)</p></li>
+<li><p>has <code class="docutils literal notranslate"><span class="pre">descriptions</span></code> attribute, which is alias of <code class="docutils literal notranslate"><span class="pre">descs</span></code></p></li>
+</ul>
+</li>
+<li><p>The columns on the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> returned by <code class="docutils literal notranslate"><span class="pre">DataGrid.to_df()</span></code>
+now have the data type that matches the FastStats variable for that column.</p></li>
+<li><p>Variables from ancestor tables can now be used as columns on a <code class="docutils literal notranslate"><span class="pre">DataGrid</span></code>.</p></li>
+<li><p>Variables from related tables can now be used as dimensions on a <code class="docutils literal notranslate"><span class="pre">Cube</span></code>.</p></li>
+</ul>
+</section>
+<section id="removed">
+<h3>Removed<a class="headerlink" href="#removed" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Removed <code class="docutils literal notranslate"><span class="pre">isin()</span></code> and <code class="docutils literal notranslate"><span class="pre">contains()</span></code> method from <code class="docutils literal notranslate"><span class="pre">Variable</span></code> base class completely
+(had been previously deprecated to raise <code class="docutils literal notranslate"><span class="pre">NotImplementedError</span></code>).
+<code class="docutils literal notranslate"><span class="pre">contains()</span></code> has been implemented on <code class="docutils literal notranslate"><span class="pre">TextVariable</span></code>
+and it is planned to implement these methods for applicable variable types in future.</p></li>
+</ul>
+</section>
+<section id="id9">
+<h3>Fixed<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>During variables initialisation process,
+variables with unrecognised type now log a warning rather than raising exception
+(this means program execution can continue rather than stopping completely).</p></li>
+<li><p>It is now possible to change the table of a selection
+to a table that is not a direct ancestor or descendant
+(this previously raised an <code class="docutils literal notranslate"><span class="pre">OperationError</span></code>).</p></li>
+</ul>
+</section>
+</section>
+<section id="version-0-5-0">
+<h2>Version 0.5.0<a class="headerlink" href="#version-0-5-0" title="Link to this heading"></a></h2>
+<p><em>2020-06-03</em></p>
+<section id="id10">
+<h3>Added<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">DataGrid</span></code> class for creating Data Grids (export of FastStats data).</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">Cube</span></code> class for creating Cubes (summary of FastStats data).</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">to_df()</span></code> method to <code class="docutils literal notranslate"><span class="pre">DataGrid</span></code> and <code class="docutils literal notranslate"><span class="pre">Cube</span></code> classes
+for converting these objects to a Pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p></li>
+</ul>
+</section>
+<section id="id11">
+<h3>Changed<a class="headerlink" href="#id11" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>You can now import <code class="docutils literal notranslate"><span class="pre">login</span></code>, <code class="docutils literal notranslate"><span class="pre">login_with_password</span></code> and <code class="docutils literal notranslate"><span class="pre">Session</span></code>,
+along with the new <code class="docutils literal notranslate"><span class="pre">DataGrid</span></code> and <code class="docutils literal notranslate"><span class="pre">Cube</span></code>, directly from the <code class="docutils literal notranslate"><span class="pre">apteco</span></code> package.</p></li>
+</ul>
+</section>
+<section id="id12">
+<h3>Removed<a class="headerlink" href="#id12" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Removed <code class="docutils literal notranslate"><span class="pre">select()</span></code> method from <code class="docutils literal notranslate"><span class="pre">Table</span></code> and <code class="docutils literal notranslate"><span class="pre">Clause</span></code> classes
+and <code class="docutils literal notranslate"><span class="pre">select()</span></code> function from query module,
+as this was not publicly documented and the direct <code class="docutils literal notranslate"><span class="pre">count()</span></code> method is preferred
+over <code class="docutils literal notranslate"><span class="pre">select().count</span></code>.
+It was wanted to reserve the <code class="docutils literal notranslate"><span class="pre">select</span></code> name for other potential future functionality.</p></li>
+</ul>
+</section>
+</section>
+<section id="version-0-4-0">
+<h2>Version 0.4.0<a class="headerlink" href="#version-0-4-0" title="Link to this heading"></a></h2>
+<p><em>2020-04-07</em></p>
+<section id="id13">
+<h3>Added<a class="headerlink" href="#id13" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Added the ability to build selections using the
+<code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> comparison operators with
+<strong>Selector</strong>, <strong>Numeric</strong>, <strong>Text</strong>, <strong>Array</strong>, <strong>FlagArray</strong>, <strong>Date</strong>, <strong>DateTime</strong>
+variables, and value(s) of the matching object type,
+e.g. <code class="docutils literal notranslate"><span class="pre">DateVariable</span></code> with a Python <code class="docutils literal notranslate"><span class="pre">datetime.date</span></code> object.
+(Note: not all FastStats variable types support all comparison operators.)</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">DateRangeClause</span></code>, <code class="docutils literal notranslate"><span class="pre">TimeRangeClause</span></code>, <code class="docutils literal notranslate"><span class="pre">DateTimeRangeClause</span></code> classes
+for creating selection clauses.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">is_ancestor()</span></code>, <code class="docutils literal notranslate"><span class="pre">is_descendant()</span></code>, <code class="docutils literal notranslate"><span class="pre">is_same()</span></code> methods
+to <code class="docutils literal notranslate"><span class="pre">Table</span></code> class for checking table relationships.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">count()</span></code> method to <code class="docutils literal notranslate"><span class="pre">Table</span></code> class to enable direct counting
+of empty query comprising just a table.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">system_info</span></code> attribute to <code class="docutils literal notranslate"><span class="pre">Session</span></code> class which returns
+FastStats system metadata as a <code class="docutils literal notranslate"><span class="pre">namedtuple</span></code>.</p></li>
+<li><p>Added installation guide, tutorial,
+and reference guides for <code class="docutils literal notranslate"><span class="pre">Session</span></code> and <code class="docutils literal notranslate"><span class="pre">Variable</span></code> objects.</p></li>
+<li><p>Added keywords and classifiers to project (for PyPI).</p></li>
+<li><p>Added continuous integration using Azure Pipelines
+so tests now run automatically during development process.
+This includes measuring test coverage.</p></li>
+</ul>
+</section>
+<section id="id14">
+<h3>Changed<a class="headerlink" href="#id14" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">login()</span></code> and <code class="docutils literal notranslate"><span class="pre">login_with_password()</span></code> functions now return <code class="docutils literal notranslate"><span class="pre">Session</span></code> object
+directly, instead of an intermediary <code class="docutils literal notranslate"><span class="pre">Credentials</span></code> object.</p></li>
+<li><p>The variables dictionaries on <code class="docutils literal notranslate"><span class="pre">Session</span></code> and <code class="docutils literal notranslate"><span class="pre">Table</span></code> objects
+now have variable <em>names</em> as keys, instead of <em>descriptions</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Variable</span></code> classes now have <code class="docutils literal notranslate"><span class="pre">table</span></code> attribute
+which returns the <code class="docutils literal notranslate"><span class="pre">Table</span></code> object for the table they belong to.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CriteriaClause</span></code> classes no longer have <code class="docutils literal notranslate"><span class="pre">table</span></code> parameter in signature;
+their <code class="docutils literal notranslate"><span class="pre">table</span></code> attribute is derived from <code class="docutils literal notranslate"><span class="pre">variable</span></code>.</p></li>
+<li><p>The comparison operators on tables are now reversed so that
+<code class="docutils literal notranslate"><span class="pre">[ancestor</span> <span class="pre">table]</span> <span class="pre">&lt;</span> <span class="pre">[descendant</span> <span class="pre">table]</span></code> is true.
+This is to fit with the idea of the master table as the ‘root’ table
+and ancestor tables as having greater precedence to child and descendant tables.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">user</span></code> attribute on <code class="docutils literal notranslate"><span class="pre">Session</span></code> is now a <code class="docutils literal notranslate"><span class="pre">namedtuple</span></code>
+rather than its own <code class="docutils literal notranslate"><span class="pre">User</span></code> class.</p></li>
+<li><p>If the master table can’t be found during session initialization,
+it now gives more specific error messages about what went wrong.</p></li>
+<li><p>If table relations aren’t initialized correctly,
+it now tells you about all the cases that fail, not just the first one it finds.</p></li>
+</ul>
+</section>
+<section id="id15">
+<h3>Removed<a class="headerlink" href="#id15" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Removed <code class="docutils literal notranslate"><span class="pre">CombinedCategoriesVariable</span></code> class,
+as its implementation didn’t cover all types of Combined Categories variables.
+Variables of this type have reverted to the more general <code class="docutils literal notranslate"><span class="pre">SelectorVariable</span></code>.
+It is planned to re-implement Combined Categories variable support in future.</p></li>
+<li><p>Removed <code class="docutils literal notranslate"><span class="pre">isin()</span></code> method on variables, as it’s not applicable to all variable types.
+It is planned to re-implement this method for relevant variables in future.</p></li>
+</ul>
+</section>
+<section id="id16">
+<h3>Fixed<a class="headerlink" href="#id16" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Session initialization process now loads all system tables,
+not just the first 10.</p></li>
+<li><p>Using generators to return selector codes
+for building selections (with <code class="docutils literal notranslate"><span class="pre">==</span></code> operator) now works.</p></li>
+</ul>
+</section>
+</section>
+<section id="version-0-3-2">
+<h2>Version 0.3.2<a class="headerlink" href="#version-0-3-2" title="Link to this heading"></a></h2>
+<p><em>2019-10-01</em></p>
+<section id="id17">
+<h3>Fixed<a class="headerlink" href="#id17" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Improved code syntax highlighting in the README.</p></li>
+</ul>
+</section>
+</section>
+<section id="version-0-3-1">
+<h2>Version 0.3.1<a class="headerlink" href="#version-0-3-1" title="Link to this heading"></a></h2>
+<p><em>2019-10-01</em></p>
+<section id="id18">
+<h3>Fixed<a class="headerlink" href="#id18" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Set Getting Started guide as the README.</p></li>
+</ul>
+</section>
+</section>
+<section id="version-0-3-0">
+<h2>Version 0.3.0<a class="headerlink" href="#version-0-3-0" title="Link to this heading"></a></h2>
+<p><em>2019-10-01</em></p>
+<section id="id19">
+<h3>Added<a class="headerlink" href="#id19" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">DateListClause</span></code> for creating selections with list of dates.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">select()</span></code> method to <code class="docutils literal notranslate"><span class="pre">Tables</span></code> class to enable counting empty queries.</p></li>
+</ul>
+</section>
+<section id="id20">
+<h3>Changed<a class="headerlink" href="#id20" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Each variable type now has a specific class with only the attributes pertinent to it.</p></li>
+</ul>
+</section>
+</section>
+<section id="version-0-2-0">
+<h2>Version 0.2.0<a class="headerlink" href="#version-0-2-0" title="Link to this heading"></a></h2>
+<p><em>2019-08-23</em></p>
+<section id="id21">
+<h3>Added<a class="headerlink" href="#id21" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">serialize()</span></code> and <code class="docutils literal notranslate"><span class="pre">deserialize()</span></code> methods to the <code class="docutils literal notranslate"><span class="pre">Session</span></code> class.</p></li>
+<li><p>Added documentation (Getting Started guide and Change Log).</p></li>
+</ul>
+</section>
+</section>
+<section id="version-0-1-2">
+<h2>Version 0.1.2<a class="headerlink" href="#version-0-1-2" title="Link to this heading"></a></h2>
+<p><em>2019-08-05</em></p>
+<section id="id22">
+<h3>Fixed<a class="headerlink" href="#id22" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Fixed not being able to connect to a different API host after first connection
+during any single Python session.</p></li>
+</ul>
+</section>
+</section>
+<section id="version-0-1-1">
+<h2>Version 0.1.1<a class="headerlink" href="#version-0-1-1" title="Link to this heading"></a></h2>
+<p><em>2019-08-05</em></p>
+<section id="id23">
+<h3>Fixed<a class="headerlink" href="#id23" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Fixed <code class="docutils literal notranslate"><span class="pre">isin()</span></code> method on variables not working.</p></li>
+</ul>
+</section>
+</section>
+<section id="version-0-1-0">
+<h2>Version 0.1.0<a class="headerlink" href="#version-0-1-0" title="Link to this heading"></a></h2>
+<p><em>2019-07-05</em></p>
+<section id="id24">
+<h3>Added<a class="headerlink" href="#id24" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">login()</span></code> and <code class="docutils literal notranslate"><span class="pre">login_with_password()</span></code> functions to log in to the API.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">Session</span></code> class for creating an API session.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">Table</span></code> class representing FastStats system tables.</p></li>
+<li><p>Added support for accessing variables on a table using the <code class="docutils literal notranslate"><span class="pre">[]</span></code> operator
+with the variable description.</p></li>
+<li><p>Added support for testing equality of tables using the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator.</p></li>
+<li><p>Added support for testing if a table is an ancestor or descendant of another
+using the <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> operators (respectively).</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">SelectorClause</span></code>, <code class="docutils literal notranslate"><span class="pre">CombinedCategoriesClause</span></code>, <code class="docutils literal notranslate"><span class="pre">NumericClause</span></code>,
+<code class="docutils literal notranslate"><span class="pre">TextClause</span></code>, <code class="docutils literal notranslate"><span class="pre">ArrayClause</span></code>, <code class="docutils literal notranslate"><span class="pre">FlagArrayClause</span></code> classes
+for creating selection clauses.</p></li>
+<li><p>Added support for creating selection clauses using the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator on variables
+with <code class="docutils literal notranslate"><span class="pre">str</span></code> literals to set values.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">isin()</span></code> method on variables to select values using an iterable.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">BooleanClause</span></code> class to apply boolean logic to clauses
+(<code class="docutils literal notranslate"><span class="pre">AND</span></code>, <code class="docutils literal notranslate"><span class="pre">OR</span></code>, <code class="docutils literal notranslate"><span class="pre">NOT</span></code>).</p></li>
+<li><p>Added support for applying boolean logic using the <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">|</span></code>, <code class="docutils literal notranslate"><span class="pre">~</span></code> operators
+on clauses.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">TableClause</span></code> class for changing resolve table level of clauses
+(<code class="docutils literal notranslate"><span class="pre">ANY</span></code>, <code class="docutils literal notranslate"><span class="pre">THE</span></code>).</p></li>
+<li><p>Added support for using the <code class="docutils literal notranslate"><span class="pre">*</span></code> operator with a clause and a table
+to change the resolve table of the clause.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">SubSelectionClause</span></code> class for using a subselection in a selection.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">Selection</span></code> class for creating a selection from a query,
+with <code class="docutils literal notranslate"><span class="pre">get_count()</span></code> and <code class="docutils literal notranslate"><span class="pre">set_table()</span></code> methods.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">select()</span></code> method on clauses to create a <code class="docutils literal notranslate"><span class="pre">Selection</span></code> from the clause.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">select()</span></code> function for creating a selection using a clause.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="reference/topics/cube.html" class="btn btn-neutral float-left" title="Cube" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="apteco-api.html" class="btn btn-neutral float-right" title="apteco-api" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Apteco Ltd.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

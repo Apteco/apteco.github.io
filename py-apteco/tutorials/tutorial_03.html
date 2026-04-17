@@ -1,0 +1,191 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3. Creating simple selections &mdash; py-apteco 0.8.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/theme_overrides.css?v=f0e53977" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=dbee5847"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4. Selecting with different variable types" href="tutorial_04.html" />
+    <link rel="prev" title="2. Accessing tables and variables" href="tutorial_02.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            py-apteco
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorial.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="tutorial_01.html">1. Connecting to your FastStats system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_02.html">2. Accessing tables and variables</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3. Creating simple selections</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#making-a-simple-selection">Making a simple selection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#specifying-multiple-values">Specifying multiple values</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_04.html">4. Selecting with different variable types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_05.html">5. Specifying selection values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_06.html">6. Combining selections using logic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_07.html">7. Controlling selection structure and tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_08.html">8. Creating Data Grids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_09.html">9. Creating Cubes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apteco-api.html">apteco-api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apteco_website.html">Back to apteco.com</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">py-apteco</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../tutorial.html">Tutorial</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">3. </span>Creating simple selections</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tutorials/tutorial_03.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="creating-simple-selections">
+<h1><span class="section-number">3. </span>Creating simple selections<a class="headerlink" href="#creating-simple-selections" title="Link to this heading"></a></h1>
+<p>In this part of the tutorial we’ll learn
+how to create and count simple selections,
+involving one variable and a chosen value or set of values.</p>
+<section id="making-a-simple-selection">
+<h2>Making a simple selection<a class="headerlink" href="#making-a-simple-selection" title="Link to this heading"></a></h2>
+<p>Selections can be built using <a class="reference internal" href="../reference/topics/variables.html#Variable" title="Variable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Variable</span></code></a> objects
+with the Python equality operator <code class="docutils literal notranslate"><span class="pre">==</span></code> to specify chosen values:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sweden</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Destination&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;29&quot;</span>
+</pre></div>
+</div>
+<p>Normally, the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator would <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#comparisons">test for equality</a>
+and return either <code class="xref py py-const docutils literal notranslate"><span class="pre">True</span></code> or <code class="xref py py-const docutils literal notranslate"><span class="pre">False</span></code>.
+However, in <strong>py-apteco</strong> it is a shortcut for creating a selection:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">sweden</span><span class="p">)</span>
+<span class="go">&lt;class &#39;apteco.query.SelectorClause&#39;&gt;</span>
+</pre></div>
+</div>
+<p>You can then get a count of the selection by calling the <a class="reference internal" href="../reference/topics/selections.html#count" title="count"><code class="xref py py-meth docutils literal notranslate"><span class="pre">count()</span></code></a> method on it:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sweden</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">25207</span>
+</pre></div>
+</div>
+<p>Because the <strong>Destination</strong> variable is on the <strong>Bookings</strong> table,
+this is a count of bookings.
+We’ll learn later on how to control which table we count.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Make sure you use the different <code class="docutils literal notranslate"><span class="pre">=</span></code> symbols correctly:
+use the <code class="docutils literal notranslate"><span class="pre">==</span></code> comparison operator with the FastStats variable and chosen value(s)
+to create the selection,
+and the single <code class="docutils literal notranslate"><span class="pre">=</span></code> to assign the result of this to a Python variable.</p>
+</div>
+</section>
+<section id="specifying-multiple-values">
+<h2>Specifying multiple values<a class="headerlink" href="#specifying-multiple-values" title="Link to this heading"></a></h2>
+<p>You can specify multiple values by using a list:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">france_or_germany_bookings</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Destination&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;06&quot;</span><span class="p">,</span> <span class="s2">&quot;07&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">france_or_germany_bookings</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">985734</span>
+</pre></div>
+</div>
+<p id="high-earners-example">In fact, you can use any Python <cite>iterable</cite>, except for a string
+(which will be treated as a single value).
+Here is an example using a generator expression:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">people</span> <span class="o">=</span> <span class="n">my_session</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="s2">&quot;People&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">high_earners</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;Income&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s2">02</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">high_earners</span><span class="o">.</span><span class="n">values</span>
+<span class="go">[&#39;07&#39;, &#39;08&#39;, &#39;09&#39;, &#39;10&#39;, &#39;11&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">high_earners</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">7114</span>
+</pre></div>
+</div>
+<p>The format string <code class="docutils literal notranslate"><span class="pre">f&quot;{i:02}&quot;</span></code> left-pads the number <code class="docutils literal notranslate"><span class="pre">i</span></code> with <code class="docutils literal notranslate"><span class="pre">0</span></code>s to a width of 2,
+which matches the format of the <strong>Income</strong> selector codes.</p>
+<p>As shown in these examples, when specifying values for <strong>Selector</strong> variables
+you need to use selector codes given as strings (Python <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> type variables).
+In the next part, we’ll learn about the different values we can give
+for other FastStats variable types.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tutorial_02.html" class="btn btn-neutral float-left" title="2. Accessing tables and variables" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorial_04.html" class="btn btn-neutral float-right" title="4. Selecting with different variable types" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Apteco Ltd.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

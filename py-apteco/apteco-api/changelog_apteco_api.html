@@ -1,0 +1,501 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Change Log for apteco-api &mdash; py-apteco 0.8.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/theme_overrides.css?v=f0e53977" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=dbee5847"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Back to apteco.com" href="../apteco_website.html" />
+    <link rel="prev" title="apteco-api" href="../apteco-api.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            py-apteco
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Change Log</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apteco-api.html">apteco-api</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Change Log for <code class="docutils literal notranslate"><span class="pre">apteco-api</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#version-0-2-0">Version 0.2.0</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#added">Added</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#changed">Changed</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#version-0-1-10">Version 0.1.10</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Added</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#version-0-1-9">Version 0.1.9</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#version-0-1-8">Version 0.1.8</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#fixed">Fixed</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#version-0-1-7">Version 0.1.7</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Added</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Changed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#removed">Removed</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#version-0-1-6">Version 0.1.6</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Fixed</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#version-0-1-5">Version 0.1.5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#version-0-1-4">Version 0.1.4</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">Added</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">Changed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">Removed</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#version-0-1-0">Version 0.1.0</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apteco_website.html">Back to apteco.com</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">py-apteco</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../apteco-api.html">apteco-api</a></li>
+      <li class="breadcrumb-item active">Change Log for <code class="docutils literal notranslate"><span class="pre">apteco-api</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/apteco-api/changelog_apteco_api.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="change-log-for-apteco-api">
+<h1>Change Log for <code class="docutils literal notranslate"><span class="pre">apteco-api</span></code><a class="headerlink" href="#change-log-for-apteco-api" title="Link to this heading"></a></h1>
+<p>A record of changes to the <code class="docutils literal notranslate"><span class="pre">apteco-api</span></code> package
+which are, or may be, relevant to <strong>py-apteco</strong>.
+Since the <code class="docutils literal notranslate"><span class="pre">apteco-api</span></code> package is auto-generated from the <strong>OrbitAPI</strong> spec,
+these changes correspond directly to changes there.</p>
+<section id="version-0-2-0">
+<h2>Version 0.2.0<a class="headerlink" href="#version-0-2-0" title="Link to this heading"></a></h2>
+<p><strong>25 Oct 2019</strong></p>
+<ul class="simple">
+<li><p>apteco-api commit: <code class="docutils literal notranslate"><span class="pre">703a653</span></code></p></li>
+<li><p>OrbitAPI version: <code class="docutils literal notranslate"><span class="pre">1.8.13.2139</span></code></p></li>
+<li><p>OrbitAPI date: 25 Oct 2019</p></li>
+</ul>
+<section id="added">
+<h3>Added<a class="headerlink" href="#added" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Exports</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Exports/{systemName}</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Queries/{systemName}/SaveFileSync</span></code></p></li>
+</ul>
+</section>
+<section id="changed">
+<h3>Changed<a class="headerlink" href="#changed" title="Link to this heading"></a></h3>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Selection</span></code>, <code class="docutils literal notranslate"><span class="pre">Logic</span></code>, <code class="docutils literal notranslate"><span class="pre">Criteria</span></code>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tableName</span></code> now required</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FastStatsSystemSummary</span></code>, <code class="docutils literal notranslate"><span class="pre">FastStatsSystemDetail</span></code>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">velocityType</span></code> removed</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+<section id="version-0-1-10">
+<h2>Version 0.1.10<a class="headerlink" href="#version-0-1-10" title="Link to this heading"></a></h2>
+<p><strong>19 Oct 2019</strong></p>
+<ul class="simple">
+<li><p>apteco-api commit: <code class="docutils literal notranslate"><span class="pre">3c8c303</span></code></p></li>
+<li><p>OrbitAPI version: <code class="docutils literal notranslate"><span class="pre">1.8.12.1960</span></code></p></li>
+<li><p>OrbitAPI date: 12 Oct 2019</p></li>
+</ul>
+<section id="id1">
+<h3>Added<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">NumericVariableInfo</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">currencySymbol</span></code> property</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dimension</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">filterQuery</span></code> property</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FastStatsSystemSummary</span></code>, <code class="docutils literal notranslate"><span class="pre">FastStatsSystemDetail</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">velocityType</span></code> property</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+<section id="version-0-1-9">
+<h2>Version 0.1.9<a class="headerlink" href="#version-0-1-9" title="Link to this heading"></a></h2>
+<p><strong>01 Oct 2019</strong></p>
+<ul class="simple">
+<li><p>apteco-api commit: <code class="docutils literal notranslate"><span class="pre">a107ed5</span></code></p></li>
+<li><p>(OrbitAPI version: <code class="docutils literal notranslate"><span class="pre">1.8.11.1775</span></code>)</p></li>
+<li><p>(OrbitAPI date: 27 Sep 2019)</p></li>
+</ul>
+<p><em>(Spec unchanged: only version number changed.)</em></p>
+</section>
+<section id="version-0-1-8">
+<h2>Version 0.1.8<a class="headerlink" href="#version-0-1-8" title="Link to this heading"></a></h2>
+<p><strong>01 Oct 2019</strong></p>
+<ul class="simple">
+<li><p>apteco-api commit: <code class="docutils literal notranslate"><span class="pre">008a8c7</span></code></p></li>
+<li><p>(OrbitAPI version: <code class="docutils literal notranslate"><span class="pre">1.8.11.1775</span></code>)</p></li>
+<li><p>(OrbitAPI date: 27 Sep 2019)</p></li>
+</ul>
+<section id="fixed">
+<h3>Fixed<a class="headerlink" href="#fixed" title="Link to this heading"></a></h3>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Telemetry/States/ForUser/{username}</span></code> <strong>GET</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Corrected capitalisation of <code class="docutils literal notranslate"><span class="pre">username</span></code> (previously <code class="docutils literal notranslate"><span class="pre">Username</span></code>)</p></li>
+<li><p>Spec incorrect - did not match API behaviour</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+<section id="version-0-1-7">
+<h2>Version 0.1.7<a class="headerlink" href="#version-0-1-7" title="Link to this heading"></a></h2>
+<p><strong>30 Sep 2019</strong></p>
+<ul class="simple">
+<li><p>apteco-api commit: <code class="docutils literal notranslate"><span class="pre">9634c69</span></code></p></li>
+<li><p>OrbitAPI version: <code class="docutils literal notranslate"><span class="pre">1.8.11.1775</span></code></p></li>
+<li><p>OrbitAPI date: 27 Sep 2019</p></li>
+</ul>
+<section id="id2">
+<h3>Added<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Sessions/TokenLogin</span></code>  <strong>POST</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Settings/DataView</span></code> <strong>GET</strong> <strong>PUT</strong> <strong>DELETE</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Settings/DataView/{settingsPath}</span></code> <strong>GET</strong> <strong>PUT</strong> <strong>DELETE</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Users/{username}/LoginHistory</span></code> <strong>GET</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SelectorVariableInfo</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">combinedFromVariableName</span></code> property</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SessionDetails</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lastLogin</span></code> property</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TokenLoginDetails</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PagedResults[UserLogin]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UserLogin</span></code></p></li>
+</ul>
+</section>
+<section id="id3">
+<h3>Changed<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Cubes/{systemName}/CalculateSync</span></code> <strong>POST</strong>, <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Exports/{systemName}/ExportSync</span></code> <strong>POST</strong>, <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Queries/{systemName}/CountSync</span></code> <strong>POST</strong>, <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Queries/{systemName}/CountFileSync</span></code> <strong>POST</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">returnDefinition</span></code> defaults to false</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CubeResult</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>No longer requires any properties (previously required <code class="docutils literal notranslate"><span class="pre">ranSuccessfully</span></code>, <code class="docutils literal notranslate"><span class="pre">dimensionResults</span></code>, <code class="docutils literal notranslate"><span class="pre">measureResults</span></code>)</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ExportResult</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>No longer requires any properties (previously required <code class="docutils literal notranslate"><span class="pre">ranSuccessfully</span></code>)</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SessionDetails</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lastLogin</span></code> property now required (in addition to <code class="docutils literal notranslate"><span class="pre">accessToken</span></code>, <code class="docutils literal notranslate"><span class="pre">user</span></code>, <code class="docutils literal notranslate"><span class="pre">sessionId</span></code>, <code class="docutils literal notranslate"><span class="pre">license</span></code>)</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="removed">
+<h3>Removed<a class="headerlink" href="#removed" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PagedResults[FastStatsSystemDetail]</span></code></p></li>
+</ul>
+</section>
+</section>
+<section id="version-0-1-6">
+<h2>Version 0.1.6<a class="headerlink" href="#version-0-1-6" title="Link to this heading"></a></h2>
+<p><strong>08 Aug 2019</strong></p>
+<ul class="simple">
+<li><p>apteco-api commit: <code class="docutils literal notranslate"><span class="pre">dd9f998</span></code></p></li>
+<li><p>(OrbitAPI version: <code class="docutils literal notranslate"><span class="pre">1.8.3.915</span></code>)</p></li>
+<li><p>(OrbitAPI date: 21 Jun 2019)</p></li>
+</ul>
+<section id="id4">
+<h3>Fixed<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">/{dataViewName}/FastStatsSystems/{systemName}</span></code> <strong>GET</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Now returns <code class="docutils literal notranslate"><span class="pre">PagedResults[FastStatsSystemDetail]</span></code> (previously <code class="docutils literal notranslate"><span class="pre">FastStatsSystemDetail</span></code>)</p></li>
+<li><p>Spec incorrect - did not match API behaviour</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+<section id="version-0-1-5">
+<h2>Version 0.1.5<a class="headerlink" href="#version-0-1-5" title="Link to this heading"></a></h2>
+<p><strong>03 Jul 2019</strong></p>
+<ul class="simple">
+<li><p>apteco-api commit: <code class="docutils literal notranslate"><span class="pre">29ea3b2</span></code></p></li>
+<li><p>(OrbitAPI version: <code class="docutils literal notranslate"><span class="pre">1.8.3.915</span></code>)</p></li>
+<li><p>(OrbitAPI date: 21 Jun 2019)</p></li>
+</ul>
+<p><em>(Spec unchanged: keywords &amp; classifiers added to</em> <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> <em>)</em></p>
+</section>
+<section id="version-0-1-4">
+<h2>Version 0.1.4<a class="headerlink" href="#version-0-1-4" title="Link to this heading"></a></h2>
+<p><strong>02 Jul 2019</strong></p>
+<ul class="simple">
+<li><p>apteco-api commit: <code class="docutils literal notranslate"><span class="pre">7e7d09a</span></code></p></li>
+<li><p>OrbitAPI version: <code class="docutils literal notranslate"><span class="pre">1.8.3.915</span></code></p></li>
+<li><p>OrbitAPI date: 21 Jun 2019</p></li>
+</ul>
+<section id="id5">
+<h3>Added<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/About/Language</span></code> <strong>GET</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/About/DataViews/{dataViewName}</span></code> <strong>GET</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DataViewSummary</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Capabilities</span></code></p></li>
+</ul>
+</section>
+<section id="id6">
+<h3>Changed<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">/About/DataViews</span></code> <strong>GET</strong>, <code class="docutils literal notranslate"><span class="pre">/About/DataViews/Domains/{domain}</span></code> <strong>GET</strong>, <code class="docutils literal notranslate"><span class="pre">/About/DataViews/Systems/{systemName}</span></code> <strong>GET</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>returns <code class="docutils literal notranslate"><span class="pre">PagedResults[DataViewSummary]</span></code> (previously <code class="docutils literal notranslate"><span class="pre">PagedResults[DataViewDetails]</span></code>)</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/{dataViewName}/FastStatsSystems/{systemName}/Folders</span></code> <strong>GET</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">filter</span></code> and <code class="docutils literal notranslate"><span class="pre">orderBy</span></code> parameters now also accept <code class="docutils literal notranslate"><span class="pre">Type</span></code>, <code class="docutils literal notranslate"><span class="pre">TableName</span></code>, <code class="docutils literal notranslate"><span class="pre">VariableType</span></code> fields, in addition to <code class="docutils literal notranslate"><span class="pre">Name</span></code>, <code class="docutils literal notranslate"><span class="pre">Description</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/{dataViewName}/FastStatsSystems/{systemName}/Folders/{path}</span></code> <strong>GET</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>now takes <code class="docutils literal notranslate"><span class="pre">filter</span></code>, <code class="docutils literal notranslate"><span class="pre">orderBy</span></code>, <code class="docutils literal notranslate"><span class="pre">offset</span></code>, <code class="docutils literal notranslate"><span class="pre">count</span></code> parameters</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/{dataViewName}/FastStatsSystems/{systemName}/All</span></code> <strong>GET</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">filter</span></code> and <code class="docutils literal notranslate"><span class="pre">orderBy</span></code> parameters now also accept <code class="docutils literal notranslate"><span class="pre">TableName</span></code>, <code class="docutils literal notranslate"><span class="pre">VariableType</span></code> fields, in addition to <code class="docutils literal notranslate"><span class="pre">Key</span></code>, <code class="docutils literal notranslate"><span class="pre">Type</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Sessions/LoginParameters</span></code> <strong>POST</strong>, <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Sessions/SaltedLogin</span></code> <strong>POST</strong>, <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Sessions/ConvertSession</span></code> <strong>POST</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>now consumes <code class="docutils literal notranslate"><span class="pre">application/x-www-form-urlencoded</span></code> (previously <code class="docutils literal notranslate"><span class="pre">multipart/form-data</span></code>)</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DataViewDetails</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">capabilities</span></code> now required</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FolderStructureNode</span></code>, <code class="docutils literal notranslate"><span class="pre">FastStatsSystemItem</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">variable</span></code> property type now <code class="docutils literal notranslate"><span class="pre">Variable</span></code> (previously <code class="docutils literal notranslate"><span class="pre">VariableItem</span></code>)</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="id7">
+<h3>Removed<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/{dataViewName}/DataGrids/{systemName}/Files/{filePath}</span></code> <strong>POST</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DataGridResult</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VariableItem</span></code></p></li>
+</ul>
+</section>
+</section>
+<section id="version-0-1-0">
+<h2>Version 0.1.0<a class="headerlink" href="#version-0-1-0" title="Link to this heading"></a></h2>
+<p><strong>28 Jun 2019</strong></p>
+<ul class="simple">
+<li><p>apteco-api commit: <code class="docutils literal notranslate"><span class="pre">e3fb422</span></code></p></li>
+<li><p>OrbitAPI version: <em>(unknown)</em></p></li>
+<li><p>OrbitAPI date: <em>(unknown)</em></p></li>
+</ul>
+<p>Initial version of the package.</p>
+<p>Has the following endpoints (relevant to <code class="docutils literal notranslate"><span class="pre">py-apteco</span></code>):</p>
+<ul class="simple">
+<li><p><em>AboutApi</em> | <strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/About/ExampleExperimentalResource</span></code> | EXPERIMENTAL: Returns a sample string if experimental endpoints are enabled</p></li>
+<li><p><em>AboutApi</em> | <strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/About/ExampleUnderDevelopmentResource</span></code> | UNDER DEVELOPMENT: Returns a sample string if under development endpoints are enabled</p></li>
+<li><p><em>AboutApi</em> | <strong>POST</strong> <code class="docutils literal notranslate"><span class="pre">/About/Process/ForceGarbageCollection</span></code> | Requires OrbitAdmin: Forces a garbage collection in the API's process and then returns details about the API's .Net process</p></li>
+<li><p><em>AboutApi</em> | <strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/About/DataViews</span></code> | Get the list of DataViews that are available.</p></li>
+<li><p><em>AboutApi</em> | <strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/About/DataViews/Domains/{domain}</span></code> | Get the list of DataViews that are available to users with the specified email domain.</p></li>
+<li><p><em>AboutApi</em> | <strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/About/DataViews/Systems/{systemName}</span></code> | Get the list of DataViews that are configured with the given FastStats system.</p></li>
+<li><p><em>AboutApi</em> | <strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/About/Endpoints</span></code> | Returns details of all the endpoints in the API</p></li>
+<li><p><em>AboutApi</em> | <strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/About/Process</span></code> | Requires OrbitAdmin: Returns details about the API's .Net process</p></li>
+<li><p><em>AboutApi</em> | <strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/About/Version</span></code> | Returns version information about the API</p></li>
+<li><p><em>CubesApi</em> | <strong>POST</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Cubes/{systemName}/CalculateSync</span></code> | EXPERIMENTAL: Calcaultes a cube using the given definition and returns the results.  The data to build the cube from is defined by the base query provided.</p></li>
+<li><p><em>DataGridsApi</em> | <strong>POST</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/DataGrids/{systemName}/Files/{filePath}</span></code> | EXPERIMENTAL: Returns the DataGrid from a saved file.</p></li>
+<li><p><em>DirectoriesApi</em> | <strong>DELETE</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Directories/{systemName}/{directoryPath}</span></code> | Deletes directory at location</p></li>
+<li><p><em>DirectoriesApi</em> | <strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Directories/{systemName}/{directoryPath}</span></code> | Returns the list of files and subdirectories under the given directory</p></li>
+<li><p><em>DirectoriesApi</em> | <strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Directories</span></code> | Returns the list of systems that have access to a filesystem</p></li>
+<li><p><em>DirectoriesApi</em> | <strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Directories/{systemName}</span></code> | Returns the list of root directories configured in this FastStats system</p></li>
+<li><p><em>DirectoriesApi</em> | <strong>PUT</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Directories/{systemName}/{directoryPath}</span></code> | Ensure that a directory exists in a location</p></li>
+<li><p><em>ExportsApi</em> | <strong>POST</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Exports/{systemName}/ExportSync</span></code> | EXPERIMENTAL: Exports data using the given export definition and returns the results.  The results might contain the actual data in the &amp;quot;rows&amp;quot; part of the result or this might be written to a file.  The data to be exported is defined by the base query provided, along with any limits defined in the export request.</p></li>
+<li><p><em>FastStatsSystemsApi</em> | <strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/FastStatsSystems/{systemName}/All</span></code> | Gets all FastStats systems items - variables, var codes, tables and folders</p></li>
+<li><p><em>FastStatsSystemsApi</em> | <strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/FastStatsSystems/{systemName}/Folders/{path}</span></code> | Gets the folder structure for the FastStats system</p></li>
+<li><p><em>FastStatsSystemsApi</em> | <strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/FastStatsSystems/{systemName}/Folders</span></code> | Gets the items in the root of the FastStats system folder structure</p></li>
+<li><p><em>FastStatsSystemsApi</em> | <strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/FastStatsSystems/{systemName}</span></code> | Returns some top-level details for the specified FastStats system</p></li>
+<li><p><em>FastStatsSystemsApi</em> | <strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/FastStatsSystems</span></code> | Returns the list of FastStats systems available</p></li>
+<li><p><em>FastStatsSystemsApi</em> | <strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/FastStatsSystems/{systemName}/Tables/{tableName}</span></code> | Gets the details for a particular table in the FastStats system</p></li>
+<li><p><em>FastStatsSystemsApi</em> | <strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/FastStatsSystems/{systemName}/Tables</span></code> | Gets all the tables present in the FastStats system</p></li>
+<li><p><em>FastStatsSystemsApi</em> | <strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/FastStatsSystems/{systemName}/Variables/{variableName}</span></code> | Gets the details for a particular variable in the FastStats system</p></li>
+<li><p><em>FastStatsSystemsApi</em> | <strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/FastStatsSystems/{systemName}/Variables/{variableName}/Codes</span></code> | Gets all the categories (var codes) for the specified variable in the FastStats system if it is a selector variable</p></li>
+<li><p><em>FastStatsSystemsApi</em> | <strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/FastStatsSystems/{systemName}/Variables</span></code> | Gets all the variables present in the FastStats system</p></li>
+<li><p><em>FastStatsSystemsApi</em> | <strong>POST</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/FastStatsSystems/{systemName}/RefreshInformationSync</span></code> | Requires OrbitAdmin: An endpoint to request the API refresh any information it holds on the given FastStats system.  This endpoint will wait until the refresh has completed before returning.</p></li>
+<li><p><em>FilesApi</em> | <strong>DELETE</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Files/{systemName}/{filePath}</span></code> | Deletes file at location</p></li>
+<li><p><em>FilesApi</em> | <strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Files/{systemName}/{filePath}</span></code> | Returns the contents for a file</p></li>
+<li><p><em>FilesApi</em> | <strong>PUT</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Files/{systemName}/{filePath}</span></code> | Creates or updates a file at a location</p></li>
+<li><p><em>QueriesApi</em> | <strong>POST</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Queries/{systemName}/GetFileSync</span></code> | EXPERIMENTAL: Get the query definition in the specified file</p></li>
+<li><p><em>QueriesApi</em> | <strong>POST</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Queries/{systemName}/CountSync</span></code> | EXPERIMENTAL: Counts the given query and returns the results</p></li>
+<li><p><em>QueriesApi</em> | <strong>POST</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Queries/{systemName}/CountFileSync</span></code> | EXPERIMENTAL: Counts the query in the specified file and returns the results</p></li>
+<li><p><em>SessionsApi</em> | <strong>POST</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Sessions/ConvertSession</span></code> | Creates an API session token from a traditional FastStats session id</p></li>
+<li><p><em>SessionsApi</em> | <strong>POST</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Sessions/LoginParameters</span></code> | Creates a new set of parameters to use when creating a new session via the salted login method.</p></li>
+<li><p><em>SessionsApi</em> | <strong>POST</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Sessions/SaltedLogin</span></code> | Creates a session to use for other API requests</p></li>
+<li><p><em>SessionsApi</em> | <strong>POST</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Sessions/SimpleLogin</span></code> | Creates a session to use for other API requests</p></li>
+<li><p><em>SessionsApi</em> | <strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Sessions/{sessionId}</span></code> | Gets some simple user details for the given session id</p></li>
+<li><p><em>SessionsApi</em> | <strong>GET</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Sessions</span></code> | Requires OrbitAdmin: Gets some simple user details for all currently valid sessions.</p></li>
+<li><p><em>SessionsApi</em> | <strong>DELETE</strong> <code class="docutils literal notranslate"><span class="pre">/{dataViewName}/Sessions/{sessionId}</span></code> | Logs out the specified session</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../apteco-api.html" class="btn btn-neutral float-left" title="apteco-api" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../apteco_website.html" class="btn btn-neutral float-right" title="Back to apteco.com" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Apteco Ltd.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

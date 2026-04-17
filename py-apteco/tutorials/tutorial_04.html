@@ -1,0 +1,221 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4. Selecting with different variable types &mdash; py-apteco 0.8.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/theme_overrides.css?v=f0e53977" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=dbee5847"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5. Specifying selection values" href="tutorial_05.html" />
+    <link rel="prev" title="3. Creating simple selections" href="tutorial_03.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            py-apteco
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorial.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="tutorial_01.html">1. Connecting to your FastStats system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_02.html">2. Accessing tables and variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_03.html">3. Creating simple selections</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4. Selecting with different variable types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#selector-array-flag-array">Selector, Array &amp; Flag Array</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#numeric">Numeric</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#text">Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#date-datetime">Date &amp; DateTime</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_05.html">5. Specifying selection values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_06.html">6. Combining selections using logic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_07.html">7. Controlling selection structure and tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_08.html">8. Creating Data Grids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_09.html">9. Creating Cubes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apteco-api.html">apteco-api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apteco_website.html">Back to apteco.com</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">py-apteco</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../tutorial.html">Tutorial</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4. </span>Selecting with different variable types</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tutorials/tutorial_04.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="selecting-with-different-variable-types">
+<h1><span class="section-number">4. </span>Selecting with different variable types<a class="headerlink" href="#selecting-with-different-variable-types" title="Link to this heading"></a></h1>
+<p>In this part of the tutorial we’ll learn
+what kind of values you can specify when making selections
+with different types of FastStats variables.</p>
+<section id="selector-array-flag-array">
+<h2>Selector, Array &amp; Flag Array<a class="headerlink" href="#selector-array-flag-array" title="Link to this heading"></a></h2>
+<p>As mentioned in the previous part, FastStats <strong>Selector</strong> variables
+require selector codes given as strings (Python <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> type).</p>
+<p>This is also true for <strong>Array</strong> and <strong>Flag Array</strong> variables:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">households</span> <span class="o">=</span> <span class="n">my_session</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="s2">&quot;Households&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ford_owners</span> <span class="o">=</span> <span class="n">households</span><span class="p">[</span><span class="s2">&quot;Car Make Code&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;FOR&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ford_owners</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">51614</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">broadsheet_readers</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;Newspapers&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="s2">&quot;Financial Times&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s2">&quot;The Times&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s2">&quot;Daily Telegraph&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s2">&quot;The Guardian&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s2">&quot;Independent&quot;</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">broadsheet_readers</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">531936</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Even selector codes that are numerical in form must be given
+as their string equivalents with appropriate 0-padding,
+as in the <a class="reference internal" href="tutorial_03.html#high-earners-example"><span class="std std-ref">high earners example</span></a> in the previous part.</p>
+</div>
+</section>
+<section id="numeric">
+<h2>Numeric<a class="headerlink" href="#numeric" title="Link to this heading"></a></h2>
+<p><strong>Numeric</strong> variables accept any number type:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">policies</span> <span class="o">=</span> <span class="n">my_session</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="s2">&quot;Policies&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ten_days_until_travel</span> <span class="o">=</span> <span class="n">policies</span><span class="p">[</span><span class="s2">&quot;Days Until Travel&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ten_days_until_travel</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">5085</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">premium_87_65</span> <span class="o">=</span> <span class="n">policies</span><span class="p">[</span><span class="s2">&quot;Premium&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mf">87.65</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">premium_87_65</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">8</span>
+</pre></div>
+</div>
+<p>As well as <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code> types, you can use other numerical types
+like <code class="xref py py-class docutils literal notranslate"><span class="pre">Decimal</span></code> from the built-in <code class="xref py py-mod docutils literal notranslate"><span class="pre">decimal</span></code> module:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">decimal</span><span class="w"> </span><span class="kn">import</span> <span class="n">Decimal</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cost12345</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Cost&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">Decimal</span><span class="p">(</span><span class="s2">&quot;123.45&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cost12345</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">11</span>
+</pre></div>
+</div>
+</section>
+<section id="text">
+<h2>Text<a class="headerlink" href="#text" title="Link to this heading"></a></h2>
+<p><strong>Text</strong> variables use Python strings:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">smiths</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;Surname&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Smith&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">smiths</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">13302</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vowel_initial</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;Initial&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="nb">list</span><span class="p">(</span><span class="s2">&quot;AEIOU&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vowel_initial</span><span class="o">.</span><span class="n">values</span>
+<span class="go">[&#39;A&#39;, &#39;E&#39;, &#39;I&#39;, &#39;O&#39;, &#39;U&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vowel_initial</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">168548</span>
+</pre></div>
+</div>
+</section>
+<section id="date-datetime">
+<h2>Date &amp; DateTime<a class="headerlink" href="#date-datetime" title="Link to this heading"></a></h2>
+<p><strong>Date</strong> and <strong>DateTime</strong> variables use the built-in Python <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime.date</span></code>
+and <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime.datetime</span></code> types.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">date</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">christmas_day_2019</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Booking Date&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">date</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">christmas_day_2019</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">627</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">travel_on_1st</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Travel Date&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="n">date</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">2020</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>
+<span class="gp">... </span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">travel_on_1st</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">41660</span>
+</pre></div>
+</div>
+<p>FastStats does not support picking a single date-time directly,
+so we can’t use the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator as we have with other variable types here.
+But in the next part we’ll learn other ways to make selections,
+including using <strong>DateTime</strong> variables.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tutorial_03.html" class="btn btn-neutral float-left" title="3. Creating simple selections" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorial_05.html" class="btn btn-neutral float-right" title="5. Specifying selection values" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Apteco Ltd.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

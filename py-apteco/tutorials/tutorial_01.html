@@ -1,0 +1,191 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1. Connecting to your FastStats system &mdash; py-apteco 0.8.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/theme_overrides.css?v=f0e53977" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=dbee5847"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. Accessing tables and variables" href="tutorial_02.html" />
+    <link rel="prev" title="Tutorial" href="../tutorial.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            py-apteco
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorial.html">Tutorial</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1. Connecting to your FastStats system</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#logging-in">Logging in</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#checking-your-session">Checking your session</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_02.html">2. Accessing tables and variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_03.html">3. Creating simple selections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_04.html">4. Selecting with different variable types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_05.html">5. Specifying selection values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_06.html">6. Combining selections using logic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_07.html">7. Controlling selection structure and tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_08.html">8. Creating Data Grids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_09.html">9. Creating Cubes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apteco-api.html">apteco-api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apteco_website.html">Back to apteco.com</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">py-apteco</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../tutorial.html">Tutorial</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">1. </span>Connecting to your FastStats system</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tutorials/tutorial_01.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="connecting-to-your-faststats-system">
+<h1><span class="section-number">1. </span>Connecting to your FastStats system<a class="headerlink" href="#connecting-to-your-faststats-system" title="Link to this heading"></a></h1>
+<p>In this part of the tutorial we’ll learn
+about creating a connection to your FastStats system.</p>
+<p>Make sure you have <strong>py-apteco</strong> installed before you start
+— see the <a class="reference internal" href="../install.html"><span class="doc">installation guide</span></a> for instructions.</p>
+<section id="logging-in">
+<h2>Logging in<a class="headerlink" href="#logging-in" title="Link to this heading"></a></h2>
+<p>To get started, import the <code class="xref py py-func docutils literal notranslate"><span class="pre">login()</span></code> function from the <a class="reference internal" href="../reference/topics/session.html#module-apteco" title="apteco"><code class="xref py py-mod docutils literal notranslate"><span class="pre">apteco</span></code></a> package.
+You can then connect to your FastStats system by calling the function
+with the following credentials as arguments:</p>
+<ul class="simple">
+<li><p><strong>API base URL</strong>: the URL for your Apteco API (Orbit API) installation</p></li>
+<li><p><strong>DataView name</strong>: the name of the DataView you’re connecting to</p></li>
+<li><p><strong>FastStats system name</strong>: the name of the system you’re using within the Dataview</p></li>
+<li><p><strong>Username</strong>: your username (the same as you use to log in to Orbit)</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">apteco</span><span class="w"> </span><span class="kn">import</span> <span class="n">login</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_session</span> <span class="o">=</span> <span class="n">login</span><span class="p">(</span><span class="s2">&quot;https://my-site.com/OrbitAPI&quot;</span><span class="p">,</span> <span class="s2">&quot;my_data_view&quot;</span><span class="p">,</span> <span class="s2">&quot;my_system&quot;</span><span class="p">,</span> <span class="s2">&quot;jdoe&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you’re working in the terminal, you’ll be asked to enter your password,
+which won’t be visible as you type it.
+If Python can’t prevent your password from appearing like this,
+or if you’re running an application,
+a pop-up password entry box will appear for you to use instead.
+This might appear in the background,
+so check your taskbar for a new window if nothing seems to be happening.</p>
+<p>If you don’t want to enter your password every time,
+there is also a <code class="xref py py-func docutils literal notranslate"><span class="pre">login_with_password()</span></code> function which takes your password
+as a fifth argument:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">apteco</span><span class="w"> </span><span class="kn">import</span> <span class="n">login_with_password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_session</span> <span class="o">=</span> <span class="n">login_with_password</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">&quot;https://my-site.com/OrbitAPI&quot;</span><span class="p">,</span> <span class="s2">&quot;my_data_view&quot;</span><span class="p">,</span> <span class="s2">&quot;my_system&quot;</span><span class="p">,</span> <span class="s2">&quot;jdoe&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is not considered good practice to have passwords saved within code like this
+— be aware of the security implications if doing so.</p>
+</div>
+</section>
+<section id="checking-your-session">
+<h2>Checking your session<a class="headerlink" href="#checking-your-session" title="Link to this heading"></a></h2>
+<p>To verify that the login was successfully,
+you can inspect the information about the FastStats system
+the session is connected to:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sys_info</span> <span class="o">=</span> <span class="n">my_session</span><span class="o">.</span><span class="n">system_info</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="sa">f</span><span class="s2">&quot;Connected to </span><span class="si">{</span><span class="n">sys_info</span><span class="o">.</span><span class="n">description</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="gp">... </span>    <span class="sa">f</span><span class="s2">&quot;, built on </span><span class="si">{</span><span class="n">sys_info</span><span class="o">.</span><span class="n">build_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1"> %B %Y at </span><span class="si">%X</span><span class="s1">&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">Connected to Holidays Demo Database, built on 27 November 2019 at 15:57:24.</span>
+</pre></div>
+</div>
+<p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">Session</span></code> object holds more than just this metadata
+about the FastStats system,
+and in the next part we’ll learn how to access the system Tables and Variables.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../tutorial.html" class="btn btn-neutral float-left" title="Tutorial" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorial_02.html" class="btn btn-neutral float-right" title="2. Accessing tables and variables" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Apteco Ltd.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

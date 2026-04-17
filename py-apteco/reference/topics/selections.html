@@ -1,0 +1,383 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selections &mdash; py-apteco 0.8.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/theme_overrides.css?v=f0e53977" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=dbee5847"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Data Grid" href="datagrid.html" />
+    <link rel="prev" title="Variables" href="variables.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            py-apteco
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../reference.html">Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="session.html">Session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tables.html">Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html">Variables</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Selections</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#basic-use">Basic use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#selection-related-tasks">Selection-related tasks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#building-a-data-grid-or-cube">Building a data grid or cube</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#api-reference">API Reference</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#core-attributes-methods">Core attributes &amp; methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sampling-and-limits">Sampling and limits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data-grids-and-cubes">Data Grids and Cubes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datagrid.html">Data Grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cube.html">Cube</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apteco-api.html">apteco-api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apteco_website.html">Back to apteco.com</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">py-apteco</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../reference.html">Reference</a></li>
+      <li class="breadcrumb-item active">Selections</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/reference/topics/selections.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="selections">
+<h1>Selections<a class="headerlink" href="#selections" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>A FastStats Selection is represented in <strong>py-apteco</strong> by a <code class="xref py py-class docutils literal notranslate"><span class="pre">Clause</span></code> object,
+possibly containing other nested or connected <code class="xref py py-class docutils literal notranslate"><span class="pre">Clause</span></code> objects,
+which combine to make the rule defining a set of records to be selected.
+The table from which to select the records is also embedded in the rule.</p>
+<p>As well as the fundamental action of counting a selection
+to see how many records in the table match the conditions defined by the rule,
+selections form the basis of many other pieces of analysis
+and can be used in many different contexts.</p>
+</section>
+<section id="basic-use">
+<h2>Basic use<a class="headerlink" href="#basic-use" title="Link to this heading"></a></h2>
+<p>Setting up variables:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">date</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dest</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Destination&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">trav</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Travel Date&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cost</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Cost&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Creating a selection:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sweden</span> <span class="o">=</span> <span class="n">dest</span> <span class="o">==</span> <span class="s2">&quot;29&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">at_least_2k</span> <span class="o">=</span> <span class="n">cost</span> <span class="o">&gt;=</span> <span class="mi">2000</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">before_2020</span> <span class="o">=</span> <span class="n">trav</span> <span class="o">&lt;=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Counting a selection:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sweden</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="go">25207</span>
+</pre></div>
+</div>
+<p>Combining selections:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sweden_before_2020</span> <span class="o">=</span> <span class="n">sweden</span> <span class="o">&amp;</span> <span class="n">before_2020</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sweden_or_expensive</span> <span class="o">=</span> <span class="n">sweden</span> <span class="o">|</span> <span class="n">at_least_2k</span>
+</pre></div>
+</div>
+<p>Changing table:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">been_to_sweden</span> <span class="o">=</span> <span class="n">people</span> <span class="o">*</span> <span class="n">sweden</span>
+</pre></div>
+</div>
+<p>Taking sample:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">random_3_pct_sweden</span> <span class="o">=</span> <span class="n">sweden</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.03</span><span class="p">,</span> <span class="n">sample_type</span><span class="o">=</span><span class="s2">&quot;Random&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Applying limit:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">top_1000_sweden_by_cost</span> <span class="o">=</span> <span class="n">sweden</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="n">cost</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="selection-related-tasks">
+<h2>Selection-related tasks<a class="headerlink" href="#selection-related-tasks" title="Link to this heading"></a></h2>
+<section id="building-a-data-grid-or-cube">
+<h3>Building a data grid or cube<a class="headerlink" href="#building-a-data-grid-or-cube" title="Link to this heading"></a></h3>
+<p>Selections can be used as the starting point
+for creating a data grid using records in that selection:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">urn</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Booking URN&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sweden_datagrid</span> <span class="o">=</span> <span class="n">sweden</span><span class="o">.</span><span class="n">datagrid</span><span class="p">([</span><span class="n">urn</span><span class="p">,</span> <span class="n">dest</span><span class="p">,</span> <span class="n">trav</span><span class="p">,</span> <span class="n">cost</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sweden_df</span> <span class="o">=</span> <span class="n">sweden_datagrid</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sweden_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">  Booking URN Destination Travel Date     Cost</span>
+<span class="go">0    10172319      Sweden  2020-05-15  1201.81</span>
+<span class="go">1    10384970      Sweden  2018-04-05   344.30</span>
+<span class="go">2    10421011      Sweden  2019-07-11   322.89</span>
+<span class="go">3    10425298      Sweden  2020-10-10   880.02</span>
+<span class="go">4    10479109      Sweden  2020-09-21   172.91</span>
+</pre></div>
+</div>
+<p>You can similarly create a cube:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">product</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Product&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">grade</span> <span class="o">=</span> <span class="n">bookings</span><span class="p">[</span><span class="s2">&quot;Grade&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sweden_cube</span> <span class="o">=</span> <span class="n">sweden</span><span class="o">.</span><span class="n">cube</span><span class="p">([</span><span class="n">grade</span><span class="p">,</span> <span class="n">dest</span><span class="p">,</span> <span class="n">product</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sweden_df</span> <span class="o">=</span> <span class="n">sweden_cube</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sweden_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;Silver&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">                        Bookings</span>
+<span class="go">Product       Accommodation Only Flight Only Package Holiday</span>
+<span class="go">Destination</span>
+<span class="go">Australia                      0           0               0</span>
+<span class="go">Denmark                        0           0               0</span>
+<span class="go">France                         0           0               0</span>
+<span class="go">Germany                        0           0               0</span>
+<span class="go">Greece                         0           0               0</span>
+<span class="go">Italy                          0           0               0</span>
+<span class="go">Jamaica                        0           0               0</span>
+<span class="go">Kuwait                         0           0               0</span>
+<span class="go">Latvia                         0           0               0</span>
+<span class="go">Mali                           0           0               0</span>
+<span class="go">Mongolia                       0           0               0</span>
+<span class="go">Namibia                        0           0               0</span>
+<span class="go">New Zealand                    0           0               0</span>
+<span class="go">Portugal                       0           0               0</span>
+<span class="go">Senegal                        0           0               0</span>
+<span class="go">Sierra Leone                   0           0               0</span>
+<span class="go">South Africa                   0           0               0</span>
+<span class="go">Sweden                       277        2264           22666</span>
+<span class="go">United States                  0           0               0</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="api-reference">
+<h2>API Reference<a class="headerlink" href="#api-reference" title="Link to this heading"></a></h2>
+<section id="core-attributes-methods">
+<h3>Core attributes &amp; methods<a class="headerlink" href="#core-attributes-methods" title="Link to this heading"></a></h3>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="table">
+<span class="sig-name descname"><span class="pre">table</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Table</span></em><a class="headerlink" href="#table" title="Link to this definition"></a></dt>
+<dd><p>resolve table of this selection</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="table_name">
+<span class="sig-name descname"><span class="pre">table_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#table_name" title="Link to this definition"></a></dt>
+<dd><p>name of the resolve table of this selection</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="count">
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#count" title="Link to this definition"></a></dt>
+<dd><p>return the number of records in this selection</p>
+</dd></dl>
+
+</section>
+<section id="sampling-and-limits">
+<h3>Sampling and limits<a class="headerlink" href="#sampling-and-limits" title="Link to this heading"></a></h3>
+<dl class="py method">
+<dt class="sig sig-object py" id="sample">
+<span class="sig-name descname"><span class="pre">sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frac</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Random'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_first</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sample" title="Link to this definition"></a></dt>
+<dd><p>Take a sample of records from the selection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> (<em>int</em>) – Number of records to return from selection.
+Cannot be used with <cite>frac</cite>.</p></li>
+<li><p><strong>frac</strong> (<em>float</em>) – Proportion of records to return out of whole selection,
+given as a number between 0 and 1.
+Cannot be used with <cite>n</cite>.</p></li>
+<li><p><strong>sample_type</strong> (<em>{'Random'</em><em>, </em><em>'Stratified'</em><em>, </em><em>'First'}</em>) – Type of sampling to use. Default is ‘Random’.</p></li>
+<li><p><strong>skip_first</strong> (<em>int</em>) – Number of records to skip from start of selection.
+Default is 0.</p></li>
+<li><p><strong>label</strong> (<em>str</em>) – Optional textual name for this selection clause.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="limit">
+<span class="sig-name descname"><span class="pre">limit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frac</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ascending</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#limit" title="Link to this definition"></a></dt>
+<dd><p>Limit the selection to a subset of records.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> (<em>int</em><em> or </em><em>tuple</em>) – Number of records to return from selection.
+Cannot be used with <cite>frac</cite>.
+If <cite>by</cite> is given, a tuple of two integers <cite>(i, j)</cite> may be passed to
+select from the <cite>i</cite>th to the <cite>j</cite>th records.</p></li>
+<li><p><strong>frac</strong> (<em>float</em><em> or </em><em>tuple</em>) – Proportion of records to return out of whole selection,
+given as a number between 0 and 1.
+Cannot be used with <cite>n</cite>.
+If <cite>by</cite> is given, a tuple of two numbers <cite>(p, q)</cite> may be passed to
+select the proportion of records between them.
+For example <cite>frac=(0.1, 0.25)</cite> with <cite>ascending=False</cite>
+would give the top 10–25% of records.</p></li>
+<li><p><strong>by</strong> (<a class="reference internal" href="variables.html#Variable" title="Variable"><em>Variable</em></a>) – Variable specifying order in which records are selected.</p></li>
+<li><p><strong>ascending</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to order records ascending (<cite>True</cite>)
+or descending (<cite>False</cite>) when selecting limit.
+Must be used with <cite>by</cite>. Default is <cite>False</cite>.</p></li>
+<li><p><strong>per</strong> (<em>Table</em><em> or </em><a class="reference internal" href="variables.html#Variable" title="Variable"><em>Variable</em></a>) – Return <cite>n</cite> records per this entity. Cannot be used with <cite>frac</cite>.
+If <cite>per</cite> is a <strong>Table</strong>, it must be a parent or ancestor table of the
+selection’s table, and for each record on this table
+<cite>n</cite> child records are returned from the selection.
+If per is a <strong>Variable</strong>, <cite>n</cite> records are returned
+for each value of this variable.
+If <cite>per</cite> is a selector variable, this means <cite>n</cite> records
+for each selector category.</p></li>
+<li><p><strong>label</strong> (<em>str</em>) – Optional textual name for this selection clause.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="data-grids-and-cubes">
+<h3>Data Grids and Cubes<a class="headerlink" href="#data-grids-and-cubes" title="Link to this heading"></a></h3>
+<dl class="py method">
+<dt class="sig sig-object py" id="datagrid">
+<span class="sig-name descname"><span class="pre">datagrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datagrid" title="Link to this definition"></a></dt>
+<dd><p>Build a data grid with this selection underlying it.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cols</span> <span class="o">=</span> <span class="p">(</span>
+<span class="go">        [people[var] for var in (&quot;Initial&quot;, &quot;Surname&quot;)]</span>
+<span class="go">        + [bookings[var] for var in (&quot;boDate&quot;, &quot;boCost&quot;, &quot;boDest&quot;)]</span>
+<span class="go">    )</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">northern</span> <span class="o">=</span> <span class="n">households</span><span class="p">[</span><span class="s2">&quot;Region&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;01&quot;</span><span class="p">,</span> <span class="s2">&quot;02&quot;</span><span class="p">,</span> <span class="s2">&quot;13&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">datagrid</span> <span class="o">=</span> <span class="n">bookings</span><span class="o">.</span><span class="n">datagrid</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">northern</span><span class="p">,</span> <span class="n">max_rows</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">datagrid</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">  Initial   Surname Booking Date     Cost    Destination</span>
+<span class="go">0       A     Allen   2020-08-11   551.81         France</span>
+<span class="go">1       W   Livesey   2021-08-02  1167.57   Sierra Leone</span>
+<span class="go">2       W   Livesey   2021-08-19   562.56  United States</span>
+<span class="go">3       W   Livesey   2021-08-08   960.55      Australia</span>
+<span class="go">4       O  Robinson   2021-08-22   455.60  United States</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>This method is a wrapper around the <code class="xref py py-class docutils literal notranslate"><span class="pre">DataGrid</span></code> class.
+Refer to the <a class="reference internal" href="datagrid.html#datagrid-reference"><span class="std std-ref">Data Grid</span></a> documentation for more details.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cube">
+<span class="sig-name descname"><span class="pre">cube</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dimensions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">measures</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cube" title="Link to this definition"></a></dt>
+<dd><p>Build a cube with this selection underlying it.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cube</span> <span class="o">=</span> <span class="n">bookings</span><span class="o">.</span><span class="n">cube</span><span class="p">(</span>
+<span class="go">        [people[&quot;Occupation&quot;], bookings[&quot;Product&quot;]],</span>
+<span class="go">        selection=(bookings[&quot;Cost&quot;] &gt; 200),</span>
+<span class="go">    )</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">cube</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+<span class="go">                    Bookings</span>
+<span class="go">Product         Accommodation  Flight Package</span>
+<span class="go">Occupation</span>
+<span class="go">Director                 1714    8477   24585</span>
+<span class="go">Manager                  4422   28566  109725</span>
+<span class="go">Manual Worker            4039   27104   77547</span>
+<span class="go">Professional             1806    9728   40072</span>
+<span class="go">Public Sector           18308   82437  249637</span>
+<span class="go">Retail Worker            9864   30853  126350</span>
+<span class="go">Retired                 12750   47333   86594</span>
+<span class="go">Sales Executive         35214  152911  407288</span>
+<span class="go">Student                  6553   27665  145156</span>
+<span class="go">Unemployed               8999   30648   57211</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>This method is a wrapper around the <code class="xref py py-class docutils literal notranslate"><span class="pre">Cube</span></code> class.
+Refer to the <a class="reference internal" href="cube.html#cube-reference"><span class="std std-ref">Cube</span></a> documentation for more details.</p>
+</div>
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="variables.html" class="btn btn-neutral float-left" title="Variables" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="datagrid.html" class="btn btn-neutral float-right" title="Data Grid" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Apteco Ltd.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

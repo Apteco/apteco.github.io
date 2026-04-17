@@ -1,0 +1,369 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>8. Creating Data Grids &mdash; py-apteco 0.8.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/theme_overrides.css?v=f0e53977" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=dbee5847"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="9. Creating Cubes" href="tutorial_09.html" />
+    <link rel="prev" title="7. Controlling selection structure and tables" href="tutorial_07.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            py-apteco
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorial.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="tutorial_01.html">1. Connecting to your FastStats system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_02.html">2. Accessing tables and variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_03.html">3. Creating simple selections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_04.html">4. Selecting with different variable types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_05.html">5. Specifying selection values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_06.html">6. Combining selections using logic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_07.html">7. Controlling selection structure and tables</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">8. Creating Data Grids</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-data-grid">Creating a data grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controlling-the-number-of-rows">Controlling the number of rows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#applying-a-selection">Applying a selection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#applying-a-selection-from-a-different-table">Applying a selection from a different table</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_09.html">9. Creating Cubes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apteco-api.html">apteco-api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apteco_website.html">Back to apteco.com</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">py-apteco</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../tutorial.html">Tutorial</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">8. </span>Creating Data Grids</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tutorials/tutorial_08.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="creating-data-grids">
+<h1><span class="section-number">8. </span>Creating Data Grids<a class="headerlink" href="#creating-data-grids" title="Link to this heading"></a></h1>
+<p>Exporting data into a data grid makes it available in a format
+that lets us easily carry out further analysis on it.
+In this part of the tutorial we’ll learn how to create data grids,
+and how to control what data is exported into them.</p>
+<section id="creating-a-data-grid">
+<h2>Creating a data grid<a class="headerlink" href="#creating-a-data-grid" title="Link to this heading"></a></h2>
+<p>We can use the <a class="reference internal" href="../reference/topics/tables.html#datagrid" title="datagrid"><code class="xref py py-meth docutils literal notranslate"><span class="pre">datagrid()</span></code></a> method on a table
+to create a data grid showing records from that table.
+We pass it a list of the FastStats variables we want to use as data grid columns:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pol_num</span> <span class="o">=</span> <span class="n">policies</span><span class="p">[</span><span class="s2">&quot;Policy Number&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pol_date</span> <span class="o">=</span> <span class="n">policies</span><span class="p">[</span><span class="s2">&quot;Policy Date&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">premium</span> <span class="o">=</span> <span class="n">policies</span><span class="p">[</span><span class="s2">&quot;Premium&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cover</span> <span class="o">=</span> <span class="n">policies</span><span class="p">[</span><span class="s2">&quot;Cover&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">days_to_travel</span> <span class="o">=</span> <span class="n">policies</span><span class="p">[</span><span class="s2">&quot;Days Until Travel&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">datagrid</span> <span class="o">=</span> <span class="n">policies</span><span class="o">.</span><span class="n">datagrid</span><span class="p">([</span><span class="n">pol_num</span><span class="p">,</span> <span class="n">pol_date</span><span class="p">,</span> <span class="n">premium</span><span class="p">,</span> <span class="n">cover</span><span class="p">,</span> <span class="n">days_to_travel</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>To work with the data we can convert it to a Pandas <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code>
+using the <code class="xref py py-meth docutils literal notranslate"><span class="pre">to_df()</span></code> method:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">datagrid</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+<span class="go">    Policy Number Policy Date  Premium        Cover  Days Until Travel</span>
+<span class="go">0        10001265  2019-05-21    87.02   Individual                 25</span>
+<span class="go">1        10036397  2017-04-09   123.30   Individual                 91</span>
+<span class="go">2        10078565  2018-09-05   143.20   Multi Trip                 30</span>
+<span class="go">3        10078566  2018-10-07    29.23       Family                 60</span>
+<span class="go">4        10078567  2018-10-03    14.65  Single Trip                 10</span>
+<span class="go">..            ...         ...      ...          ...                ...</span>
+<span class="go">995      11192414  2022-01-06    17.83  Single Trip                 26</span>
+<span class="go">996      11205561  2016-07-09    10.43   Individual                 35</span>
+<span class="go">997      11242733  2021-02-23    33.56   Individual                 10</span>
+<span class="go">998      11252163  2021-03-23    13.57   Individual                 41</span>
+<span class="go">999      11262841  2020-07-28    11.19   Individual                 86</span>
+
+<span class="go">[1000 rows x 5 columns]</span>
+</pre></div>
+</div>
+<p>Where possible, the <code class="xref py py-meth docutils literal notranslate"><span class="pre">to_df()</span></code> method will convert the raw data
+to the corresponding native data types:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<span class="go">&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;</span>
+<span class="go">RangeIndex: 1000 entries, 0 to 999</span>
+<span class="go">Data columns (total 5 columns):</span>
+<span class="go"> #   Column             Non-Null Count  Dtype</span>
+<span class="go">---  ------             --------------  -----</span>
+<span class="go"> 0   Policy Number      1000 non-null   object</span>
+<span class="go"> 1   Policy Date        1000 non-null   object</span>
+<span class="go"> 2   Premium            1000 non-null   float64</span>
+<span class="go"> 3   Cover              1000 non-null   object</span>
+<span class="go"> 4   Days Until Travel  1000 non-null   int64</span>
+<span class="go">dtypes: float64(1), int64(1), object(3)</span>
+<span class="go">memory usage: 39.2+ KB</span>
+</pre></div>
+</div>
+<p>Pandas doesn’t currently have a column type for strings or dates
+(though it does have a date<em>time</em> column type),
+so these are stored as ordinary Python objects.
+However if we select an individual string or date from the DataFrame
+we can see that it’s a native <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime.date</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Cover&quot;</span><span class="p">]</span>
+<span class="go">&#39;Multi Trip&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Policy Date&quot;</span><span class="p">]</span>
+<span class="go">datetime.date(2018, 10, 7)</span>
+</pre></div>
+</div>
+<p>You can use any variable type as a data grid column,
+except for Array and Flag Array variables.
+As in FastStats, you can also use variables from parent or ancestor tables,
+but not child or descendant tables:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">occu</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;Occupation&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">town</span> <span class="o">=</span> <span class="n">households</span><span class="p">[</span><span class="s2">&quot;Town&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mixed_tables_datagrid</span> <span class="o">=</span> <span class="n">policies</span><span class="o">.</span><span class="n">datagrid</span><span class="p">([</span><span class="n">pol_num</span><span class="p">,</span> <span class="n">premium</span><span class="p">,</span> <span class="n">occu</span><span class="p">,</span> <span class="n">cover</span><span class="p">,</span> <span class="n">town</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mixed_tables_datagrid</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span>
+<span class="go">    Policy Number  Premium        Cover       Occupation                 Town</span>
+<span class="go">0        10001265    87.02   Individual  Sales Executive             Aberdeen</span>
+<span class="go">1        10036397   123.30   Individual     Professional           Birmingham</span>
+<span class="go">2        10078565   143.20   Multi Trip  Sales Executive     Sutton Coldfield</span>
+<span class="go">3        10078566    29.23       Family  Sales Executive     Sutton Coldfield</span>
+<span class="go">4        10078567    14.65  Single Trip    Public Sector     Sutton Coldfield</span>
+<span class="go">..            ...      ...          ...              ...                  ...</span>
+<span class="go">995      11192414    17.83  Single Trip    Retail Worker            Maidstone</span>
+<span class="go">996      11205561    10.43   Individual    Public Sector           Buckingham</span>
+<span class="go">997      11242733    33.56   Individual         Director               London</span>
+<span class="go">998      11252163    13.57   Individual    Public Sector  Newcastle-upon-Tyne</span>
+<span class="go">999      11262841    11.19   Individual    Public Sector  Newcastle-upon-Tyne</span>
+
+<span class="go">[1000 rows x 5 columns]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is the table structure for the tables
+from the demo <em>Holidays</em> system being used here:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Households
+ └─ People
+     └─ Policies
+</pre></div>
+</div>
+<p>Our data grid is displaying <cite>Policies</cite> records, but the columns include
+the <cite>Occupation</cite> variable from the parent <cite>People</cite> table,
+as well as the <cite>Town</cite> variable from the ‘grandparent’ <cite>Households</cite> table.</p>
+</div>
+</section>
+<section id="controlling-the-number-of-rows">
+<h2>Controlling the number of rows<a class="headerlink" href="#controlling-the-number-of-rows" title="Link to this heading"></a></h2>
+<p>By default, the data grid will return 1000 rows,
+but we can adjust this using the <cite>max_rows</cite> parameter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">pol_num</span><span class="p">,</span> <span class="n">premium</span><span class="p">,</span> <span class="n">occupation</span><span class="p">,</span> <span class="n">cover</span><span class="p">,</span> <span class="n">town</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">only_10_policies_datagrid</span> <span class="o">=</span> <span class="n">policies</span><span class="o">.</span><span class="n">datagrid</span><span class="p">(</span><span class="n">columns</span><span class="p">,</span> <span class="n">max_rows</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">only_10_policies_datagrid</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span>
+<span class="go">  Policy Number  Premium       Occupation        Cover              Town</span>
+<span class="go">0      10001265    87.02  Sales Executive   Individual          Aberdeen</span>
+<span class="go">1      10036397   123.30     Professional   Individual        Birmingham</span>
+<span class="go">2      10078565   143.20  Sales Executive   Multi Trip  Sutton Coldfield</span>
+<span class="go">3      10078566    29.23  Sales Executive       Family  Sutton Coldfield</span>
+<span class="go">4      10078567    14.65    Public Sector  Single Trip  Sutton Coldfield</span>
+<span class="go">5      10090306    30.50     Professional       Family          Redditch</span>
+<span class="go">6      10094721    83.78    Public Sector       Family              Bath</span>
+<span class="go">7      10109667    25.48          Manager   Individual            Yeovil</span>
+<span class="go">8      10109674    33.87    Public Sector   Multi Trip            Yeovil</span>
+<span class="go">9      10123545    50.56  Sales Executive   Individual            Nelson</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As its name suggests, the number of rows in the data grid
+isn’t necessarily equal to <cite>max_rows</cite> – it just provides an upper limit.
+The number of rows will be less than this
+if there are fewer records available.</p>
+</div>
+</section>
+<section id="applying-a-selection">
+<h2>Applying a selection<a class="headerlink" href="#applying-a-selection" title="Link to this heading"></a></h2>
+<p>You can filter the records shown in the data grid by applying a selection to it
+using the <cite>selection</cite> parameter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">multi_trip</span> <span class="o">=</span> <span class="n">policies</span><span class="p">[</span><span class="s2">&quot;Cover&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;4&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">multi_trip_datagrid</span> <span class="o">=</span> <span class="n">policies</span><span class="o">.</span><span class="n">datagrid</span><span class="p">(</span><span class="n">columns</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="n">multi_trip</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">multi_trip_datagrid</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span>
+<span class="go">    Policy Number  Premium       Occupation       Cover              Town</span>
+<span class="go">0        10078565   143.20  Sales Executive  Multi Trip  Sutton Coldfield</span>
+<span class="go">1        10109674    33.87    Public Sector  Multi Trip            Yeovil</span>
+<span class="go">2        10278405    56.27  Sales Executive  Multi Trip             Newry</span>
+<span class="go">3        10326709    21.99  Sales Executive  Multi Trip         Cambridge</span>
+<span class="go">4        10425299    38.50          Student  Multi Trip     South Croydon</span>
+<span class="go">..            ...      ...              ...         ...               ...</span>
+<span class="go">995      10976366    87.88  Sales Executive  Multi Trip             Esher</span>
+<span class="go">996      11131381    14.12       Unemployed  Multi Trip            Pudsey</span>
+<span class="go">997      11258013   148.09    Public Sector  Multi Trip         Gateshead</span>
+<span class="go">998      11519086    45.61  Sales Executive  Multi Trip      Bognor Regis</span>
+<span class="go">999      11783140    12.66     Professional  Multi Trip        Malmesbury</span>
+
+<span class="go">[1000 rows x 5 columns]</span>
+</pre></div>
+</div>
+<p>You can also build the data grid directly
+from the selection using the <a class="reference internal" href="../reference/topics/tables.html#datagrid" title="datagrid"><code class="xref py py-meth docutils literal notranslate"><span class="pre">datagrid()</span></code></a> method:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">multi_trip_datagrid</span> <span class="o">=</span> <span class="n">multi_trip</span><span class="o">.</span><span class="n">datagrid</span><span class="p">(</span><span class="n">columns</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">multi_trip_datagrid</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span>
+<span class="go">    Policy Number  Premium       Occupation       Cover              Town</span>
+<span class="go">0        10078565   143.20  Sales Executive  Multi Trip  Sutton Coldfield</span>
+<span class="go">1        10109674    33.87    Public Sector  Multi Trip            Yeovil</span>
+<span class="go">2        10278405    56.27  Sales Executive  Multi Trip             Newry</span>
+<span class="go">3        10326709    21.99  Sales Executive  Multi Trip         Cambridge</span>
+<span class="go">4        10425299    38.50          Student  Multi Trip     South Croydon</span>
+<span class="go">..            ...      ...              ...         ...               ...</span>
+<span class="go">995      10976366    87.88  Sales Executive  Multi Trip             Esher</span>
+<span class="go">996      11131381    14.12       Unemployed  Multi Trip            Pudsey</span>
+<span class="go">997      11258013   148.09    Public Sector  Multi Trip         Gateshead</span>
+<span class="go">998      11519086    45.61  Sales Executive  Multi Trip      Bognor Regis</span>
+<span class="go">999      11783140    12.66     Professional  Multi Trip        Malmesbury</span>
+
+<span class="go">[1000 rows x 5 columns]</span>
+</pre></div>
+</div>
+<p><em>(this data grid is identical to the previous one)</em></p>
+<p>When creating a data grid from a selection,
+the table for the data grid is automatically set as the selection’s table.</p>
+</section>
+<section id="applying-a-selection-from-a-different-table">
+<h2>Applying a selection from a different table<a class="headerlink" href="#applying-a-selection-from-a-different-table" title="Link to this heading"></a></h2>
+<p>Just as in FastStats, you can apply a selection based on a table
+different from the one used in your data grid:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">student</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="s2">&quot;Occupation&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;4&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">student_policies_datagrid</span> <span class="o">=</span> <span class="n">policies</span><span class="o">.</span><span class="n">datagrid</span><span class="p">(</span><span class="n">columns</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="n">student</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">student_policies_datagrid</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span>
+<span class="go">    Policy Number  Premium Occupation        Cover            Town</span>
+<span class="go">0        10152036    33.82    Student  Single Trip     Bournemouth</span>
+<span class="go">1        10165468    23.22    Student   Individual        Ferndown</span>
+<span class="go">2        10173730   117.09    Student       Family          Bolton</span>
+<span class="go">3        10415201    10.29    Student   Individual         Sudbury</span>
+<span class="go">4        10418882    30.11    Student   Individual  Clacton-on-Sea</span>
+<span class="go">..            ...      ...        ...          ...             ...</span>
+<span class="go">995      10204828    34.75    Student       Family      Eastbourne</span>
+<span class="go">996      10423854    12.87    Student       Family         Croydon</span>
+<span class="go">997      10467615    16.68    Student  Single Trip  Leamington Spa</span>
+<span class="go">998      10597061    34.80    Student  Single Trip     Stourbridge</span>
+<span class="go">999      10629056    17.79    Student   Individual          London</span>
+
+<span class="go">[1000 rows x 5 columns]</span>
+</pre></div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">student</span></code> is a selection on the <cite>People</cite> table,
+but we are applying it to a <cite>Policies</cite> data grid.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The selection’s table must be the same as the data grid,
+or a ‘related’ table – either an ancestor or descendant.</p>
+</div>
+<p>Again, you can build the data grid from the selection itself,
+but this time you will need to use the <cite>table</cite> parameter
+to set the data grid to the desired table:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">student_policies_datagrid</span> <span class="o">=</span> <span class="n">student</span><span class="o">.</span><span class="n">datagrid</span><span class="p">(</span><span class="n">columns</span><span class="p">,</span> <span class="n">table</span><span class="o">=</span><span class="n">policies</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">student_policies_datagrid</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span>
+<span class="go">    Policy Number  Premium Occupation        Cover            Town</span>
+<span class="go">0        10152036    33.82    Student  Single Trip     Bournemouth</span>
+<span class="go">1        10165468    23.22    Student   Individual        Ferndown</span>
+<span class="go">2        10173730   117.09    Student       Family          Bolton</span>
+<span class="go">3        10415201    10.29    Student   Individual         Sudbury</span>
+<span class="go">4        10418882    30.11    Student   Individual  Clacton-on-Sea</span>
+<span class="go">..            ...      ...        ...          ...             ...</span>
+<span class="go">995      10204828    34.75    Student       Family      Eastbourne</span>
+<span class="go">996      10423854    12.87    Student       Family         Croydon</span>
+<span class="go">997      10467615    16.68    Student  Single Trip  Leamington Spa</span>
+<span class="go">998      10597061    34.80    Student  Single Trip     Stourbridge</span>
+<span class="go">999      10629056    17.79    Student   Individual          London</span>
+
+<span class="go">[1000 rows x 5 columns]</span>
+</pre></div>
+</div>
+<p><em>(this data grid is identical to the previous one)</em></p>
+<p>As well as exporting data to a data grid to do further analysis on it externally,
+FastStats has built-in support for many kinds of analysis.
+In the next part, we’ll learn how to create Cubes
+for carrying out multi-dimensional tabular analysis on our data.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tutorial_07.html" class="btn btn-neutral float-left" title="7. Controlling selection structure and tables" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorial_09.html" class="btn btn-neutral float-right" title="9. Creating Cubes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Apteco Ltd.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
